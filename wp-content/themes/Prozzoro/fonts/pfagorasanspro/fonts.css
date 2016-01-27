@@ -1,0 +1,38 @@
+/* font-family: "AgoraSansProRegular"; */
+@font-face {
+    font-family: "PF Agora Sans Pro regular";
+    src: url("AgoraSansProRegular/AgoraSansProRegular.eot");
+    src: url("AgoraSansProRegular/AgoraSansProRegular.eot?#iefix")format("embedded-opentype"),
+    url("AgoraSansProRegular/AgoraSansProRegular.woff") format("woff"),
+    url("AgoraSansProRegular/AgoraSansProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
+/* font-family: "AgoraSansProLight"; */
+@font-face {
+    font-family: "PF Agora Sans Pro light";
+    src: url("AgoraSansProLight/AgoraSansProLight.eot");
+    src: url("AgoraSansProLight/AgoraSansProLight.eot?#iefix")format("embedded-opentype"),
+    url("AgoraSansProLight/AgoraSansProLight.woff") format("woff"),
+    url("AgoraSansProLight/AgoraSansProLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
+/* font-family: "AgoraSansProMedium"; */
+@font-face {
+    font-family: "PF Agora Sans Pro medium";
+    src: url("AgoraSansProMedium/AgoraSansProMedium.eot");
+    src: url("AgoraSansProMedium/AgoraSansProMedium.eot?#iefix")format("embedded-opentype"),
+    url("AgoraSansProMedium/AgoraSansProMedium.woff") format("woff"),
+    url("AgoraSansProMedium/AgoraSansProMedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

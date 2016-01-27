@@ -1,0 +1,519 @@
+<?php
+
+register_nav_menus(array(
+  'header_menu' => 'Меню в header',  
+  'provider_menu' => 'Меню в "Поставщикам"',  
+  'foot_menu_left' => 'Меню в footer слева',
+  'foot_menu_center' => 'Меню в footer по центру',
+  'foot_menu_right' => 'Меню в footer справа'
+));
+
+function register_my_widgets(){
+	register_sidebar( array(
+		'name' => 'Контакты в футере',
+		'id' => 'footer-contacts-sidebar',
+		'description' => 'Выводиться в футер справа',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	));
+  register_sidebar( array(
+    'name' => 'Заказчику',
+    'id' => 'customer-sidebar',
+    'description' => 'Выводиться в body страницы "Заказчику"',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
+  ));
+  register_sidebar( array(
+    'name' => 'Поделиться',
+    'id' => 'share-sidebar',
+    'description' => 'Выводиться в конце новостей, записей и ответов/вопросов',
+    'before_widget' => '<div class="nav navbar-nav inline-navbar margin-bottom">',
+    'after_widget' => '</div>',
+    'before_title' => '<li>',
+    'after_title' => '</li>',
+  ));
+  register_sidebar( array(
+    'name' => 'Кнопки соцсетей',
+    'id' => 'social-sidebar',
+    'description' => 'Выводиться в header и footer',
+    'before_widget' => '<div class="nav navbar-nav inline-navbar">',
+    'after_widget' => '</div>',
+    'before_title' => '<li>',
+    'after_title' => '</li>',
+  ));
+}
+add_action( 'widgets_init', 'register_my_widgets' );
+
+function register_faq_widget() { 
+  register_widget( 'FAQ_Widget' );
+} 
+class FAQ_Widget extends WP_Widget {
+  function __construct() {
+    parent::__construct(
+      'faq_widget', // Base ID
+      __( 'Widget Title', 'text_domain' ), // Name
+      array( 'description' => __( 'A FAQ Widget', 'text_domain' ), ) // Args
+    );
+  }
+  function FAQ_Widget() {
+      $widget_ops = array( 'classname' => 'example', 'description' => __('Виджет, который выводит FAQ с отметкой "Топ"', 'example') );
+      $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'example-widget' );
+      $this->WP_Widget( 'example-widget', __('FAQ Widget', 'example'), $widget_ops, $control_ops );
+  }
+  public function widget($args, $instance) {
+    extract($args);
+    $title = apply_filters('widget_title', $instance['title'] );
+    echo $before_widget; 
+    if ( $title )
+      echo $before_title . $title . $after_title;
+     faq_in_top();
+     echo $after_widget; 
+  }
+  public function update( $new_instance, $old_instance ) {
+      $instance = $old_instance;
+      //Strip tags from title and name to remove HTML
+      $instance['title'] = strip_tags( $new_instance['title'] ); 
+      return $instance;
+  }
+  public function form( $instance ) {
+    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
+    ?>
+    <p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+    </p>
+    <?php 
+  }
+}
+add_action( 'widgets_init', 'register_faq_widget' );
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'faq',
+    array(
+    'labels' => array(
+              'name' => 'FAQ',
+              'has_archive' => true
+              ),
+    'public' => true,
+    'supports' => array( 'title', 'editor' ),
+   'taxonomies' => array('category'),
+   'show_in_menu'=>true,
+   'menu_position'=>5,
+   'menu_icon'=>'dashicons-format-chat',
+   'rewrite' => array('slug' => '/category/faq/'),
+   'query_var' => true,
+   'has_archive' => true,
+   'hierarchical' => false
+   ));
+
+   register_post_type( 'partners',
+    array(
+    'labels' => array(
+              'name' => 'Партнери',
+              'has_archive' => true
+              ),
+   'public' => true,
+   'supports' => array( 'title' ),
+   'show_in_menu'=>true,
+   'menu_position'=>5,
+   'menu_icon'=>'dashicons-businessman',
+   'rewrite' => array('slug' => '/partner'),
+   'query_var' => true,
+   'has_archive' => true,
+   'hierarchical' => false
+   ));
+
+   register_post_type( 'faces',
+    array(
+    'labels' => array(
+              'name' => 'Обличчя реформи',
+              'has_archive' => true
+              ),
+   'public' => true,
+   'supports' => array( 'title' ),
+   'show_in_menu'=>true,
+   'menu_position'=>5,
+   'menu_icon'=>'dashicons-id-alt',
+   'rewrite' => array('slug' => '/faces'),
+   'query_var' => true,
+   'has_archive' => true,
+   'hierarchical' => false
+   ));
+}
+
+function add_faqcategory_automatically($post_ID) {
+  global $wpdb;
+  if(!has_term('','category',$post_ID)) {
+  $faqcat = array (15);
+  wp_set_object_terms( $post_ID, $faqcat, 'category');
+  }
+}
+add_action('publish_faq', 'add_faqcategory_automatically');
+
+function inherit_template()
+{
+    if (is_category())
+    {
+        $catid = get_query_var('cat');
+        $cat = &get_category($catid);
+        $parent = $cat->category_parent;
+        $cat = &get_category($parent);
+        if ($cat->cat_ID == 15)
+        {
+            if (file_exists(TEMPLATEPATH . '/category-faq.php'))
+            {
+                include (TEMPLATEPATH . '/category-faq.php');
+                exit;
+            }
+        }
+    }
+}
+
+add_action('template_redirect', 'inherit_template', 1);
+
+function lemon_wp_title( $title, $sep ) {
+  global $paged, $page;
+  if ( is_feed() )
+  return $title;
+  $title .= get_bloginfo( 'name', 'display' );
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) )
+    $title = "$title $sep $site_description";
+  return $title;
+}
+add_filter( 'wp_title', 'lemon_wp_title', 10, 2 );
+
+function lemon_body_class( $classes ) {
+  if ( function_exists('qtrans_getLanguage') ){
+  	if ( qtrans_getLanguage()=='ua')
+  		$classes[] = 'ua_content';
+  	if ( qtrans_getLanguage()=='en')
+  		$classes[] = 'en_content';
+  }
+	return $classes;
+}
+add_filter( 'body_class', 'lemon_body_class' );
+
+function lemon_menu_name( $location ) {
+  if( empty($location) ) return false;
+
+    $locations = get_nav_menu_locations();
+    if( ! isset( $locations[$location] ) ) return false;
+
+    $menu_obj = get_term( $locations[$location], 'nav_menu' );
+	$menu_title = $menu_obj->name;
+
+	return $menu_title;
+}
+
+function content($limit) {
+  $content = explode(' ', strip_tags(get_the_content()), $limit);
+  if (count($content)>=$limit) {
+    array_pop($content);
+    $content = implode(" ",$content).'&#091;...&#093;'.'<br />';
+  } else {
+    $content = implode(" ",$content);
+  } 
+  $content = preg_replace('/\[.+\]/','', $content);
+  $content = apply_filters('the_content', $content); 
+  $content = str_replace(']]>', ']]&gt;', $content);
+  return $content;
+}
+
+function my_post_queries( $query ) {
+    if (!is_admin() && $query->is_main_query()){
+        if(is_category(15)||is_category(12)||is_category(13)){
+            // $query->set('posts_per_page', 2);
+            $query->set('post_type','faq');
+        }
+    }
+}
+add_action( 'pre_get_posts', 'my_post_queries' );
+
+function wp_corenavi() {
+  global $wp_query;
+  $pages = '';
+  $max = $wp_query->max_num_pages;
+  if (!$current = get_query_var('paged')) $current = 1;
+  $a['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
+  $a['total'] = $max;
+  $a['current'] = $current;
+
+  $total = 0; //1 - выводить текст "Страница N из N", 0 - не выводить
+  $a['mid_size'] = 2; //сколько ссылок показывать слева и справа от текущей
+  $a['end_size'] = 3; //сколько ссылок показывать в начале и в конце
+  $a['prev_text'] = '...'; //текст ссылки "Предыдущая страница"
+  $a['next_text'] = '...'; //текст ссылки "Следующая страница"
+
+  if ($max > 1) echo '<div class="navigation">';
+  if ($total == 1 && $max > 1) $pages = '<span class="pages">Страница ' . $current . ' из ' . $max . '</span>'."\r\n";
+  echo $pages . paginate_links($a);
+  if ($max > 1) echo '</div>';
+}
+
+add_shortcode('faq-in-top', 'faq_in_top');
+function faq_in_top() {
+  echo '<div class="faq"><ul class="faq--list">';
+  $args = array(
+    'posts_per_page' => -1, 
+    'orderby' => 'menu_order', 
+    'post_type' => 'faq', 
+    'post_status' => 'publish',
+    'meta_query' => array(
+      array(
+        'key' => 'top_faq',
+        'value' => 1
+      )
+    )
+   );
+  $query = new WP_Query($args); 
+  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); 
+  echo '<li><div class="faq--qestion"><a href="#faq-'.get_the_ID().'" data-toggle="collapse"">'.get_the_title().'</a></div><div id="faq-'.get_the_ID().'" class="collapse"><div class="faq--answer">'.get_the_content().'</div>';
+  if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('share-sidebar');
+  echo '<div class="clearfix"></div></div></li>';
+  endwhile; endif;
+  wp_reset_postdata();
+
+  echo '</ul></div>';
+}
+
+function author_img($my_user_id) {
+  $author_id = get_the_author_meta($my_user_id);
+  $author_img = get_field('author-photo', 'user_'. $my_user_id );
+  $author_img_src = $author_img['url'];
+  return $author_img_src ;
+}
+
+function last_news($total_news){
+  $category_link = get_category_link ($categ_id); 
+  $args = array(
+    'posts_per_page' => $total_news, 
+    'orderby' => 'date', 
+    'author' => all_experts()
+    );
+  $query = new WP_Query($args); 
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); 
+       $avtor = get_the_author_meta('ID',$post->post_author);
+       $author_posts_url = get_author_posts_url($avtor); 
+       $user = get_userdata($avtor);
+      echo '<div class="news-wrapper"><div class="img_wrapper"><img src="'.author_img($avtor).'" alt="'.$user->user_firstname . ' ' . $user->user_lastname.'" /></div>';
+      echo '<div class="avtor"><a href="'.$author_posts_url.'">'.$user->user_firstname .' '. $user->user_lastname. '</a></div><div class="blog-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></div><div class="date-time">'; news_date($post->ID); 
+      echo', '.get_the_time().' '.comments($post->ID).'</div><div class="clearfix"></div></div>';
+  endwhile; endif;
+  wp_reset_postdata();
+}
+
+add_shortcode('author-in-top', 'author_in_top');
+function author_in_top(){
+  global $wpdb;
+  $f_content='';
+  $lastnames = $wpdb->get_col("SELECT user_id FROM $wpdb->usermeta WHERE $wpdb->usermeta.meta_key = 'last_name' ORDER BY $wpdb->usermeta.meta_value ASC"); 
+    $i=0;
+    $f_content.= '<hr /><h1 class="x-big">'.get_cat_name(16).'</h1><div class="blog-list blog-sm"><div class="row"><div class="render-as-table-sm">';  
+    foreach ($lastnames as $userid) { 
+      $user = get_userdata($userid);  
+      $roles = $user->roles;      
+      $post_count = get_usernumposts($user->ID); 
+      $author_posts_url = get_author_posts_url($user->ID); 
+      $intop = get_field('top_faq', 'user_'. $user->ID);
+      $posada = get_field('posada', 'user_'. $user->ID);
+    $args = array('posts_per_page' => 1, 'orderby' => 'date', 'author' => $user->ID);
+    $query = new WP_Query($args); 
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+    if (($roles[0] == 'author') and ($intop == 1) and ($i < 3)){     
+      $f_content.= '<div class="col-sm-4 gray-bg">';
+      $f_content.= '<div class="img_wrapper"><img src="'.author_img($user->ID).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" /></div><div class="padding"><div class="blog--fio"><a href="'. $author_posts_url .'">'. $user->user_firstname . ' ' . $user->user_lastname .'</a></div>'.$posada.'<div class="blog--specialization">'. get_the_title().'</div><a class="blog-more" href="'.get_the_permalink().'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div></div>';
+    $i++;
+    }   
+    endwhile; endif;
+    wp_reset_postdata();
+   }
+    $f_content.= '</div><div class="blog-all"> <a href="'.get_category_link(16).'" ><i class="sprite-arrow-right"></i> '.get_cat_name(16).'</a></div></div><hr /></div>';    
+    return $f_content;
+}
+
+function all_experts() {
+global $wpdb;
+$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
+foreach($authors as $author) {
+  $user = get_userdata($author->ID);  
+  $roles = $user->roles;  
+  $author_id = $user->ID;
+  // if (($roles[0]=='author')|($roles[0]=='editor')) {
+  if ($roles[0]=='author') {
+    $author_id_array[]=$author_id;
+   }
+ } $author_list_str = implode(",", $author_id_array);
+ return $author_list_str;
+}
+
+function show_experts() {  
+  $number     = 100;  
+  $roles    ='author';
+  $paged      = (get_query_var('paged')) ? get_query_var('paged') : 1;  
+  $offset     = ($paged - 1) * $number;  
+  $users      = get_users();  
+  $query      = get_users('&offset='.$offset.'&number='.$number.'&role='.$roles);  
+  $total_users = count($users);  
+  $total_query = count($query);  
+  $total_pages = intval($total_users / $number) + 1;        
+foreach($query as $q) {   
+  $author_id = $q->ID;
+  $author_url = get_author_posts_url($q->ID);
+  ?>
+  <div class="author-info">
+  <a class="news-link" href="<?php echo $author_url; ?>"> 
+    <div class="avatar" style="background: url('<?php echo author_img($author_id); ?>'); background-position:50%;"><span class="more_news_img"></span></div>
+    <div class="author-heading"><?php the_author_meta('display_name', $author_id); ?></div>
+    <div class="author-title"><?php the_author_meta('author-post', $author_id); ?></div>    
+  </a>
+  </div>  
+<?php }  
+}
+
+function news_date($id){
+  $my_post_id = get_post($id); 
+  $mon = date('m',strtotime($my_post_id->post_date));
+  $year = date('Y',strtotime($my_post_id->post_date));
+  $day = date('d',strtotime($my_post_id->post_date));
+
+  switch ($day) {
+  case "01":
+        $day = '1';
+        break;
+  case "02":
+        $day = '2';
+        break;
+  case "03":
+        $day = '3';
+        break;
+  case "04":
+        $day = '4';
+        break;
+  case "05":
+        $day = '5';
+        break;
+  case "06":
+        $day = '6';
+        break;
+  case "07":
+        $day = '7';
+        break;
+  case "08":
+        $day = '8';
+        break;
+  case "09":
+        $day = '9';
+        break;
+    }
+
+  switch ($mon) {
+    case "01":
+        $monthnum = '<!--:ru-->января<!--:--><!--:ua-->січня<!--:--><!--:en-->January<!--:-->';
+        break;
+    case "02":
+        $monthnum = '<!--:ru-->февраля<!--:--><!--:ua-->лютого<!--:--><!--:en-->February<!--:-->';
+        break;
+    case "03":
+        $monthnum = '<!--:ru-->марта<!--:--><!--:ua-->березня<!--:--><!--:en-->March<!--:-->';
+        break;
+    case "04":
+        $monthnum = '<!--:ru-->апреля<!--:--><!--:ua-->квітня<!--:--><!--:en-->April<!--:-->';
+        break;
+    case "05":
+        $monthnum = '<!--:ru-->мая<!--:--><!--:ua-->травня<!--:--><!--:en-->May<!--:-->';
+        break;
+    case "06":
+        $monthnum = '<!--:ru-->июня<!--:--><!--:ua-->червня<!--:--><!--:en-->June<!--:-->';
+        break;
+    case "07":
+        $monthnum = '<!--:ru-->июля<!--:--><!--:ua-->липня<!--:--><!--:en-->July<!--:-->';
+        break;
+    case "08":
+        $monthnum = '<!--:ru-->августа<!--:--><!--:ua-->серпня<!--:--><!--:en-->August<!--:-->';
+        break;
+    case "09":
+        $monthnum = '<!--:ru-->сентября<!--:--><!--:ua-->вересня<!--:--><!--:en-->September<!--:-->';
+        break;
+    case "10":
+        $monthnum = '<!--:ru-->октября<!--:--><!--:ua-->жовтня<!--:--><!--:en-->October<!--:-->';
+        break;
+    case "11":
+        $monthnum = '<!--:ru-->ноября<!--:--><!--:ua-->листопада<!--:--><!--:en-->November<!--:-->';
+        break;
+    case "12":
+        $monthnum = '<!--:ru-->декабря<!--:--><!--:ua-->грудня<!--:--><!--:en-->Desember<!--:-->';
+        break;
+  }
+
+  echo _e(' '. $day .' '. $monthnum .' '. $year );
+}
+
+
+function comments($my_post_id){
+  $comment_num = get_comments_number($my_post_id); 
+  if ($comment_num > 0) {
+  echo'<span class="comment">' . $comment_num . '</span>';
+  }
+}
+
+add_shortcode('platforms-to-screen', 'platforms_to_screen');
+function platforms_to_screen(){
+  $platform[1] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_1.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[2] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_2.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[3] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_3.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[4] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_4.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[5] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_5.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[6] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_6.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $content ='';
+  $content .= '<div class="start-steps--platforms-list margin-bottom clearfix">';
+  foreach ($platform as $key => $value) {
+        $content .=  '<div class="item"><a href="'.$value['href'].'"><img src="'.$value['img'].'" alt="'.$value['name'].'" title="'.$value['name'].'" /></a><a href="'.$value['href'].'">'.$value['name'].'</a><div class="phone">'.$value['phone'].'</div></div>';
+    }
+  $content .=  '</div>';
+  return $content;
+}
+
+add_shortcode('dogovory-to-screen', 'dogovory_to_screen');
+function dogovory_to_screen(){
+  $dogovor[1] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
+  $dogovor[2] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
+  $dogovor[3] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
+  $dogovor[4] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
+  $content ='';
+  $content .= '<div class="dogovory margin-bottom clearfix">';
+  foreach ($dogovor as $key => $value) {
+        $content .=  '<div class="col-sm-3"><div class="item-wrapper"><div class="item"><span class="size65 green">'.$value['sum'].'</span><span class="size24 green">'.$value['val'].'</span><span class="size24">'.$value['name'].'</span><span class="size14">'.$value['type'].'</span><span class="size14">Завершено: '.$value['closed'].'</span></div></div></div>';
+    }
+  $content .=  '</div>';
+  return $content;
+}
+
+add_shortcode('reform-faces', 'reform_faces');
+function reform_faces(){
+ $content ='';
+ $content.='<div class="row faces"><ul class="nav-justified">'; 
+ $args = array(
+      'post_type' => 'faces',
+      'post_status' => 'publish',
+      'orderby' => 'date',
+      'order' => 'ASC',          
+      'posts_per_page' => -1        
+    );
+    $wp_query = new WP_Query($args);
+    if ( $wp_query->have_posts() ) {
+      while ( $wp_query->have_posts() ) {
+        $wp_query->the_post();
+        $img_url = wp_get_attachment_image_src(get_post_field('photo', $post->ID), 'medium'); 
+        $content.='<li><img src="'.$img_url[0].'" alt="'.get_the_title().'" title="'.get_the_title().'"><span class="size21 blue">'.get_post_field('name', $post->ID).'</span>'.get_post_field('posada', $post->ID).'</li>';
+       }
+    } 
+    wp_reset_postdata(); 
+  return $content;
+}
+
