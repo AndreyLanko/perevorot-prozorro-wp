@@ -156,7 +156,10 @@ class Lm_Social_Share extends WP_Widget {
      */
     public function widget($args, $instance) {
         $datatitle = get_the_title();
-        $datahref = get_the_permalink();
+
+        if (!is_singular('faq') & !is_post_type_archive('faq')){
+            $datahref = get_the_permalink();           
+        } else $datahref = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 
         $title = apply_filters('widget_title', $instance['title']);
         $facebook = $instance['facebook'] ? 'true' : 'false';
