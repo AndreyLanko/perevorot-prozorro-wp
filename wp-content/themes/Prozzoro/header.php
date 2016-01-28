@@ -65,7 +65,7 @@
 				</div>
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container">
+        <div class="container switcher">
         <?php $cur_post = get_the_ID();?>
 			<ul class="nav nav-justified sections <?php echo(($cur_post==145)|($cur_post==148)|($cur_post==150) ? 'expanded':''); ?>">
 				<li class="green-bg <?php echo ($cur_post==145 ? 'active':'notitle'); ?>"><a href="<?php echo get_permalink( 145 ) ?>"><i class="sprite-customer"></i> <span><?php echo get_the_title( 145 ) ?></span></a></li>
