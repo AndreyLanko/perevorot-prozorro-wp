@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-            <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+            <?php // if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 <div class="pull-right">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                     <ul class="nav navbar-nav inline-navbar">
