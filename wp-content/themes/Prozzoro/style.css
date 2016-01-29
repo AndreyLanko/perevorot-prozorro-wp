@@ -14,14 +14,14 @@
 
 .sprite-arrow-up {width: 21px;height: 21px;background-position: -368px 0;}
 .sprite-social-youtube {width: 21px;height: 21px;background-position: -300px -141px;}
-.sprite-coment {width: 21px;height: 21px;background-position: -321px -141px;}
+.sprite-coment {width: 21px;height: 21px;background-position: -281px -141px;}
 .sprite-refresh {width: 21px;height: 21px;background-position: -461px 0;}
 
 .sprite-check-black {width: 19px;height: 20px;background-position: -389px 0;}
 .sprite-check-blue {width: 19px;height: 20px;background-position: -389px -20px;}
 .sprite-check-white {width: 19px;height: 20px;background-position: -281px -141px;}
 
-.sprite-coment-border {width: 13px;height: 13px;background-position: -389px 0;}
+.sprite-coment-border {width: 13px;height: 13px;background-position: -389px -40px;}
 
 .en_content #ua{
 	display: none;
@@ -38,7 +38,7 @@ ol.no-style{
 	margin-left: 70px;
     padding: 0;
     list-style-type: decimal;
-    font-size: 1.28em;
+    font-size: 1.142857em;
 }
 	ol.no-style > li{
 		padding-left: 5px;
@@ -50,6 +50,7 @@ ol.no-style{
 
 .color-arrows{
 	width: 100%;
+	margin-top: 30px;
 }
 	.color-arrows > .arrows{
 		padding: 0px;
@@ -154,7 +155,7 @@ ul.white-checkboxes{
 		    line-height: 19px;
 		    width: 19px;
 		    height: 20px;
-		    background: url('/wp-content/themes/Prozzoro/images/sprite.png') no-repeat; 
+		    background: url('images/sprite.png') no-repeat; 
 			background-position: -389px 0;
 		}
 		ul.blue-checkboxes > li::before{
@@ -169,10 +170,13 @@ ul.white-checkboxes{
 }
 
 .page-content p {
-	font-size: 18px;
+	font-size: 16px;
 }
+	.page-content h1 {
+		margin: 30px 0 20px 0;
+	}
 	.page-content ul.download{
-		font-size: 18px;
+		font-size: 16px;
 		list-style: none;
 		padding: 0;
 		margin: 0 0 20px 20px;
@@ -183,7 +187,7 @@ ul.white-checkboxes{
 	.page-content .download a::before{
 		content: '';
 		display: inline-block;
-		background: url('/wp-content/themes/Prozzoro/images/sprite.png') no-repeat; 
+		background: url('images/sprite.png') no-repeat; 
 		background-position: -21px -468px; 
 		width: 18px; 
 		height: 18px; 
@@ -192,6 +196,7 @@ ul.white-checkboxes{
 	}
 	.page-content h3{
 		text-transform: uppercase;
+		font-family: 'Open Sans', sans-serif;
 	}
 	.page-content .blue-btn{
 		margin: 25px 0;
@@ -214,6 +219,7 @@ ul.white-checkboxes{
 .size27, .page-content .size27{font-size: 27px;}
 .size30, .page-content .size30{font-size: 30px;}
 .size36, .page-content .size36{font-size: 36px;}
+.size55, .page-content .size50{font-size: 50px;}
 .size55, .page-content .size55{font-size: 55px;}
 .size60, .page-content .size60{font-size: 60px;}
 .size65, .page-content .size65{font-size: 65px;}
@@ -222,6 +228,7 @@ ul.white-checkboxes{
 	display: inline-block;
 	text-align: center;
 	width: 95%;
+	margin: 10px auto;
 	padding: 20px;
 	background: #f0f5f2;
 	border: 1px solid #f0f5f2;
@@ -298,19 +305,20 @@ ul.language-chooser{
 }
 
 .specification h1 {
-    padding: 50px 0 10px;
+    padding: 50px 0 45px;
     margin: -15px -15px 15px -15px;
     background: #fff;
 }
 .specification p{
 	display: inline-block;
-	width: 33,33%;
+	width: 33%;
 	padding-right: 50px;
 	vertical-align: top;
 }
 
 h1.page-title{
-	margin: 50px 0 25px;
+	margin: 50px 0 35px;
+	font-size: 3.75em;
 }
 
 .left-menu{
@@ -337,6 +345,11 @@ h1.page-title{
 	.left-menu .current-cat a:focus{
 		text-decoration: none;
 		color: #0099cc;
+	}
+	.left-menu .more,
+	.left-menu .comment,
+	.left-menu .news-small{
+		font-size: 0.79em;
 	}
 
 .faq--qestion a{
@@ -368,7 +381,7 @@ nav.footer .current-menu-item a{
 }
 
 .blog {
-	font-size: 18px;
+	font-size: 16px;
 	margin-top: 30px;
 }
 .blog .more{
@@ -384,6 +397,7 @@ nav.footer .current-menu-item a{
 .blog h3{
 	text-transform: uppercase;
 	text-align: left;
+	font-family: 'Open Sans', sans-serif;
 }
 .blog h3 a:hover,
 .blog h3 a:focus{
@@ -424,7 +438,7 @@ nav.footer .current-menu-item a{
 			max-width: 40px;
 		}
 	.right-col .avtor{
-		font-size: 18px;
+		font-size: 16px;
 		color: #0099cc;
 		padding-left: 50px;
 	}
@@ -456,7 +470,7 @@ nav.footer .current-menu-item a{
 				width: 100%;
 			}
 			.right-col .top-blog .news-title{
-				font-size: 18px;
+				font-size: 16px;
 				text-transform: uppercase;
 			}
 			.right-col .top-blog .news-title,
@@ -529,14 +543,17 @@ nav.footer .current-menu-item a{
 		vertical-align: middle;
 	}
 
-.provider-menu {
+.provider-menu,
+.customer-menu {
 	border-bottom: 2px solid #eeeeee;
 }
-.provider-menu .nav>li{
+.provider-menu .nav>li,
+.customer-menu .nav>li{
 	display: inline-block;
 	margin: 5px 0 5px 25px;
 }
-.provider-menu .nav>li>a {
+.provider-menu .nav>li>a,
+.customer-menu .nav>li>a  {
    color:#333 ;
    white-space: nowrap;
 }
@@ -546,7 +563,14 @@ nav.footer .current-menu-item a{
 		color: #33b220;
 	    background: none;
 	}
-		.provider-menu .nav>li>a {
+	.customer-menu .nav>li>a:focus,
+	.customer-menu .nav>li>a:hover,
+	.customer-menu .nav>li.current-menu-item>a{
+		color: #6dc8eb;
+	    background: none;
+	}
+		.provider-menu .nav>li>a,
+		.customer-menu .nav>li>a {
 		    position: relative;
 		    display: block;
 		    padding: 5px;
@@ -554,7 +578,7 @@ nav.footer .current-menu-item a{
 
 .faces{
 	text-align: center;
-	padding:50px 0 70px 0;
+	padding:20px 0 15px 0;
 }
 	.faces img{
 		max-height: 150px;
@@ -564,13 +588,32 @@ nav.footer .current-menu-item a{
 	.faces ul{
 		list-style: none;
 	}
+	.faces li{
+		padding: 0 10px;
+	}
 	.faces span{
 		display: block;
 		line-height: 1em;
 		margin: 15px 0;
 	}
+	.faces .size21{
+		font-family: 'Open Sans', sans-serif;
+	}
 
 .home {font-size: 14px;margin-top:0px;}
+
+.news-wrapper .comment{
+	float: right;
+}
+.top-blog .comment{
+	float: left;
+	padding: 16px 10px 16px 0;
+}
+	.top-blog .comment i{
+		width: 21px;
+		height: 21px;
+		background-position: -281px -141px;
+	}
 
 @media (min-width:768px) and (max-width: 992px) { 
 	.specification p{

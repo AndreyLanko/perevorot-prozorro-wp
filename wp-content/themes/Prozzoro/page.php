@@ -2,6 +2,31 @@
 <div class="container page-content">
 	<?php	
 	switch ($post->ID) {
+
+	case "123":
+	while ( have_posts() ) : the_post();?>
+		<div class="customer-menu">
+			<ul class="nav">
+			<?php	wp_nav_menu( array(
+				'theme_location' => 'reform_menu',
+				'fallback_cb' => '__return_empty_string',
+				'items_wrap' => '%3$s',
+				'container' => ''
+			) );
+			?>							
+			</ul>
+		</div>
+        <h1 class="page-title"><?php the_title( ); ?></h1>
+		<div class="row"> 
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<?php  the_content(); 
+				$sidebar = get_post_meta($post->ID, "sidebar", true);
+				if ($sidebar == 'sharebutton'){get_sidebar($sidebar);}?>
+			</div>
+		</div>
+    <?php endwhile;
+    break;
+
 	case "253":
 	while ( have_posts() ) : the_post();?>
         <h1 class="page-title"><?php the_title( ); ?></h1>
