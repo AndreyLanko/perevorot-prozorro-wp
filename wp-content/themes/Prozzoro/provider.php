@@ -17,7 +17,7 @@ Template Name: Постачальнику
 		</ul>
 	</div>
 		<?php $field = get_field_object('first-green', $post->ID);
-		echo('<h1>'. $field['label'] . '</h1>' );
+		echo('<h1><a id="perevagy"></a>'. $field['label'] . '</h1>' );
 		?>
 		<div class="system-advantages--steps green-list">
 			<div class="row">				
@@ -47,7 +47,7 @@ Template Name: Постачальнику
 	<hr />
 	<div class="system-advantages--buttons">
 		<a class="green-btn" href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a>
-		<a href="https://prozorro.zendesk.com/hc/uk" target="_blank" class="blue-btn">Перейти на Базу знань</a>
+		<a href="http://help.vdz.ua" target="_blank" class="blue-btn">Перейти на Базу знань</a>
 	</div>		
 
 </div>

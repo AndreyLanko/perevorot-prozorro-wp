@@ -3,6 +3,8 @@
 register_nav_menus(array(
   'header_menu' => 'Меню в header',  
   'provider_menu' => 'Меню в "Поставщикам"',  
+  'customer_menu' => 'Меню в "Заказчику"', 
+  'reform_menu' => 'Меню в "Про реформу"', 
   'foot_menu_left' => 'Меню в footer слева',
   'foot_menu_center' => 'Меню в footer по центру',
   'foot_menu_right' => 'Меню в footer справа'
@@ -273,13 +275,12 @@ function faq_in_top() {
    );
   $query = new WP_Query($args); 
   if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); 
-  echo '<li><div class="faq--qestion"><a href="#faq-'.get_the_ID().'" data-toggle="collapse"">'.get_the_title().'</a></div><div id="faq-'.get_the_ID().'" class="collapse"><div class="faq--answer">'.get_the_content().'</div>';
-  if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('share-sidebar');
+  echo '<li><div class="faq--qestion"><a href="#faq-'.get_the_ID().'" data-toggle="collapse">'.get_the_title().'</a></div><div id="faq-'.get_the_ID().'" class="collapse"><div class="faq--answer">'.get_the_content().'</div>';
+ // if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('share-sidebar');
   echo '<div class="clearfix"></div></div></li>';
   endwhile; endif;
   wp_reset_postdata();
-
-  echo '</ul></div>';
+  echo '</ul><div> <a href="'.get_category_link(15).'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Всі питання</span><span id="en">All FAQ</span></a></div></div>';
 }
 
 function author_img($my_user_id) {
@@ -293,7 +294,7 @@ function last_news($total_news){
   $category_link = get_category_link ($categ_id); 
   $args = array(
     'posts_per_page' => $total_news, 
-    'orderby' => 'date', 
+    'orderby' => 'comment_count', 
     'author' => all_experts()
     );
   $query = new WP_Query($args); 
@@ -314,7 +315,7 @@ function author_in_top(){
   $f_content='';
   $lastnames = $wpdb->get_col("SELECT user_id FROM $wpdb->usermeta WHERE $wpdb->usermeta.meta_key = 'last_name' ORDER BY $wpdb->usermeta.meta_value ASC"); 
     $i=0;
-    $f_content.= '<hr /><h1 class="x-big">'.get_cat_name(16).'</h1><div class="blog-list blog-sm"><div class="row"><div class="render-as-table-sm">';  
+    $f_content.= '<hr /><h1>'.get_cat_name(16).'</h1><div class="blog-list blog-sm"><div class="row"><div class="render-as-table-sm">';  
     foreach ($lastnames as $userid) { 
       $user = get_userdata($userid);  
       $roles = $user->roles;      
@@ -325,8 +326,8 @@ function author_in_top(){
     $args = array('posts_per_page' => 1, 'orderby' => 'date', 'author' => $user->ID);
     $query = new WP_Query($args); 
     if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-    if (($roles[0] == 'author') and ($intop == 1) and ($i < 3)){     
-      $f_content.= '<div class="col-sm-4 gray-bg">';
+    if (($roles[0] == 'author') and ($intop == 1) and ($i < 4)){     
+      $f_content.= '<div class="col-sm-3 gray-bg">';
       $f_content.= '<div class="img_wrapper"><img src="'.author_img($user->ID).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" /></div><div class="padding"><div class="blog--fio"><a href="'. $author_posts_url .'">'. $user->user_firstname . ' ' . $user->user_lastname .'</a></div>'.$posada.'<div class="blog--specialization">'. get_the_title().'</div><a class="blog-more" href="'.get_the_permalink().'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div></div>';
     $i++;
     }   
@@ -456,20 +457,22 @@ function news_date($id){
 
 
 function comments($my_post_id){
+  $com_content = '';
   $comment_num = get_comments_number($my_post_id); 
   if ($comment_num > 0) {
-  echo'<span class="comment">' . $comment_num . '</span>';
+    $com_content.='<span class="comment"><i class="sprite-coment-border"></i> '. $comment_num .'</span>';
   }
+  return $com_content;
 }
 
 add_shortcode('platforms-to-screen', 'platforms_to_screen');
 function platforms_to_screen(){
-  $platform[1] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_1.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[2] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_2.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[3] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_3.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[4] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_4.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[5] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_5.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[6] = array('img' => '/wp-content/themes/Prozzoro/images/platforms/platform_6.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[1] = array('img' => 'images/platforms/platform_1.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[2] = array('img' => 'images/platforms/platform_2.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[3] = array('img' => 'images/platforms/platform_3.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[4] = array('img' => 'images/platforms/platform_4.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[5] = array('img' => 'images/platforms/platform_5.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $platform[6] = array('img' => 'images/platforms/platform_6.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
   $content ='';
   $content .= '<div class="start-steps--platforms-list margin-bottom clearfix">';
   foreach ($platform as $key => $value) {
@@ -517,3 +520,14 @@ function reform_faces(){
   return $content;
 }
 
+function disqus_embed($disqus_shortname) {
+    global $post;
+    wp_enqueue_script('disqus_embed', 'http://'.$disqus_shortname.'.disqus.com/embed.js');
+    echo '<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = "'.$disqus_shortname.'";
+        var disqus_title = "'.$post->post_title.'";
+        var disqus_url = "'.get_permalink($post->ID).'";
+        var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
+    </script>';
+}
