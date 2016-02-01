@@ -23,6 +23,9 @@
 
 .sprite-coment-border {width: 13px;height: 13px;background-position: -389px -40px;}
 
+.sprite-totop {width: 55px;height: 55px;background-position: -482px 0;}
+.sprite-totop-h {width: 55px;height: 55px;background-position: -482px -55px;}
+
 .en_content #ua{
 	display: none;
 }
@@ -620,6 +623,29 @@ nav.footer .current-menu-item a{
 		width: 21px;
 		height: 21px;
 		background-position: -281px -141px;
+	}
+
+.back-to-top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    width: 55px;
+    height: 55px;
+    background: url('./images/sprite.png') no-repeat;
+    background-position: -482px 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+    padding: 1em;
+    display: none;
+}
+	.back-to-top:hover {    
+	    background-position: -482px -55px;
+	    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);
+		-moz-opacity: 1.0;
+		-khtml-opacity: 1.0;
+		opacity: 1.0;
 	}
 
 @media (min-width:768px) and (max-width: 992px) { 
