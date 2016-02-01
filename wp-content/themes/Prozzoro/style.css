@@ -50,6 +50,9 @@ ol.no-style{
 		ol.no-style > li::before{
 			display: none;
 		} 
+.single-content ol.no-style{
+	font-size: 1.0em;
+}
 
 .color-arrows{
 	width: 100%;
