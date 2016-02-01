@@ -201,12 +201,12 @@ ul.white-checkboxes{
 	.page-content .blue-btn{
 		margin: 25px 0;
 	}
-	.page-content .img{
-		height: 50px;
+	/*.page-content .img{
+		line-height: 50px;
 	}
 		.page-content .img img{
 			max-height: 100%;
-		}
+		}*/
 
 .contacts{
 	margin-top: 50px;
@@ -528,6 +528,13 @@ nav.footer .current-menu-item a{
     margin: 40px 0 25px;
     list-style: none;
 }
+	.monitoring img{
+		max-width: 100%;
+		max-height: 50px;		
+	}
+	.monitoring .img {
+		line-height: 75px;
+	}
 
 .partners {
 	text-align: center;
