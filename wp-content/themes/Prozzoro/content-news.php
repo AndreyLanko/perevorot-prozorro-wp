@@ -111,7 +111,7 @@
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 				      echo '<div class="news-small">';
-				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</div><div class="date-time">'.get_the_time().'</div></div>';   
+				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'.get_the_time().'</div></div>';   
 				    endwhile; endif;
 				    wp_reset_postdata();
 				   ?>

@@ -467,18 +467,19 @@ function comments($my_post_id){
 
 add_shortcode('platforms-to-screen', 'platforms_to_screen');
 function platforms_to_screen(){
-  $platform[1] = array('img' => 'images/platforms/platform_1.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[2] = array('img' => 'images/platforms/platform_2.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[3] = array('img' => 'images/platforms/platform_3.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[4] = array('img' => 'images/platforms/platform_4.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[5] = array('img' => 'images/platforms/platform_5.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
-  $platform[6] = array('img' => 'images/platforms/platform_6.jpg', 'href' => '#', 'name' => 'Назва майданчика', 'phone' => '044 585-90-77' );
+  $api = file_get_contents('http://dev.prozorro.org/json/platforms/all/' );
+  $platform = json_decode($api);
+  shuffle($platform);
+
   $content ='';
-  $content .= '<div class="start-steps--platforms-list margin-bottom clearfix">';
+  $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
   foreach ($platform as $key => $value) {
-        $content .=  '<div class="item"><a href="'.$value['href'].'"><img src="'.$value['img'].'" alt="'.$value['name'].'" title="'.$value['name'].'" /></a><a href="'.$value['href'].'">'.$value['name'].'</a><div class="phone">'.$value['phone'].'</div></div>';
-    }
-  $content .=  '</div>';
+    $size = getimagesize($value->logo);
+        if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
+        else {$nw=$size[0]; $nh=$size[1];}        
+    $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+  }
+  $content .=  '</div></div>';
   return $content;
 }
 

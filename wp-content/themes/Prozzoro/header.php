@@ -15,9 +15,12 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/fonts/pfagorasanspro/fonts.css" rel="stylesheet">
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/style.css" rel="stylesheet">
+    <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.theme.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/style.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/owl.carousel.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/script.js"></script>
 	<?php wp_head(); ?>
 </head>
@@ -25,7 +28,7 @@
 <body <?php body_class(); ?>>
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-            <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+            <?php // if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 <div class="pull-right">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                     <ul class="nav navbar-nav inline-navbar">
