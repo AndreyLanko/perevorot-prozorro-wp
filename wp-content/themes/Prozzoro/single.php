@@ -84,6 +84,7 @@
 					$args = array(
 						'showposts' => 5, 
 						'orderby' => 'date', 
+						'order' => 'DESC', 
 						'category' => $c_id
 					);
 				    $query = new WP_Query($args); 
