@@ -22,15 +22,13 @@
 		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
 			<?php 
 				$cat_list = $category->cat_ID;
-				$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 				$args = array(
 					'cat' => $cat_list,
 					'post_type' => 'faq',
 					'post_status' => 'publish',
 					'orderby' => 'date',
 					'order' => 'DESC',					
-					'posts_per_page' => -1,
-					'paged' => $paged					
+					'posts_per_page' => -1				
 				);
 				$wp_query = new WP_Query( $args );
 
@@ -56,10 +54,7 @@
 					</div>
 					<?php }
 				} 
-				wp_reset_postdata(); ?>
-			<div class="pager">
-			    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
-			</div>	
+				wp_reset_postdata(); ?>	
 		</div>
 	</div>
 

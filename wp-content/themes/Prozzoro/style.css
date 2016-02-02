@@ -50,6 +50,27 @@ ol.no-style{
 		ol.no-style > li::before{
 			display: none;
 		} 
+.single-content ol.no-style{
+	font-size: 1.0em;
+}
+
+.site-content table{
+	width: 100%;
+	margin: 15px 0 30px;
+}
+	.site-content table tr{
+		border-bottom: 1px solid #eee;
+	}
+	.site-content table th{
+		text-align: center;
+		vertical-align: middle;
+		color:#24a7d3;
+		padding: 5px 10px;
+	}
+	.site-content table td{
+		vertical-align: middle;
+		padding: 5px 10px;
+	}
 
 .color-arrows{
 	width: 100%;
