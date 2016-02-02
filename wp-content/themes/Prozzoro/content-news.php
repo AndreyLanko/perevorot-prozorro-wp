@@ -58,10 +58,11 @@
 			<hr />
 
 			<div class="top-blog">
-				<h3><?php echo get_the_category_by_ID(16); ?></h3>
+				<h3><a href="<?php echo get_permalink( 16 ) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>
 				<?php	
 					$args = array(
 						'showposts' => 1, 
+						'cat' => 16,
 						'orderby' => 'date', 
 						'author' => all_experts()
 					);
@@ -106,12 +107,12 @@
 					$args = array(
 						'showposts' => 5, 
 						'orderby' => 'date', 
-						'category' => $c_id
+						'cat' => $c_id
 					);
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 				      echo '<div class="news-small">';
-				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'.get_the_time().'</div></div>';   
+				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'; news_date($post->ID); echo', '.get_the_time().'</div></div>';   
 				    endwhile; endif;
 				    wp_reset_postdata();
 				   ?>

@@ -43,5 +43,46 @@
 		<div class="right-col col-md-4 col-lg-4 col-sm-4 col-xs-hidden ">
 		<h3><?php echo _e('[:ua]Популярні записи [:en]Featured Blog'); ?></h3>
 		<?php last_news(5); ?>
+		<div class="other-news">
+				<?php  
+				switch ($category->cat_ID) {
+					case "19":
+				        $c_id[1] = '1';
+				        break;
+				 	case "18":
+				        $c_id[1] = '1';
+				        break;
+				    case "17":
+				    	$c_id[1] = '16';
+				    	$c_id[2] = '18';
+				        $c_id[3] = '19';
+				        break;
+				    case "16":
+				    	$c_id[1] = '17';
+				    	$c_id[2] = '18';
+				        $c_id[3] = '19';
+				        break;
+				    case "1":
+				        $c_id[1] = '18';
+				        $c_id[1] = '19';
+				        break;
+				   }
+				 ?>
+				 <p>&nbsp;</p>
+				<h3><?php echo _e('[:ua]Інші новини[:en]Other news'); ?></h3>
+				<?php	
+					$args = array(
+						'showposts' => 5, 
+						'orderby' => 'date', 
+						'cat' => $c_id
+					);
+				    $query = new WP_Query($args); 
+				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+				      echo '<div class="news-small">';
+				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'; news_date($post->ID); echo', '.get_the_time().'</div></div>';   
+				    endwhile; endif;
+				    wp_reset_postdata();
+				   ?>
+			</div>
 		</div>
 	</div>

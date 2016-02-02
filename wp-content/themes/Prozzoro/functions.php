@@ -323,7 +323,7 @@ function author_in_top(){
       $author_posts_url = get_author_posts_url($user->ID); 
       $intop = get_field('top_faq', 'user_'. $user->ID);
       $posada = get_field('posada', 'user_'. $user->ID);
-    $args = array('posts_per_page' => 1, 'orderby' => 'date', 'author' => $user->ID);
+    $args = array('posts_per_page' => 1, 'orderby' => 'date', 'author' => $user->ID, 'cat'=> 16);
     $query = new WP_Query($args); 
     if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
     if (($roles[0] == 'author') and ($intop == 1) and ($i < 4)){     
