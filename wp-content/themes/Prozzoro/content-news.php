@@ -3,7 +3,6 @@
 			$category = get_category(get_query_var('cat'),false);
 			$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		?>
-		?>
 			<div class="left-menu hidden-lg hidden-md hidden-sm col-xs-12 ">
 				<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 				<ul>
