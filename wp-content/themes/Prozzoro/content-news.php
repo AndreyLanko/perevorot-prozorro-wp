@@ -64,6 +64,7 @@
 						'showposts' => 1, 
 						'cat' => 16,
 						'orderby' => 'date', 
+						'order' => 'DESC', 
 						'author' => all_experts()
 					);
 				    $query = new WP_Query($args); 

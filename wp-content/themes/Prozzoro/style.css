@@ -33,6 +33,11 @@
 	display: none;
 }
 
+.alignleft {
+	float: left;
+	padding-right: 10px;
+}
+
 .navbar-brand{
 	margin-top: 15px;
 }
@@ -533,7 +538,10 @@ nav.footer .current-menu-item a{
 	.navigation .page-numbers.prev:hover,
 	.navigation .page-numbers.prev:focus,
 	.navigation .page-numbers.next:hover,
-	.navigation .page-numbers.next:focus{
+	.navigation .page-numbers.next:focus,
+	.navigation .page-numbers.dots:hover,
+	.navigation .page-numbers.dots:focus
+	{
 		border: 1px #fff solid;
 		border-radius: 0;
 	}
