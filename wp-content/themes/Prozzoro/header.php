@@ -28,11 +28,15 @@
 <body <?php body_class(); ?>>
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-            <?php // if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
-                <div class="pull-right">
+                <div class="col-md-4 no-padding">
+                 <?php //  if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+                </div>
+                <div class="col-md-4 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
-                    <ul class="nav navbar-nav inline-navbar">
-                        <li class="<?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav navbar-nav pull-right start-working">
+                        <li class="blue-bg <?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
                     </ul>
                 </div>
             </div><!-- /.container-fluid -->

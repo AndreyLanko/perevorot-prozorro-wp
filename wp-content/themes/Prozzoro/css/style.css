@@ -164,7 +164,7 @@ hr {border: 1px solid #eeeeee;}
 .nav-list.nav  > li > a:hover, .nav-list.nav  > li > a:active, .nav-list.nav  > li > a:focus {background:none;}
 
 .top-menu {min-height: 30px; border: none; background: #f0f5f2; text-transform: uppercase; margin-bottom: 0;}
-.top-menu .navbar-nav > li > a{padding-top: 7px; padding-bottom: 3px;}
+.top-menu .navbar-nav > li > a{padding-top: 5px; padding-bottom: 5px;}
 .top-menu.navbar-default .navbar-nav > li > a {color:#1689b3;}
 .top-menu.navbar-default .navbar-nav > li > a:hover,.top-menu.navbar-default .navbar-nav > li > a:focus {text-decoration: underline;}
 .top-menu.navbar-default .navbar-nav > li.active >a {color:#666;background: none;}

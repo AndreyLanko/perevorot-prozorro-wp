@@ -14,8 +14,7 @@
 					<li class="cat-item <?php echo ($category[0]->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
 				</ul>
 			</div>
-			<div class="blog news col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
-			
+			<div class="blog news col-md-8 col-lg-8 col-sm-8 col-xs-12 ">			
 
 			<div class="back"><a href="<?php echo get_category_link($category[0]->cat_ID); ?>"><i class="sprite sprite-arrow-left"></i> <?php  echo get_the_category_by_ID($category[0]->cat_ID); ?></a></div>
 			<div class="day"><?php the_time('d.m.y') ?></div>
@@ -45,6 +44,7 @@
 					$args = array(
 						'showposts' => 1, 
 						'orderby' => 'date', 
+						'cat'=> 16,
 						'author' => all_experts()
 					);
 				    $query = new WP_Query($args); 
@@ -90,7 +90,8 @@
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 				      echo '<div class="news-small">';
-				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</div><div class="date-time">'.get_the_time().'</div></div>';   
+				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</div><div class="date-time">'; news_date($post->ID); 
+      echo', '.get_the_time().'</div></div>';   
 				    endwhile; endif;
 				    wp_reset_postdata();
 				   ?>
