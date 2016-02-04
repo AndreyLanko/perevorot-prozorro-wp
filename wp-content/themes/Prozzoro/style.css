@@ -33,6 +33,11 @@
 	display: none;
 }
 
+.no-padding{
+	padding-right: 0;
+	padding-left: 0;
+}
+
 .alignleft {
 	float: left;
 	padding-right: 10px;
@@ -289,6 +294,30 @@ ul.white-checkboxes{
 }
 	.single-content .right-col{
 		margin-top: 30px;
+	}
+
+.top-menu.navbar-default ul.start-working>li:hover,
+.top-menu.navbar-default ul.start-working>li:focus,
+.top-menu.navbar-default ul.start-working>li.active,
+.top-menu.navbar-default ul.start-working>li.active:hover,
+.top-menu.navbar-default ul.start-working>li.active:focus{
+	background: #97d8f1;
+	text-decoration: none;
+	color: #333;
+}
+
+.top-menu.navbar-default ul.start-working>li>a{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #333;
+}
+	.top-menu.navbar-default ul.start-working>li>a:hover,
+	.top-menu.navbar-default ul.start-working>li>a:focus,
+	.top-menu.navbar-default ul.start-working>li.active>a,
+	.top-menu.navbar-default ul.start-working>li.active>a:hover,
+	.top-menu.navbar-default ul.start-working>li.active>a:focus{
+		text-decoration: none;
+		color: #333;
 	}
 
 ul.language-chooser{

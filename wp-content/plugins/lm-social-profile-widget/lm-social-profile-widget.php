@@ -32,6 +32,7 @@ class Lm_Social_Profile extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
+        $title = apply_filters('widget_title', $instance['title']);
         $facebook = $instance['facebook'];
         $twitter = $instance['twitter'];
         $google = $instance['google'];
@@ -42,6 +43,7 @@ class Lm_Social_Profile extends WP_Widget {
         $social_wrapper['after'] = '</li>';
 
         // social profile link
+
         $facebook_profile = '<a href="' . $facebook . '" target="_blank"><i class="sprite-header-fb"></i></a>';
         $google_profile = '<a href="' . $google . '" target="_blank"><i class="sprite-header-g"></i></a>';
         $twitter_profile = '<a href="' . $twitter . '" target="_blank"><i class="sprite-header-tw"></i></a>';
@@ -51,6 +53,9 @@ class Lm_Social_Profile extends WP_Widget {
         echo $args['before_widget'];        
 
         echo '<ul class="social-top">';
+        if (!empty($title)) {
+            echo '<li class="title">'. $title .'</li>';
+        }
         echo (!empty($facebook) ) ? $social_wrapper['before'].$facebook_profile.$social_wrapper['after'] : null;
         echo (!empty($twitter) ) ? $social_wrapper['before'].$twitter_profile.$social_wrapper['after'] : null;
         echo (!empty($google) ) ? $social_wrapper['before'].$google_profile.$social_wrapper['after'] : null;
@@ -69,12 +74,19 @@ class Lm_Social_Profile extends WP_Widget {
      * @param array $instance Previously saved values from database.
      */
     public function form($instance) {
+        isset($instance['title']) ? $title = $instance['title'] : null;
+        empty($instance['title']) ? $title = 'We in Social Networks' : null;
+
         isset($instance['facebook']) ? $facebook = $instance['facebook'] : null;
         isset($instance['twitter']) ? $twitter = $instance['twitter'] : null;
         isset($instance['google']) ? $google = $instance['google'] : null;
         isset($instance['linkedin']) ? $linkedin = $instance['linkedin'] : null;
         isset($instance['youtube']) ? $youtube = $instance['youtube'] : null;
         ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+        </p>
         <p>
             <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo esc_attr($facebook); ?>">
@@ -115,6 +127,7 @@ class Lm_Social_Profile extends WP_Widget {
      */
     public function update($new_instance, $old_instance) {
         $instance = array();
+        $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['facebook'] = (!empty($new_instance['facebook']) ) ? strip_tags($new_instance['facebook']) : '';
         $instance['twitter'] = (!empty($new_instance['twitter']) ) ? strip_tags($new_instance['twitter']) : '';
         $instance['google'] = (!empty($new_instance['google']) ) ? strip_tags($new_instance['google']) : '';
@@ -178,7 +191,8 @@ class Lm_Social_Share extends WP_Widget {
 
         $facebook_count = '<span class="share-count">'.facebook_like_share_count($datahref).'</span>';
         $google_count = '<span class="share-count">'.google_plusones($datahref).'</span>';
-        $twitter_count = '<span class="share-count">'.twitter_tweet_count($datahref).'</span>';
+      //  $twitter_count = '<span class="share-count">'.twitter_tweet_count($datahref).'</span>';
+        $twitter_count = '';
         $linkedin_count = '<span class="share-count">'.linkenin_share_count($datahref).'</span>';
 
         echo $args['before_widget'];        
