@@ -179,6 +179,7 @@ class Lm_Social_Share extends WP_Widget {
         $twitter = $instance['twitter'] ? 'true' : 'false';
         $google = $instance['google'] ? 'true' : 'false';
         $linkedin = $instance['linkedin'] ? 'true' : 'false';
+        $vkontakte = $instance['vkontakte'] ? 'true' : 'false';
 
         $social_wrapper['before'] = '<li>';
         $social_wrapper['after'] = '</li>';
@@ -188,12 +189,19 @@ class Lm_Social_Share extends WP_Widget {
         $google_profile = '<a data-type="gp" data-title="'.$datatitle.'" data-href="'.$datahref.'" href="" target="_blank"><i class="sprite-social-g"></i></a>';
         $twitter_profile = '<a data-type="tw" data-title="'.$datatitle.'" data-href="'.$datahref.'" href="" target="_blank"><i class="sprite-social-tw"></i></a>';
         $linkedin_profile = '<a data-type="in" data-title="'.$datatitle.'" data-href="'.$datahref.'" href="" target="_blank"><i class="sprite-social-in"></i></a>';
+        $vkontakte_profile = '<a data-type="vk" data-title="'.$datatitle.'" data-href="'.$datahref.'" href="" target="_blank"><i class="sprite-social-vk"></i></a>';
 
-        $facebook_count = '<span class="share-count">'.facebook_like_share_count($datahref).'</span>';
-        $google_count = '<span class="share-count">'.google_plusones($datahref).'</span>';
+        $_fb = facebook_like_share_count($datahref);
+        $_gp = google_plusones($datahref);
+        $_ln = linkenin_share_count($datahref);
+        $_vk = vkontakte_share_count($datahref);
+
+        $facebook_count = ($_fb)?'<span class="share-count">'.facebook_like_share_count($datahref).'</span>':'';
+        $google_count = ($_gb)?'<span class="share-count">'.google_plusones($datahref).'</span>':'';
       //  $twitter_count = '<span class="share-count">'.twitter_tweet_count($datahref).'</span>';
         $twitter_count = '';
-        $linkedin_count = '<span class="share-count">'.linkenin_share_count($datahref).'</span>';
+        $linkedin_count = ($_ln)?'<span class="share-count">'.linkenin_share_count($datahref).'</span>':'';
+        $vkontakte_count = ($_vk)?'<span class="share-count">'.vkontakte_share_count($datahref).'</span>':'';
 
         echo $args['before_widget'];        
 
@@ -205,6 +213,7 @@ class Lm_Social_Share extends WP_Widget {
         echo (isset( $instance[ 'twitter' ] ) ) ? $social_wrapper['before'].$twitter_profile.$twitter_count.$social_wrapper['after'] : null;
         echo (isset( $instance[ 'google' ] ) ) ? $social_wrapper['before'].$google_profile.$google_count.$social_wrapper['after'] : null;
         echo (isset( $instance[ 'linkedin' ] ) ) ? $social_wrapper['before'].$linkedin_profile.$linkedin_count.$social_wrapper['after'] : null;
+        echo (isset( $instance[ 'vkontakte' ] ) ) ? $social_wrapper['before'].$vkontakte_profile.$vkontakte_count.$social_wrapper['after'] : null;
         echo '</ul>';
 
         echo $args['after_widget'];
@@ -225,30 +234,31 @@ class Lm_Social_Share extends WP_Widget {
         isset($instance['twitter']) ? $twitter = $instance['twitter'] : null;
         isset($instance['google']) ? $google = $instance['google'] : null;
         isset($instance['linkedin']) ? $linkedin = $instance['linkedin'] : null;
+        isset($instance['vkontakte']) ? $linkedin = $instance['vkontakte'] : null;
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="checkbox"  <?php checked( $instance[ 'facebook' ], 'on' ); ?> />
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="checkbox" <?php checked( $instance[ 'twitter' ], 'on' ); ?> />
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Google+:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('google'); ?>" name="<?php echo $this->get_field_name('google'); ?>" type="checkbox" <?php checked( $instance[ 'google' ], 'on' ); ?> />
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('Linkedin:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="checkbox" <?php checked( $instance[ 'linkedin' ], 'on' ); ?> />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id('vkontakte'); ?>"><?php _e('ВКотнакте:'); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id('vkontakte'); ?>" name="<?php echo $this->get_field_name('vkontakte'); ?>" type="checkbox" <?php checked( $instance[ 'vkontakte' ], 'on' ); ?> />
         </p>
 
         <?php
@@ -271,6 +281,7 @@ class Lm_Social_Share extends WP_Widget {
         $instance['twitter'] = $new_instance['twitter'];
         $instance['google'] = $new_instance['google'];
         $instance['linkedin'] = $new_instance['linkedin'];
+        $instance['vkontakte'] = $new_instance['vkontakte'];
 
         return $instance;
     }
@@ -305,6 +316,12 @@ function linkenin_share_count($url) {
     $api = file_get_contents('http://www.linkedin.com/countserv/count/share?format=json&url='. $url );
     $count = json_decode($api);
     return $count->count;
+}
+function vkontakte_share_count($url) {
+    $api = file_get_contents('http://vkontakte.ru/share.php?act=count&index=1&url='. $url );
+    $tmp = array();
+    preg_match('/^VK.Share.count\(1, (\d+)\);$/i',$api,$tmp);
+    return $tmp[1];
 }
 function google_plusones($url) {
     $curl = curl_init();

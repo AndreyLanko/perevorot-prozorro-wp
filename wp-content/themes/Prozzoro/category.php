@@ -4,10 +4,10 @@
 	<?php $category = get_category(get_query_var('cat'),false);
 	$cat_list = $category->cat_ID;
 
-	if (($cat_list == 16) | ($cat_list == 17)) {
+	if ($cat_list == 16) {
 		get_template_part( 'content', 'blog' );
 	}
-	elseif (($cat_list == 1) | ($cat_list == 18) | ($cat_list == 19)){
+	elseif (($cat_list == 1) | ($cat_list == 17) | ($cat_list == 18)){
 		get_template_part( 'content', 'news' );
 	}
 	else {

@@ -217,7 +217,7 @@ function content($limit) {
   $content = explode(' ', strip_tags(get_the_content()), $limit);
   if (count($content)>=$limit) {
     array_pop($content);
-    $content = implode(" ",$content).'&#091;...&#093;'.'<br />';
+    $content = implode(" ",$content).'...'.'<br />';
   } else {
     $content = implode(" ",$content);
   } 

@@ -682,6 +682,10 @@ nav.footer .current-menu-item a{
 		height: 21px;
 		background-position: -281px -141px;
 	}
+h3.title{
+	text-transform: none;
+}
+
 
 .back-to-top {
     position: fixed;
