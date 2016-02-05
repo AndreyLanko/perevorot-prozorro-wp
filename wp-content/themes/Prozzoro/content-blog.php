@@ -22,7 +22,7 @@
 					<div class="blog <?php echo ($paged == 1 ? 'first':''); ?> col-md-12 col-lg-12 col-sm-12 col-xs-12">
 					<div class="img_wrapper"><img src="<?php echo author_img($avtor);?>" alt="<?php echo $user->user_firstname . ' ' . $user->user_lastname ;?> " /></div>
 					<span class="day"><?php the_time('d.m.y') ?></span>
-					<h3><a href="<?php the_permalink(); ?>"><?php echo $user->user_firstname . ' ' . $user->user_lastname ;?>:<br/>  <?php the_title(); ?></a></h3>
+					<h3 class="title"><a href="<?php the_permalink(); ?>"><?php echo $user->user_firstname . ' ' . $user->user_lastname ;?>:<br/>  <?php the_title(); ?></a></h3>
 					<?php echo content(50); ?>
 					<div class="clearfix"></div>
 					<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('share-sidebar'); ?>	
@@ -41,8 +41,7 @@
 		</div>
 
 		<div class="right-col col-md-4 col-lg-4 col-sm-4 col-xs-hidden ">
-		<h3><?php echo _e('[:ua]Популярні записи [:en]Featured Blog'); ?></h3>
-		<?php last_news(5); ?>
+		<div class="fb-page" data-href="https://www.facebook.com/prozorro" data-tabs="timeline" data-width="500" data-height="650" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/prozorro"><a href="https://www.facebook.com/prozorro">Система електронних державних закупівель ProZorro</a></blockquote></div></div>
 		<div class="other-news">
 				<?php  
 				switch ($category->cat_ID) {
