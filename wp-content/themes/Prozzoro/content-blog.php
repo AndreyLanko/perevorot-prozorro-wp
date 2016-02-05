@@ -41,7 +41,7 @@
 		</div>
 
 		<div class="right-col col-md-4 col-lg-4 col-sm-4 col-xs-hidden ">
-		<div class="fb-page" data-href="https://www.facebook.com/prozorro" data-tabs="timeline" data-width="500" data-height="650" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/prozorro"><a href="https://www.facebook.com/prozorro">Система електронних державних закупівель ProZorro</a></blockquote></div></div>
+		<div class="fb-page" data-href="https://www.facebook.com/prozorro" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true" ><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/prozorro"><a href="https://www.facebook.com/prozorro">Система електронних державних закупівель ProZorro</a></blockquote></div></div>
 		<div class="other-news">
 				<?php  
 				switch ($category->cat_ID) {
