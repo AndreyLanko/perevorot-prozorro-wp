@@ -101,7 +101,7 @@ ul.language-chooser{list-style: none;padding: 0;margin: 0;display: inline-block;
 
 /*************************** Footer *******************************************/
 
-.footer {font-size: 1.05em; margin-bottom:0; border:none; padding-top:30px; margin-top:50px;background-color:#f0f5f2;}
+.footer {font-size: 1.05em; margin-bottom:0; border:none; padding-top:30px; margin-top:50px;background-color:#f0f5f2;height: auto;}
 .footer h4{color: #666; margin: 10px 0 25px 0;text-transform: uppercase;}
 .footer a {color:#999;}
 .footer a:hover, .footer a:active, .footer a:focus {color:#666;}

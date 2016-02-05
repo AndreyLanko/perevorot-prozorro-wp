@@ -60,7 +60,7 @@
 			<hr />
 
 			<div class="top-blog">
-				<h3><a href="<?php echo get_category_link(1) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>
+				<h3><a href="<?php echo get_category_link(16) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>
 				<?php	
 					$args = array(
 						'showposts' => 1, 
