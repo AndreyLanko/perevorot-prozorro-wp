@@ -91,27 +91,22 @@ class Lm_Social_Profile extends WP_Widget {
             <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo esc_attr($facebook); ?>">
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo esc_attr($twitter); ?>">
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Google+:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('google'); ?>" name="<?php echo $this->get_field_name('google'); ?>" type="text" value="<?php echo esc_attr($google); ?>">
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('Linkedin:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>">
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id('youtube'); ?>"><?php _e('Youtube:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" name="<?php echo $this->get_field_name('youtube'); ?>" type="text" value="<?php echo esc_attr($youtube); ?>">
         </p>
-
         <?php
     }
 
@@ -257,7 +252,7 @@ class Lm_Social_Share extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="checkbox" <?php checked( $instance[ 'linkedin' ], 'on' ); ?> />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id('vkontakte'); ?>"><?php _e('ВКотнакте:'); ?></label> 
+            <label for="<?php echo $this->get_field_id('vkontakte'); ?>"><?php _e('ВКонтакте:'); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('vkontakte'); ?>" name="<?php echo $this->get_field_name('vkontakte'); ?>" type="checkbox" <?php checked( $instance[ 'vkontakte' ], 'on' ); ?> />
         </p>
 
