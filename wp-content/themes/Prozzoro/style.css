@@ -296,6 +296,9 @@ ul.white-checkboxes{
 		margin-top: 30px;
 	}
 
+.top-menu.navbar-default ul.start-working{
+	margin-right: 5px;
+}
 .top-menu.navbar-default ul.start-working>li:hover,
 .top-menu.navbar-default ul.start-working>li:focus,
 .top-menu.navbar-default ul.start-working>li.active,
