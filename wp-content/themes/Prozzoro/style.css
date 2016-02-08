@@ -310,6 +310,7 @@ ul.white-checkboxes{
 	padding-top: 5px;
 	padding-bottom: 5px;
 	color: #333;
+	line-height: 23px;
 }
 	.top-menu.navbar-default ul.start-working>li>a:hover,
 	.top-menu.navbar-default ul.start-working>li>a:focus,
