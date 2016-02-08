@@ -4,6 +4,8 @@ h1.margin-top-x {margin: 30px 0 20px 0;}
 
 table.table-monitor td{vertical-align: top;}
 .last{padding-bottom: 15px;}
+.blocks-wr{padding-right: 5px;}
+.search-form--add-cryteria a {padding: 20px 5px 15px;}
 
 /*************************** Social Buttons *******************************************/
 [class^="sprite-social-"], [class^="sprite-header-"] {display: inline-block; background: url('../images/sprite-networks.png') no-repeat; overflow: hidden; text-indent: -9999px; vertical-align:middle; text-align: left; }
@@ -76,10 +78,11 @@ span.share-count{display: inline-block;margin-left: 10px;color: #333;}
 .main-menu {border: none; margin-bottom:0;}
 .main-menu.navbar-default {background: none;}
 .main-menu .navbar-brand{height: auto;}
-.main-menu .navbar-nav > li {float:none; padding:45px 15px;}
+.main-menu .navbar-nav > li {float:none; padding:45px 15px;width: 1%;}
 .main-menu .navbar-nav > li > a{white-space:nowrap;color: #333;padding: 0;border-bottom: 2px solid #fff;}
 .main-menu .navbar-nav > li > a:hover,.main-menu .navbar-nav > li > a:focus, .main-menu .navbar-nav > li.current-menu-item > a{color: #666;border-bottom: 2px solid #666;}
 
+.top-menu.navbar-default ul.start-working{margin-right: 5px;}
 .top-menu.navbar-default ul.start-working>li:hover,.top-menu.navbar-default ul.start-working>li:focus,.top-menu.navbar-default ul.start-working>li.active,.top-menu.navbar-default ul.start-working>li.active:hover,.top-menu.navbar-default ul.start-working>li.active:focus{background: #97d8f1;text-decoration: none;color: #333;}
 .top-menu.navbar-default ul.start-working>li>a{padding-top: 5px;padding-bottom: 5px;color: #333;line-height: 23px;}
 .top-menu.navbar-default ul.start-working>li>a:hover,.top-menu.navbar-default ul.start-working>li>a:focus,.top-menu.navbar-default ul.start-working>li.active>a,.top-menu.navbar-default ul.start-working>li.active>a:hover,.top-menu.navbar-default ul.start-working>li.active>a:focus{text-decoration: none;color: #333;}

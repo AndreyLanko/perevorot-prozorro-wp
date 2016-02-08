@@ -43,7 +43,7 @@
                 <div class="col-md-4 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 no-padding">
                     <ul class="nav navbar-nav pull-right start-working">
                         <li class="blue-bg <?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
                     </ul>
