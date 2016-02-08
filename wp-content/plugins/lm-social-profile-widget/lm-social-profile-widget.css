@@ -52,8 +52,8 @@ ul.share {padding-left: 0;margin-bottom: 0; margin-top: 15px; list-style: none;}
 /********************* END ************************************/
 
 ul.social-top {padding-left: 0;margin: 0; list-style: none; float: right;}
-.social-top > li {display: inline-block;float: left;position: relative;color: #6dc8eb;padding-top: 1px;}
-.social-top > li.title{cursor: default;padding-top: 5px;padding-right: 15px;padding-left: 0;}
+.social-top > li {display: inline-block;float: left;position: relative;color: #6dc8eb;padding-top: 4px;}
+.social-top > li.title{cursor: default;padding-top: 6px;padding-right: 15px;padding-left: 0;}
 .social-top > li > a {color: #6dc8eb;line-height: 16px;position: relative;display: block;padding: 0px 8px 5px;}
 .social-top > li > a:hover, .social-top > li > a:focus, .social-top > li > a:active{background:none;}
 .social-top > li > a:hover i.sprite-header-fb, .social-top > li > a:focus i.sprite-header-fb, .social-top > li > a:active i.sprite-header-fb {background-position: -184px 0;}
