@@ -72,12 +72,11 @@
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();?>
 				      <div class="news-small">
-				      	<div class="news-title"><a href="<? the_permalink(); ?>"><?php the_title();?></a></div>
+				      	<div class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
 				      	<div class="date-time"><?php news_date($post->ID); echo', '.get_the_time();?></div>
 				      </div>';   
 				    <?php endwhile; endif;
-				    wp_reset_postdata();
-				   ?>
+				    wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</div>

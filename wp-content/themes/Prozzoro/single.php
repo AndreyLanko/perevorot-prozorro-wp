@@ -40,7 +40,7 @@
 
 			<div class="top-blog">
 				<h3><a href="<?php echo get_category_link(16) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>
-				<?=single_last_blog(16);?>
+				<?php echo single_last_blog(16);?>
 			</div>
 			<hr />
 
@@ -77,22 +77,21 @@
 				    	 $query->the_post();?>
 					     <div class="news-small">
 						      <div class="news-title">
-							      <a href="<? the_permalink(); ?>">					      
-						      		<? the_title(); ?>
+							      <a href="<?php the_permalink(); ?>">					      
+						      		<?php the_title(); ?>
 					    	     </a>
 				    	   	 </div>
 				    	   	 <div class="date-time">
-					    	   	 <? news_date($post->ID);?>
-					    	   	 <? echo', '.get_the_time(); ?>
+					    	   	 <?php news_date($post->ID);?>
+					    	   	 <?php echo', '.get_the_time(); ?>
 				    	   	 </div>
 				    	</div>   
-				    <? endwhile; endif;
-				    wp_reset_postdata();
-				   ?>
+				    <?php endwhile; endif;
+				    wp_reset_postdata(); ?>
 			</div>
 
-			</div>
 		</div>
 	</div>
+</div>
 
 <?php get_footer(); ?>	
