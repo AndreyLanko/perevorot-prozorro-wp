@@ -527,7 +527,7 @@ nav.footer .current-menu-item a{
 		padding-bottom: 50px;
 	}	
 		.right-col .gray-bg .top-blog {
-			height: 110px;
+			height: 105px;
 			overflow: hidden;
 		}
 		.right-col .gray-bg .day{
@@ -553,7 +553,7 @@ nav.footer .current-menu-item a{
 			max-width: 100%;
 		}
 		.right-col .gray-bg .img_wrapper img{
-			height: 175px;
+			height: 155px;
 			width: auto;
 			max-width: 100%;
 		}
@@ -572,7 +572,7 @@ nav.footer .current-menu-item a{
 				background-position: -281px -141px;
 			}
 		.right-col .gray-bg .blog--fio{
-		    font-size: 1.5em;
+		    font-size: 1.3em;
 			padding-bottom: 10px;
 		}
 			.right-col .gray-bg .blog--fio a{
@@ -717,15 +717,6 @@ nav.footer .current-menu-item a{
 .news-wrapper .comment{
 	float: right;
 }
-.single-top-blog .comment{
-	float: left;
-	padding: 16px 10px 16px 0;
-}
-	.single-top-blog .comment i{
-		width: 21px;
-		height: 21px;
-		background-position: -281px -141px;
-	}
 h3.title{
 	text-transform: none;
 }
@@ -753,9 +744,11 @@ h3.title{
 		-khtml-opacity: 1.0;
 		opacity: 1.0;
 	}
-
+.gray-bg  hr{
+	margin: 5px 0;
+}
 .gray-bg .top-blog {
-	height: 110px;
+	height: 105px;
 	overflow: hidden;
 }
 .gray-bg .day{
@@ -770,14 +763,14 @@ h3.title{
 	font-size: 18px;
 	color: #0099cc;
 	text-decoration: none;
-	margin: 15px 0;
+	margin: 8px 0;
 }
 	.gray-bg .title a:hover,
 	.gray-bg .title a:focus{
 		text-decoration: underline;
 	}
 .gray-bg .img_wrapper img{
-	height: 175px;
+	height: 155px;
 	width: auto;
 	max-width: 100%;
 }
