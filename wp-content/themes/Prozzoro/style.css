@@ -520,33 +520,73 @@ nav.footer .current-menu-item a{
 		color: #999;
 		font-style: italic;
 	}
-	.right-col .top-blog{
-			margin: 50px 0;
+	.right-col .gray-bg {
+		font-size: 14px;
+		color: #333;
+		position: relative;
+		padding-bottom: 50px;
+	}	
+		.right-col .gray-bg .top-blog {
+			height: 110px;
+			overflow: hidden;
 		}
-		.right-col .top-blog .img_wrapper {
-			max-width: 400px; 
-			width: 100%;
+		.right-col .gray-bg .day{
+			display: block;
+			font-size: 14px;
+			color: #666;
+			font-style: italic;
 		}
-			.right-col .top-blog .img_wrapper img {
-				max-width: 400px; 
-				width: 100%;
+		.right-col .gray-bg .title,
+		.right-col .gray-bg .title a{
+			text-transform: uppercase;
+			font-size: 18px;
+			color: #0099cc;
+			text-decoration: none;
+			margin: 15px 0;
+		}
+			.right-col .gray-bg .title a:hover,
+			.right-col .gray-bg .title a:focus{
+				text-decoration: underline;
 			}
-			.right-col .top-blog .news-title{
-				font-size: 16px;
-				text-transform: uppercase;
+		.right-col .gray-bg .img_wrapper{
+			width: auto;
+			max-width: 100%;
+		}
+		.right-col .gray-bg .img_wrapper img{
+			height: 175px;
+			width: auto;
+			max-width: 100%;
+		}
+		.right-col .gray-bg .comment{
+			font-size: 1em;
+			position: absolute;
+			left: 15px;
+			bottom: 0;
+			padding: 16px 10px 16px 0;
+			color: #0099cc;
+			cursor: default;
+		}
+			.right-col .gray-bg .comment i{
+				width: 21px;
+				height: 21px;
+				background-position: -281px -141px;
 			}
-			.right-col .top-blog .news-title,
-			.right-col .top-blog .news-title a,
-			.right-col .top-blog .more,
-			.right-col .top-blog .more a{
-				color: #0099cc;
+		.right-col .gray-bg .blog--fio{
+		    font-size: 1.5em;
+			padding-bottom: 10px;
+		}
+			.right-col .gray-bg .blog--fio a{
+				color:#0099cc;
 			}
-				.right-col .top-blog .news-title a:hover,
-				.right-col .top-blog .news-title a:focus,
-				.right-col .top-blog .more a:hover,
-				.right-col .top-blog .more a:focus{
-				 text-decoration: underline;
-				}
+		.right-col .gray-bg .blog-more{
+			position: absolute;
+		    bottom: 15px;
+		    right: 15px;
+		}
+			.right-col .gray-bg a.blog-more{
+				color:#0099cc;
+			}
+			
 	.right-col .news-small{
 		margin-bottom: 25px;
 	}
@@ -677,11 +717,11 @@ nav.footer .current-menu-item a{
 .news-wrapper .comment{
 	float: right;
 }
-.top-blog .comment{
+.single-top-blog .comment{
 	float: left;
 	padding: 16px 10px 16px 0;
 }
-	.top-blog .comment i{
+	.single-top-blog .comment i{
 		width: 21px;
 		height: 21px;
 		background-position: -281px -141px;
@@ -712,6 +752,47 @@ h3.title{
 		-moz-opacity: 1.0;
 		-khtml-opacity: 1.0;
 		opacity: 1.0;
+	}
+
+.gray-bg .top-blog {
+	height: 110px;
+	overflow: hidden;
+}
+.gray-bg .day{
+	display: block;
+	font-size: 14px;
+	color: #666;
+	font-style: italic;
+}
+.gray-bg .title,
+.gray-bg .title a{
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #0099cc;
+	text-decoration: none;
+	margin: 15px 0;
+}
+	.gray-bg .title a:hover,
+	.gray-bg .title a:focus{
+		text-decoration: underline;
+	}
+.gray-bg .img_wrapper img{
+	height: 175px;
+	width: auto;
+	max-width: 100%;
+}
+.gray-bg .comment{
+	position: absolute;
+	left: 15px;
+	bottom: 0;
+	padding: 16px 10px 16px 0;
+	color: #0099cc;
+	cursor: default;
+}
+	.gray-bg .comment i{
+		width: 21px;
+		height: 21px;
+		background-position: -281px -141px;
 	}
 
 @media (min-width:768px) and (max-width: 992px) { 

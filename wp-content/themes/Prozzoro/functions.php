@@ -227,6 +227,13 @@ function content($limit) {
   return $content;
 }
 
+function trim_title_chars($count, $after) {
+  $title = get_the_title();
+  if (mb_strlen($title) > $count) $title = mb_substr($title,0,$count);
+  else $after = '';
+  return $title . $after;
+}
+
 function my_post_queries( $query ) {
     if (!is_admin() && $query->is_main_query()){
         if(is_category(15)||is_category(12)||is_category(13)){
@@ -328,7 +335,21 @@ function author_in_top(){
     if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
     if (($roles[0] == 'author') and ($intop == 1) and ($i < 4)){     
       $f_content.= '<div class="col-sm-3 gray-bg">';
-      $f_content.= '<div class="img_wrapper"><img src="'.author_img($user->ID).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" /></div><div class="padding"><div class="blog--fio"><a href="'. $author_posts_url .'">'. $user->user_firstname . ' ' . $user->user_lastname .'</a></div>'.$posada.'<div class="blog--specialization">'. get_the_title().'</div><a class="blog-more" href="'.get_the_permalink().'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div></div>';
+      $f_content.= '<div class="padding top-blog">
+                      <div class="day">'.get_the_date('j.m.Y').'</div>
+                      <div class="title"><a href="'.get_the_permalink().'" >'.trim_title_chars(45, '...').'</a></div>
+                    </div>
+                    <hr />
+                    <div class="img_wrapper padding">
+                      <img src="'.author_img($user->ID).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" />
+                    </div>
+                    <hr />
+                    <div class="padding">
+                      <div class="blog--fio">
+                        <a href="'. $author_posts_url .'">'. $user->user_firstname . ' ' . $user->user_lastname .'</a>
+                      </div>'.
+                    $posada
+                    .'</div>'.comments($post->ID).'<a class="blog-more" href="'.get_the_permalink().'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div>';
     $i++;
     }   
     endwhile; endif;
@@ -336,6 +357,44 @@ function author_in_top(){
    }
     $f_content.= '</div><div class="blog-all"> <a href="'.get_category_link(16).'" ><i class="sprite-arrow-right"></i> '.get_cat_name(16).'</a></div></div><hr /></div>';    
     return $f_content;
+}
+
+function single_last_blog($categoryid){
+  global $wpdb;
+  $f_content='';
+  $args = array(
+            'showposts' => 1, 
+            'orderby' => 'date',
+            'order' => 'DESC',  
+            'cat'=> $categoryid,
+            'author' => all_experts()
+          );
+           $query = new WP_Query($args); 
+           if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+               $avtor = get_the_author_meta('ID',$post->post_author);
+               $user = get_userdata($avtor);   
+               $posada = get_field('posada', 'user_'. $user->ID); 
+               $f_content.= '<div class="gray-bg">';
+               $f_content.= '<div class="padding top-blog">
+                                <div class="day">'.get_the_date('j.m.Y').'</div>
+                                <div class="title"><a href="'.get_the_permalink().'" >'.trim_title_chars(45, '...').'</a></div>
+                              </div>
+                              <hr />
+                              <div class="img_wrapper padding">
+                                <img src="'.author_img($user->ID).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" />
+                              </div>
+                              <div class="clearfix"></div>
+                              <hr />
+                              <div class="padding">
+                                <div class="blog--fio">
+                                  <a href="'. $author_posts_url .'">'. $user->user_firstname . ' ' . $user->user_lastname .'</a>
+                                </div>'.
+                                $posada
+                              .'</div>'.comments($post->ID).'<a class="blog-more" href="'.get_the_permalink().'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div>';
+         endwhile; endif;
+   wp_reset_postdata();
+   $f_content.= '<div class="clearfix"></div>';    
+   return $f_content;
 }
 
 function all_experts() {
@@ -459,9 +518,9 @@ function news_date($id){
 function comments($my_post_id){
   $com_content = '';
   $comment_num = get_comments_number($my_post_id); 
-  if ($comment_num > 0) {
-    $com_content.='<span class="comment"><i class="sprite-coment-border"></i> '. $comment_num .'</span>';
-  }
+   if ($comment_num > 0) {
+     $com_content.='<span class="comment"><i class="sprite-coment-border"></i> '. $comment_num .'</span>';
+   }
   return $com_content;
 }
 
