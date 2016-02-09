@@ -13,7 +13,10 @@
 				</ul>
 			</div>
 			<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
-			<?php 
+			<?php if ($category->cat_ID=='18') { ?>
+			<h3 class="gray text-uppercase">Календар подій</h3>
+				<?php echo  do_shortcode('[my_calendar]');
+			} else {
 			$args = array(
 				'cat' => $category->cat_ID,
 				'post_status' => 'publish',
@@ -47,6 +50,7 @@
 			<div class="pager">
 			    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
 			</div>	
+			<?php } ?>
 		</div>
 
 		<div class="right-col left-menu col-md-4 col-lg-4 col-sm-4 hidden-xs ">
@@ -106,7 +110,7 @@
 					    	   	 <? news_date($post->ID);?>
 					    	   	 <? echo', '.get_the_time(); ?>
 				    	   	 </div>
-				    	</div>';   
+				    	</div>
 				    <? endwhile; endif;
 				    wp_reset_postdata();
 				   ?>
