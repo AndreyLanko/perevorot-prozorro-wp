@@ -7,7 +7,7 @@
 				<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 				<ul>
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
+					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>">Всі новини</a></li>
 				</ul>
@@ -53,7 +53,7 @@
 			<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 			<ul>
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
+					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>">Всі новини</a></li>
 				</ul>
@@ -61,24 +61,9 @@
 
 			<div class="top-blog">
 				<h3><a href="<?php echo get_category_link(16) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>
-				<?php	
-					$args = array(
-						'showposts' => 1, 
-						'cat' => 16,
-						'orderby' => 'date', 
-						'order' => 'DESC', 
-						'author' => all_experts()
-					);
-				    $query = new WP_Query($args); 
-				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-				       $avtor = get_the_author_meta('ID',$post->post_author);
-				       $user = get_userdata($avtor);
-				      echo '<div class="gray-bg">';
-				      echo '<div class="img_wrapper"><img src="'.author_img($avtor).'" alt="'. $user->user_firstname . ' ' . $user->user_lastname .'" /></div><div class="padding"><div class="news-title"><a href="';the_permalink(); echo '">'. $user->user_firstname . ' ' . $user->user_lastname .' : '; the_title(); echo '</div><div class="more">'.comments($post->ID).'<a href="'; the_permalink(); echo '" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Детальніше</span><span id="en">More</span></a></div></div><div class="clearfix"></div></div>';   
-				    endwhile; endif;
-				    wp_reset_postdata();
-				   ?>
+				<?=single_last_blog(16);?>
 			</div>
+			<hr />
 
 			<div class="other-news">
 				<?php  
@@ -108,10 +93,21 @@
 						'cat' => $c_id
 					);
 				    $query = new WP_Query($args); 
-				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-				      echo '<div class="news-small">';
-				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'; news_date($post->ID); echo', '.get_the_time().'</div></div>';   
-				    endwhile; endif;
+				    if ( $query->have_posts() ) : 
+				    	while ( $query->have_posts() ) : 
+				    	 $query->the_post();?>
+					     <div class="news-small">
+						      <div class="news-title">
+							      <a href="<? the_permalink(); ?>">					      
+						      		<? the_title(); ?>
+					    	     </a>
+				    	   	 </div>
+				    	   	 <div class="date-time">
+					    	   	 <? news_date($post->ID);?>
+					    	   	 <? echo', '.get_the_time(); ?>
+				    	   	 </div>
+				    	</div>';   
+				    <? endwhile; endif;
 				    wp_reset_postdata();
 				   ?>
 

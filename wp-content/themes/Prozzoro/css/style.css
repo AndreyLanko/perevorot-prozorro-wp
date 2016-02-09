@@ -106,9 +106,9 @@ hr {border: 1px solid #eeeeee;}
 
 .render-as-table-sm {display:table; width:100%; border-spacing:15px; border-collapse: unset;}
 .render-as-table-sm > div {display:table-cell; float:none; padding:0;}
-.render-as-table-sm > div[class^=col-]{position: relative;padding-bottom: 25px;}
+.render-as-table-sm > div[class^=col-]{position: relative;padding-bottom: 50px;}
 .render-as-table-sm .img_wrapper img {width: 100%;}
-.render-as-table-sm .blog-more{position: absolute;bottom: 15px; left: 15px;}
+.render-as-table-sm .blog-more{position: absolute;bottom: 15px; right: 15px;}
 
 @media (max-width: 769px) {
 .render-as-table-sm {display:block;}

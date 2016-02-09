@@ -45,9 +45,6 @@
 		<div class="other-news">
 				<?php  
 				switch ($category->cat_ID) {
-					case "19":
-				        $c_id[1] = '1';
-				        break;
 				 	case "18":
 				        $c_id[1] = '1';
 				        break;
@@ -73,10 +70,12 @@
 						'cat' => $c_id
 					);
 				    $query = new WP_Query($args); 
-				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-				      echo '<div class="news-small">';
-				      echo '<div class="news-title"><a href="';the_permalink(); echo '">'; the_title(); echo '</a></div><div class="date-time">'; news_date($post->ID); echo', '.get_the_time().'</div></div>';   
-				    endwhile; endif;
+				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();?>
+				      <div class="news-small">
+				      	<div class="news-title"><a href="<? the_permalink(); ?>"><?php the_title();?></a></div>
+				      	<div class="date-time"><?php news_date($post->ID); echo', '.get_the_time();?></div>
+				      </div>';   
+				    <?php endwhile; endif;
 				    wp_reset_postdata();
 				   ?>
 			</div>
