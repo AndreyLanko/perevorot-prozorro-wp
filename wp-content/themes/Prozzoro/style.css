@@ -456,6 +456,9 @@ nav.footer .current-menu-item a{
 	margin-bottom: 50px;
 	font-style: italic;
 }
+.single .blog .day{
+	margin-bottom: 15px;
+}
 .blog h3{
 	text-transform: uppercase;
 	text-align: left;
@@ -825,3 +828,141 @@ h3.title{
 	}
 
 }
+
+/*********************************************** CALENDAR **********************************************************************************/
+
+.page-content div[class*="-calendar-toolbar"]{
+	display: none;
+}
+.page-content div[class*="-title-buttons"] div[class*="-btn-group"] {
+	margin-left: 0px;
+}
+.page-content div[class*="-btn-toolbar"] {
+	margin: 0 0 15px 0;
+}
+.page-content div[class*="-btn-group"] {
+	margin: 15px 0 0;
+}
+.page-content div[class*="-title-buttons"] a[class*="-prev-year"],
+.page-content div[class*="-title-buttons"] a[class*="-next-year"],
+.page-content div[class*="-title-buttons"] a[class*="-prev-day"],
+.page-content div[class*="-title-buttons"] a[class*="-next-day"],
+.page-content div[class*="-btn-group"] a[class*="-prev-year"],
+.page-content div[class*="-btn-group"] a[class*="-next-year"],
+.page-content div[class*="-btn-group"] a[class*="-prev-day"],
+.page-content div[class*="-btn-group"] a[class*="-next-day"],
+.page-content div[class*="-views-dropdown"] a[class*="-btn"],
+.page-content div[class*="-views-dropdown"] div[class*="-dropdown-menu"] {
+	border-radius: 0px;
+}
+.page-content div[class*="-views-dropdown"] div[class*="-dropdown-menu"] div[class*="-active"] a{
+	background: #6dc8eb;
+}
+.page-content div[class*="-title-buttons"] a:hover,
+.page-content div[class*="-title-buttons"] a:focus,
+.page-content div[class*="-views-dropdown"] a:hover,
+.page-content div[class*="-views-dropdown"] a:focus,
+.page-content a[class*="-btn-default"]:hover,
+.page-content a[class*="-btn-default"]:focus{
+	background: #f0f5f2;
+}
+
+.site-content table[class*="-month-view"] td,
+.site-content table[class*="-week-view"] td,
+.site-content div[class*="-oneday-view"] td{
+	vertical-align: top;
+}
+
+.page-content table[class*="-month-view"], 
+.page-content table[class*="-week-view"],
+.page-content div[class*="-week-view"] table.tablescroll_head tr,
+.page-content div[class*="-oneday-view"],
+.page-content div[class*="-oneday-view"] table.tablescroll_head tr,
+.page-content table[class*="-month-view"] td, 
+.page-content table[class*="-week-view"] td,
+.page-content div[class*="-oneday-view"] td {
+	border: 3px solid #fff !important;
+}
+.page-content div[class*="-oneday-view"] .ai1ec-quarter-marker, 
+.page-content div[class*="-week-view"] .ai1ec-quarter-marker{
+    border-top: 1px solid rgba(255,255,255,0.5) !important;
+}
+.page-content div[class*="-oneday-view"] .ai1ec-hour-marker, 
+.page-content div[class*="-week-view"] .ai1ec-hour-marker{
+	border-top: 2px solid rgba(255,255,255,1) !important;
+}
+
+.page-content table[class*="-month-view"] div[class*="-date"],
+.page-content table[class*="-week-view"] div[class*="-date"],
+.page-content div[class*="-oneday-view"] div[class*="-date"]{
+	background: none;
+	text-shadow: none;
+	font-size: 0.9em;
+	padding: 0.4em;
+}
+.page-content table[class*="-month-view"] th[class*="-weekday"],
+.page-content div[class*="-week-view"] th[class*="-weekday"],
+.page-content div[class*="-oneday-view"] th[class*="-weekday"],
+.tablescroll_head th.ai1ec-weekday {
+	background: none;
+	text-shadow: none;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: center !important;
+}
+.ai1ec-week-view th .ai1ec-weekday-day, 
+.ai1ec-oneday-view th .ai1ec-weekday-day,
+.ai1ec-week-view th .ai1ec-weekday-date, 
+.ai1ec-oneday-view th .ai1ec-weekday-date{
+	font-size: 1em !important;
+}
+.page-content div[class*="-oneday-view"] td[class*="-allday-events"],
+.page-content div[class*="-week-view"] td[class*="-allday-events"]{
+	display: none;
+}
+
+.page-content table[class*="-week-view"] div[class*="-hour-marker"] div,
+.page-content table[class*="-week-view"] div[class*="-allday-label"],
+.page-content div[class*="-oneday-view"] table[class*="-oneday-view-original"]  div[class*="-hour-marker"] div,
+.page-content div[class*="-oneday-view"] table[class*="-oneday-view-original"] div[class*="-allday-label"] {
+	font-size: 0.9em !important;
+	border-radius: 0;
+	text-shadow: none;
+	padding: 3px;
+	margin-left: 3px;
+}
+.ai1ec-month-view .ai1ec-event{
+	height: 28px !important;
+}
+.ai1ec-event-title{
+	display: block;
+}
+.page-content table[class*="-month-view"] div[class*="-event"]{
+	margin: 10px 5px;
+}
+.page-content table[class*="-week-view"] div[class*="-event"],
+.page-content div[class*="-oneday-view"] div[class*="-event"]{
+	padding: 10px 5px;
+}
+
+.page-content table[class*="-week-view"] tr[class*="-week"] a[class*="-event-container"],
+.page-content div[class*="-oneday-view"] tr[class*="-oneday"] a[class*="-event-container"]{
+	background-image: none;
+	border-radius: 0;
+	border:none;
+	box-shadow: none;
+	text-shadow: none;
+}
+.page-content table[class*="-week-view"] tr[class*="-week"] a[class*="-event-container"] span[class*="-event-time"],
+.page-content div[class*="-oneday-view"] tr[class*="-oneday"] a[class*="-event-container"] span[class*="-event-time"],
+.page-content table[class*="-week-view"] tr[class*="-week"] a[class*="-event-container"] span[class*="-event-title"],
+.page-content div[class*="-oneday-view"] tr[class*="-oneday"] a[class*="-event-container"] span[class*="-event-title"]{
+	font-size: 1.2em !important;
+}
+.page-content .tablescroll_head tr th:last-child{
+	width: auto !important;
+}
+}
+  
+
+/******************************************** END CALENDAR ********************************************************************************/
