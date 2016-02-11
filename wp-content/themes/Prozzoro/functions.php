@@ -374,6 +374,7 @@ function single_last_blog($categoryid){
                $avtor = get_the_author_meta('ID',$post->post_author);
                $user = get_userdata($avtor);   
                $posada = get_field('posada', 'user_'. $user->ID); 
+               $author_posts_url = get_author_posts_url($user->ID);
                $f_content.= '<div class="gray-bg">';
                $f_content.= '<div class="padding top-blog">
                                 <div class="day">'.get_the_date('j.m.Y').'</div>

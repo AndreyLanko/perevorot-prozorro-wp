@@ -23,7 +23,7 @@
 				$avtor = get_the_author_meta('ID',$post->post_author);
 				$user = get_userdata($avtor);?>
 				<div class="row">
-					<div class="blog <?php echo ($paged == 1 ? 'first':''); ?> col-md-12 col-lg-12 col-sm-12 col-xs-12">
+					<div class="blog <?php// echo ($paged == 1 ? 'first':''); ?> col-md-12 col-lg-12 col-sm-12 col-xs-12">
 					<div class="img_wrapper"><img src="<?php echo author_img($avtor);?>" alt="<?php echo $user->user_firstname . ' ' . $user->user_lastname ;?> " /></div>
 					<span class="day"><?php the_time('d.m.y') ?></span>
 					<h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
@@ -45,8 +45,7 @@
 		</div>
 
 		<div class="right-col col-md-4 col-lg-4 col-sm-4 col-xs-hidden ">
-		<h3><?php echo _e('[:ua]Популярні записи [:en]Featured Blog'); ?></h3>
-		<?php last_news(5); ?>
+		<div class="fb-page" data-href="https://www.facebook.com/prozorro" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true" ><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/prozorro"><a href="https://www.facebook.com/prozorro">Система електронних державних закупівель ProZorro</a></blockquote></div></div>
 		</div>
 	</div>
 
