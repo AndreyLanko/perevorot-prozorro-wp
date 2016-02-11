@@ -21,6 +21,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/owl.carousel.js"></script>
+    <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/attrchange.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/script.js"></script>
 	<?php wp_head(); ?>
 </head>
@@ -61,7 +62,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/prozorro-logo-tmp.png" width="200" alt="Logo" /></a>
+                    <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro.png" alt="Logo" /></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
