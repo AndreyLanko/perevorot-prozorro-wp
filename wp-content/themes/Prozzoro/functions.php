@@ -527,7 +527,8 @@ function comments($my_post_id){
 
 add_shortcode('platforms-to-screen', 'platforms_to_screen');
 function platforms_to_screen(){
-  $api = file_get_contents('http://dev.prozorro.org/json/platforms/all/' );
+  //$api = file_get_contents('http://dev.prozorro.org/json/platforms/all/' );
+  $api = file_get_contents('http://dev.prozorro.org/json/platforms/contractors/' );
   $platform = json_decode($api);
   shuffle($platform);
 

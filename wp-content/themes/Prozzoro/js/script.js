@@ -2,12 +2,12 @@
 $(document).ready( function(){
     
     function init_event_calendar() {
+         $('.ai1ec-month-view td').has('div.ai1ec-event').attr("style","background-color:#8fd785 !important");
         var block = $('.ai1ec-event-title');
         var after = block.nextAll('.ai1ec-event-time:first');
         if(after[0] == undefined)
             return;
-        $(block).before($(after));
-        $('.ai1ec-month-view td').has('div.ai1ec-event').attr("style","background-color:#8fd785 !important");
+        $(block).before($(after));       
     }
 
     init_event_calendar();
@@ -26,12 +26,6 @@ $(document).ready( function(){
             //Triggered when the selected elements attribute is added/updated/removed
         }        
     });
-
-    var block = $('.ai1ec-event-title');
-    var after = block.nextAll('.ai1ec-event-time:first');
-    if(after[0] == undefined)
-        return;
-    $(block).before($(after));
 
 	$('.owl-carousel').owlCarousel({
     loop:true,
