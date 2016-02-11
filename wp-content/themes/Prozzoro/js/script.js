@@ -1,5 +1,38 @@
 (function($) {
 $(document).ready( function(){
+    
+    function init_event_calendar() {
+        var block = $('.ai1ec-event-title');
+        var after = block.nextAll('.ai1ec-event-time:first');
+        if(after[0] == undefined)
+            return;
+        $(block).before($(after));
+        $('.ai1ec-month-view td').has('div.ai1ec-event').attr("style","background-color:#8fd785 !important");
+    }
+
+    init_event_calendar();
+    
+    $("#ai1ec-calendar-view-loading").attrchange({
+        trackValues: true, /* Default to false, if set to true the event object is 
+                    updated with old and new value.*/
+        callback: function (event) {
+            if(event.newValue == "display: none;") {
+                init_event_calendar();
+            } 
+            //event               - event object
+            //event.attributeName - Name of the attribute modified
+            //event.oldValue      - Previous value of the modified attribute
+            //event.newValue      - New value of the modified attribute
+            //Triggered when the selected elements attribute is added/updated/removed
+        }        
+    });
+
+    var block = $('.ai1ec-event-title');
+    var after = block.nextAll('.ai1ec-event-time:first');
+    if(after[0] == undefined)
+        return;
+    $(block).before($(after));
+
 	$('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,

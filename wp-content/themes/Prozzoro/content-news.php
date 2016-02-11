@@ -13,9 +13,10 @@
 				</ul>
 			</div>
 			<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
-			<?php if ($category->cat_ID=='18') { ?>
-			<h3 class="gray text-uppercase">Календар подій</h3>
-				<?php echo  do_shortcode('[my_calendar]');
+			<?php if ($category->cat_ID=='18') { 
+				header("HTTP/1.1 301 Moved Permanently"); 
+				header("Location: /podiyi/"); 
+				exit(); 
 			} else {
 			$args = array(
 				'cat' => $category->cat_ID,

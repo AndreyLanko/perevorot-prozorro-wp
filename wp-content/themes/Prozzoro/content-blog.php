@@ -19,7 +19,7 @@
 				$avtor = get_the_author_meta('ID',$post->post_author);
 				$user = get_userdata($avtor);?>
 				<div class="row">
-					<div class="blog <?php echo ($paged == 1 ? 'first':''); ?> col-md-12 col-lg-12 col-sm-12 col-xs-12">
+					<div class="blog <?php // echo ($paged == 1 ? 'first':''); ?> col-md-12 col-lg-12 col-sm-12 col-xs-12">
 					<div class="img_wrapper"><img src="<?php echo author_img($avtor);?>" alt="<?php echo $user->user_firstname . ' ' . $user->user_lastname ;?> " /></div>
 					<span class="day"><?php the_time('d.m.y') ?></span>
 					<h3 class="title"><a href="<?php the_permalink(); ?>"><?php echo $user->user_firstname . ' ' . $user->user_lastname ;?>:<br/>  <?php the_title(); ?></a></h3>
@@ -74,7 +74,7 @@
 				      <div class="news-small">
 				      	<div class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
 				      	<div class="date-time"><?php news_date($post->ID); echo', '.get_the_time();?></div>
-				      </div>';   
+				      </div>  
 				    <?php endwhile; endif;
 				    wp_reset_postdata(); ?>
 			</div>
