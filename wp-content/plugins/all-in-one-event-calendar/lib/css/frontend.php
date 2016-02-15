@@ -205,9 +205,11 @@ class Ai1ec_Css_Frontend extends Ai1ec_Base {
 	}
 
 	public function echo_css() {
-		echo '<style>';
-		echo $this->get_compiled_css();
-		echo '</style>';
+		//  echo '<style>';
+		// echo $this->get_compiled_css();
+		//  echo '</style>';
+	$myStyleFile ='/wp-content/themes/Prozzoro/css/ai1ec_lm_style.css';
+	echo'<link href="'.$myStyleFile.'" rel="stylesheet">';
 	}
 
 	/**

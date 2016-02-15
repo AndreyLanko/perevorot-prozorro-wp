@@ -164,19 +164,19 @@ class Lm_Social_Share extends WP_Widget {
       global $wpdb;
       $table_name = "wp_lm_social";
       $sql = "CREATE TABLE IF NOT EXISTS `".$table_name."` (
-  `id` int(11) NOT NULL,
-  `fb` int(11) NOT NULL DEFAULT '0',
-  `tw` int(11) NOT NULL DEFAULT '0',
-  `in` int(11) NOT NULL DEFAULT '0',
-  `vk` int(11) NOT NULL DEFAULT '0',
-  `gp` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		  `id` int(11) NOT NULL,
+		  `fb` int(11) NOT NULL DEFAULT '0',
+		  `tw` int(11) NOT NULL DEFAULT '0',
+		  `in` int(11) NOT NULL DEFAULT '0',
+		  `vk` int(11) NOT NULL DEFAULT '0',
+		  `gp` int(11) NOT NULL DEFAULT '0'
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
       $wpdb->query($sql);
       $json_response = array(
         'success' =>  false
       );
-      $sql = "select count(*) from $table_name where id = ".$data['post_id'];
-      $result = $wpdb->get_var($wpdb->prepare($sql));
+      $sql = "select count(*) from $table_name where id = %d";
+      $result = $wpdb->get_var($wpdb->prepare($sql,array($data['post_id'])));
       if ($result == 0) {
         $insert_data = array(
           'id'  =>  $data['post_id']
