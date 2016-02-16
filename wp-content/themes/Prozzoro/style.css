@@ -302,6 +302,25 @@ ul.white-checkboxes{
 		margin-top: 30px;
 	}
 
+.top-menu .event-calendar{
+	text-align: center;
+	line-height: 33px;	
+}
+.top-menu .event-calendar a i.sprite-icon-calendar{
+	margin: 0 10px;
+}
+	.top-menu .event-calendar a{
+		color: #6dc8eb;
+	}
+	.top-menu .event-calendar a:hover,
+	.top-menu .event-calendar a:focus{
+		text-decoration: underline;
+	}
+	.top-menu .event-calendar a:hover i.sprite-icon-calendar,
+	.top-menu .event-calendar a:focus i.sprite-icon-calendar{
+		background-position: -537px -24px;
+	}
+
 .top-menu.navbar-default ul.start-working{
 	margin-right: 5px;
 }
