@@ -3,7 +3,7 @@
 
 	<nav class="navbar navbar-default footer">
             <div class="container">
-            	<a href="#" class="back-to-top"></a>
+            	<a href="#" class="back-to-top hidden-sm hidden-xs"></a>
 				<div class="row">
 					<div class="col-md-3 margin-bottom">
 						<h4><?php echo _e(lemon_menu_name('foot_menu_left'));?></h4>

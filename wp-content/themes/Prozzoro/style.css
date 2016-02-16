@@ -780,7 +780,7 @@ h3.title{
     height: 55px;
     background: url('./images/sprite.png') no-repeat;
     background-position: -561px 0;
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.4);
 	-moz-opacity: 0.4;
 	-khtml-opacity: 0.4;
 	opacity: 0.4;
@@ -844,6 +844,14 @@ h3.title{
 		display: inline-block;
 		width: 49%;
 	}
+	.top-menu .event-calendar span.text,
+	.top-menu .social-top li.title{
+		display: none;
+	}
+	.top-menu .event-calendar,
+	.top-menu ul.language-chooser{
+		line-height: 33px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -873,6 +881,15 @@ h3.title{
 
 	.faq .navbar-nav{
 		margin: 0;
+	}
+
+	.top-menu .event-calendar span.text,
+	.top-menu .social-top li.title{
+		display: none;
+	}
+	.top-menu .event-calendar,
+	.top-menu ul.language-chooser{
+		line-height: 48px;
 	}
 
 }
