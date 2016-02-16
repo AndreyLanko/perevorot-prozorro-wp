@@ -4,10 +4,12 @@ $(document).ready( function(){
     function init_event_calendar() {
          $('.ai1ec-month-view td').has('div.ai1ec-event').attr("style","background-color:#8fd785 !important");
         var block = $('.ai1ec-event-title');
-        var after = block.nextAll('.ai1ec-event-time:first');
-        if(after[0] == undefined)
-            return;
-        $(block).before($(after));       
+        $(".ai1ec-event-title").each(function() {
+            var after = $(this).nextAll('.ai1ec-event-time:first');
+            if(after[0] !== undefined)                
+                $(this).before($(after)); 
+        });
+              
     }
 
     init_event_calendar();
