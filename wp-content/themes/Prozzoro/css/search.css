@@ -126,3 +126,5 @@ nav.footer .current-menu-item a{text-decoration: none;color: #0099cc;}
 
 .back-to-top {position: fixed;bottom: 1em;right: 1em;width: 55px;height: 55px;background: url('../images/sprite.png') no-repeat;background-position: -482px 0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);-moz-opacity: 0.8;-khtml-opacity: 0.8;opacity: 0.8;padding: 1em;display: none;}
 .back-to-top:hover {background-position: -482px -55px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);-moz-opacity: 1.0;-khtml-opacity: 1.0;opacity: 1.0;}
+.go-down {position: fixed;top: 1em;right: 1em;width: 55px;height: 55px;background: url('../images/sprite.png') no-repeat;background-position: -561px 0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.4);-moz-opacity: 0.4;-khtml-opacity: 0.4;opacity: 0.4;padding: 1em;display: none;}
+.go-down:hover { background-position: -537px -55px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);-moz-opacity: 1.0;-khtml-opacity: 1.0;opacity: 1.0;}
