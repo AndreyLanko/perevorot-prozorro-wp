@@ -1,4 +1,5 @@
-<?php get_header();  ?>
+<?php get_header(); 
+	 inherit_template(); ?>
 <div class="container">
 	<h1 class="page-title"><?php single_cat_title( ); ?></h1>
 	<?php $category = get_category(get_query_var('cat'),false);

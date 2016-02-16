@@ -171,24 +171,20 @@ function create_post_type() {
 function add_faqcategory_automatically($post_ID) {
   global $wpdb;
   if(!has_term('','category',$post_ID)) {
-  $faqcat = array (15);
-  wp_set_object_terms( $post_ID, $faqcat, 'category');
+    $faqcat = array (15);
+    wp_set_object_terms( $post_ID, $faqcat, 'category');
   }
 }
 add_action('publish_faq', 'add_faqcategory_automatically');
 
-function inherit_template()
-{
-    if (is_category())
-    {
+function inherit_template(){
+    if (is_category()){
         $catid = get_query_var('cat');
         $cat = &get_category($catid);
         $parent = $cat->category_parent;
         $cat = &get_category($parent);
-        if ($cat->cat_ID == 15)
-        {
-            if (file_exists(TEMPLATEPATH . '/category-faq.php'))
-            {
+        if ($cat->cat_ID == 15) {
+            if (file_exists(TEMPLATEPATH . '/category-faq.php'))  {
                 include (TEMPLATEPATH . '/category-faq.php');
                 exit;
             }
