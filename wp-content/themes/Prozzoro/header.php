@@ -42,16 +42,16 @@
 
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-                <div class="col-md-4 no-padding">
-                 <?php //  if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+                <div class="col-md-4 col-sm-3 col-xs-3 no-padding">
+                 <?php // if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 </div>
-                <div class="col-md-3 no-padding">
+                <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                 </div>
-                <div class="col-md-3 no-padding event-calendar">
-                     <a href="<?php echo get_category_link(18); ?>"><?php echo _e('[:ua]Календар подій [:en]Event calendar'); ?> <i class="sprite-icon-calendar"></i></a>
+                <div class="col-md-3 col-sm-1 col-xs-1 no-padding event-calendar">
+                     <a href="<?php echo get_category_link(18); ?>"><span class="text"><?php echo _e('[:ua]Календар подій [:en]Event calendar'); ?></span> <i class="sprite-icon-calendar"></i></a>
                 </div>
-                <div class="col-md-2 no-padding">
+                <div class="col-md-2 col-sm-5 col-xs-5 no-padding">
                     <ul class="nav navbar-nav pull-right start-working">
                         <li class="blue-bg <?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
                     </ul>
@@ -100,4 +100,4 @@
 
 <div class="site">
 	<div id="content" class="site-content">
-    <a href="#" class="go-down"></a>
+    <a href="#" class="go-down hidden-sm hidden-xs"></a>
