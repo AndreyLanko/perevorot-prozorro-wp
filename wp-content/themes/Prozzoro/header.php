@@ -45,10 +45,13 @@
                 <div class="col-md-4 no-padding">
                  <?php //  if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 </div>
-                <div class="col-md-4 no-padding">
+                <div class="col-md-3 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                 </div>
-                <div class="col-md-4 no-padding">
+                <div class="col-md-3 no-padding event-calendar">
+                     <a href="<?php echo get_category_link(18); ?>"><?php echo _e('[:ua]Календар подій [:en]Event calendar'); ?> <i class="sprite-icon-calendar"></i></a>
+                </div>
+                <div class="col-md-2 no-padding">
                     <ul class="nav navbar-nav pull-right start-working">
                         <li class="blue-bg <?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
                     </ul>
@@ -97,3 +100,4 @@
 
 <div class="site">
 	<div id="content" class="site-content">
+    <a href="#" class="go-down"></a>

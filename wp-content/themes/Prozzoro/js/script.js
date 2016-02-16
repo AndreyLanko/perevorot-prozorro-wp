@@ -68,6 +68,23 @@ $(document).ready( function(){
         return false;
     });
 
+     var topset = $(document).height()- 2*($(window).height());
+     jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() < (topset+200)) {
+            jQuery('.go-down').fadeIn(duration);
+        } else {
+            jQuery('.go-down').fadeOut(duration);
+        }
+    });
+     var do_action = false;
+    jQuery('.go-down').click(function(event) {
+        if(do_action)return;
+        do_action=true;
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop:(jQuery(document).scrollTop() + $(window).height())}, duration, function(){do_action=false;});
+        return false;
+    });
+
 	jQuery('#scrollup').click( function(){
 		window.scroll(0 ,0); 
 		return false;

@@ -12,6 +12,9 @@
 .sprite-sut {width: 44px;height: 44px;background-position: -315px -97px;}
 .sprite-tsili {width: 44px;height: 44px;background-position: -359px -97px;}
 
+.sprite-icon-calendar {width: 24px;height: 24px;background-position: -537px 0;}
+.sprite-icon-calendar-h {width: 24px;height: 24px;background-position: -537px -24px;}
+
 .sprite-arrow-up {width: 21px;height: 21px;background-position: -368px 0;}
 .sprite-social-youtube {width: 21px;height: 21px;background-position: -300px -141px;}
 .sprite-coment {width: 21px;height: 21px;background-position: -281px -141px;}
@@ -25,6 +28,8 @@
 
 .sprite-totop {width: 55px;height: 55px;background-position: -482px 0;}
 .sprite-totop-h {width: 55px;height: 55px;background-position: -482px -55px;}
+.sprite-todown {width: 55px;height: 55px;background-position: -561px 0;}
+.sprite-todown-h {width: 55px;height: 55px;background-position: -537px -55px;}
 
 .en_content #ua{
 	display: none;
@@ -67,6 +72,7 @@ ol.no-style{
 .site-content table{
 	width: 100%;
 	margin: 15px 0 30px;
+	position: relative;
 }
 	.site-content table tr{
 		border-bottom: 1px solid #eee;
@@ -294,6 +300,25 @@ ul.white-checkboxes{
 }
 	.single-content .right-col{
 		margin-top: 30px;
+	}
+
+.top-menu .event-calendar{
+	text-align: center;
+	line-height: 33px;	
+}
+.top-menu .event-calendar a i.sprite-icon-calendar{
+	margin: 0 10px;
+}
+	.top-menu .event-calendar a{
+		color: #6dc8eb;
+	}
+	.top-menu .event-calendar a:hover,
+	.top-menu .event-calendar a:focus{
+		text-decoration: underline;
+	}
+	.top-menu .event-calendar a:hover i.sprite-icon-calendar,
+	.top-menu .event-calendar a:focus i.sprite-icon-calendar{
+		background-position: -537px -24px;
 	}
 
 .top-menu.navbar-default ul.start-working{
@@ -747,6 +772,29 @@ h3.title{
 		-khtml-opacity: 1.0;
 		opacity: 1.0;
 	}
+.go-down {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 55px;
+    height: 55px;
+    background: url('./images/sprite.png') no-repeat;
+    background-position: -561px 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+    padding: 1em;
+    display: none;
+}
+	.go-down:hover {    
+	    background-position: -537px -55px;
+	    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);
+		-moz-opacity: 1.0;
+		-khtml-opacity: 1.0;
+		opacity: 1.0;
+	}
+
 .gray-bg  hr{
 	margin: 5px 0;
 }
