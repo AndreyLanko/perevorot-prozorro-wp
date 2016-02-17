@@ -16,9 +16,8 @@ Template Name: Замовнику
 			?>							
 			</ul>
 		</div>
-		<?php $field = get_field_object('no-money-blue', $post->ID);
-		echo('<h1><a id="perevagy"></a>'. $field['label'] . '</h1>' );
-		?>
+		<?php $field = get_field_object('no-money-blue', $post->ID);?>
+		<h1><a id="perevagy"></a><?php echo _e($field['label']); ?></h1>
 		<div class="system-advantages--steps">
 			<div class="row">				
 				<div class="col-sm-4 margin-bottom ">
@@ -37,15 +36,13 @@ Template Name: Замовнику
 		</div>		
 		<hr />
 
-		<?php $field = get_field_object('etapy-zakupivli', $post->ID);
-		echo('<h1><a id="etapy"></a>'. $field['label'] . '</h1>' );
-		?>
+		<?php $field = get_field_object('etapy-zakupivli', $post->ID);?>
+		<h1><a id="etapy"></a><?php echo _e($field['label']); ?></h1>
 		<div class="custom-counter"><?php echo _e(get_post_field('etapy-zakupivli', $post->ID)); ?></div>
 		<hr />
 
-		<?php $field = get_field_object('propozitsii', $post->ID);
-		echo('<h1><a id="propozytsii"></a>'. $field['label'] . '</h1>' );
-		?>			
+		<?php $field = get_field_object('propozitsii', $post->ID);?>
+		<h1><a id="propozytsii"></a><?php echo _e($field['label']); ?></h1>
 		<div class="system-advantages--text"><?php echo (get_post_field('propozitsii', $post->ID)); ?></div>			
 
 		<?php echo author_in_top();?>
