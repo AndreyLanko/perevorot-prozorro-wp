@@ -30,6 +30,14 @@ register_nav_menus(array(
   'foot_menu_right' => 'Меню в footer справа'
 ));
 
+function get_dynamic_sidebar($index=1) {
+    $sidebar_contents = "";
+    ob_start();
+    dynamic_sidebar($index);
+    $sidebar_contents = ob_get_clean();
+    return $sidebar_contents;
+}
+
 function register_my_widgets(){
 	register_sidebar( array(
 		'name' => 'Контакты в футере',
@@ -192,7 +200,6 @@ function inherit_template(){
     }
 }
 
-
 function lemon_wp_title( $title, $sep ) {
   global $paged, $page;
   if ( is_feed() )
@@ -331,6 +338,45 @@ function last_news($total_news){
   wp_reset_postdata();
 }
 
+add_shortcode('vacancies-in-top', 'vacancies_in_top');
+function vacancies_in_top(){
+  $text_to_site = '';
+  $args = array(
+    'showposts' => 3, 
+    'category_name' =>  'vacancies',
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC'
+  );
+  $wp_query = new WP_Query( $args );
+  $cat = get_category_by_slug(vacancies);
+  $text_to_site.='<h1 align="center">'.$cat->cat_name.'</h1>';
+  if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+      $text_to_site.= '<div class="row">
+                         <div class="vacancies col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                          <span class="day">';
+      $text_to_site.= get_the_time('d.m.y');
+      $text_to_site.='</span>
+                          <h3 class="title"><a href="';
+      $text_to_site.= get_the_permalink(); 
+      $text_to_site.='">';
+      $text_to_site.= get_the_title();
+      $text_to_site.= '</a></h3>';
+      $text_to_site.= content(15); 
+      $text_to_site.= '<div class="clearfix"></div>';
+      $text_to_site.= get_dynamic_sidebar('share-sidebar');
+      $text_to_site.= '<div class="more"><a href="';
+      $text_to_site.= get_the_permalink(); 
+      $text_to_site.= '"><i class="sprite-arrow-right"></i>  <span id="ua">Детальніше</span><span id="en">More</span></a></div>
+                          <div class="clearfix"></div>
+                          <hr />    
+                          </div>
+                      </div>';
+      endwhile; endif;
+      wp_reset_postdata(); 
+      return $text_to_site;
+  }
+
 add_shortcode('author-in-top', 'author_in_top');
 function author_in_top(){
   global $wpdb;
@@ -370,7 +416,7 @@ function author_in_top(){
     endwhile; endif;
     wp_reset_postdata();
    }
-    $f_content.= '</div><div class="blog-all"> <a href="'.get_category_link(16).'" ><i class="sprite-arrow-right"></i> '.get_cat_name(16).'</a></div></div><hr /></div>';    
+    $f_content.= '</div><div class="clearfix"></div><div class="blog-all"> <a href="'.get_category_link(16).'" ><i class="sprite-arrow-right"></i> '.get_cat_name(16).'</a></div></div><hr /></div>';    
     return $f_content;
 }
 

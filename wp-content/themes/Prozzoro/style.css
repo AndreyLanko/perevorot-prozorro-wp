@@ -48,6 +48,11 @@
 	padding-right: 10px;
 }
 
+.size-full{
+	max-width: 100%;
+	height: auto;
+}
+
 .navbar-brand{
 	margin-top: 15px;
 }
@@ -241,10 +246,10 @@ ul.white-checkboxes{
 	.page-content .blue-btn{
 		margin: 25px 0;
 	}
-	/*.page-content .img{
-		line-height: 50px;
+	.page-content .img{
+		max-width: 100%;
 	}
-		.page-content .img img{
+	/*	.page-content .img img{
 			max-height: 100%;
 		}*/
 
@@ -263,6 +268,15 @@ ul.white-checkboxes{
 .size55, .page-content .size55{font-size: 55px;}
 .size60, .page-content .size60{font-size: 60px;}
 .size65, .page-content .size65{font-size: 65px;}
+
+.page-content img{
+	max-width: 100%;
+	height: auto;
+}
+.page-content iframe{
+	max-width: 100%;
+	height: auto;
+}
 
 .dogovory .item-wrapper{
 	display: inline-block;
@@ -785,7 +799,7 @@ h3.title{
 	-khtml-opacity: 0.4;
 	opacity: 0.4;
     padding: 1em;
-    display: none;
+    display: block;
 }
 	.go-down:hover {    
 	    background-position: -537px -55px;
@@ -839,6 +853,58 @@ h3.title{
 		background-position: -281px -141px;
 	}
 
+@media (max-width: 1020px) {
+	.navbar-header .navbar-brand {
+		margin-top: 0;
+		padding: 0 15px;
+	}
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .top-menu .event-calendar,
+	.top-menu ul.language-chooser{
+		line-height: 45px;
+	}
+	.navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+    .main-menu--list .nav>li {
+	    position: relative;
+	    display: block;
+	    width: 100%;
+	}
+	.main-menu .navbar-nav > li{
+		padding: 0 15px;
+	}
+	.pull-right{
+		float: right!important;
+	}
+}
+
 @media (min-width:768px) and (max-width: 992px) { 
 	.specification p{
 		display: inline-block;
@@ -848,13 +914,13 @@ h3.title{
 	.top-menu .social-top li.title{
 		display: none;
 	}
-	.top-menu .event-calendar,
-	.top-menu ul.language-chooser{
-		line-height: 33px;
-	}
 }
 
 @media (max-width: 768px) {
+	.navbar-header .navbar-brand {
+		margin-top: 0;
+		padding: 0 15px;
+	}
 	.specification p{
 		display: inline-block;
 		width: 99%;
@@ -888,8 +954,21 @@ h3.title{
 		display: none;
 	}
 	.top-menu .event-calendar,
-	.top-menu ul.language-chooser{
-		line-height: 48px;
+	.top-menu ul.language-chooser,
+	.top-menu ul.social-top{
+		line-height: 45px;
+	}
+	ul.start-working{
+		margin-left: 15px;
+	}
+	.footer .nav ul.social-top{
+		float: left;
+	}
+	ul.share {
+		margin-left: -15px;
+	}
+	.more{
+		float: left;
 	}
 
 }

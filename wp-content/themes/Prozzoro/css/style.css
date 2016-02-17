@@ -172,7 +172,7 @@ hr {border: 1px solid #eeeeee;}
 .main-menu {border: none; margin-bottom:0;}
 .main-menu.navbar-default {background: none;}
 .main-menu .navbar-brand{height: auto;}
-.main-menu .navbar-nav > li {float:none; padding:45px 15px;}
+.main-menu .navbar-nav > li {float:none; padding:45px 5px;}
 .main-menu .navbar-nav > li > a{white-space:nowrap;color: #333;padding: 0;border-bottom: 2px solid #fff;}
 .main-menu .navbar-nav > li > a:hover,.main-menu .navbar-nav > li > a:focus, .main-menu .navbar-nav > li.current-menu-item > a{color: #666;border-bottom: 2px solid #666;}
 @media (max-width: 991px) {
@@ -327,7 +327,8 @@ ol > li > h3 {text-transform:uppercase;color: #3399cc;}
 .system-advantages--text {font-size:1.142857em;}
 .system-advantages .blog-list img{width: 100%;}
 @media (max-width: 769px) {
-.system-advantages  .render-as-table-sm > .gray-bg {padding-bottom:15px;}
+.system-advantages  .render-as-table-sm > .gray-bg {padding-bottom:35px;margin-bottom: 10px;}
+.blog-more {left:15px; right: 0;}
 }
 .system-advantages--buttons {font-size: 1.142857em; text-align:center; padding:70px 0;}
 .system-advantages--buttons > a {width:260px; text-align:center; padding:15px 0; font-family:Helvetica, sans-serif;font-weight:400;}

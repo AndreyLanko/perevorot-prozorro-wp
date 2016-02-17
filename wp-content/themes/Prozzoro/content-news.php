@@ -9,7 +9,7 @@
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>">Всі новини</a></li>
+					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
 				</ul>
 			</div>
 			<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
@@ -60,7 +60,7 @@
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>">Всі новини</a></li>
+					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
 				</ul>
 			<hr />
 
@@ -73,19 +73,14 @@
 			<div class="other-news">
 				<?php  
 				switch ($category->cat_ID) {
-				 	case "18":
-				        $c_id[1] = '1';
-				        break;
 				    case "17":
 				    	$c_id[1] = '16';
-				    	$c_id[2] = '18';
 				        break;
 				    case "16":
 				    	$c_id[1] = '17';
-				    	$c_id[2] = '18';
 				        break;
 				    case "1":
-				        $c_id[1] = '18';
+				        $c_id[1] = '17';
 				        break;
 				   }
 				 ?>

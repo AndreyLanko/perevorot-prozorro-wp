@@ -132,15 +132,30 @@ nav.footer .current-menu-item a{text-decoration: none;color: #0099cc;}
 
 .back-to-top {position: fixed;bottom: 1em;right: 1em;width: 55px;height: 55px;background: url('../images/sprite.png') no-repeat;background-position: -482px 0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);-moz-opacity: 0.8;-khtml-opacity: 0.8;opacity: 0.8;padding: 1em;display: none;}
 .back-to-top:hover {background-position: -482px -55px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);-moz-opacity: 1.0;-khtml-opacity: 1.0;opacity: 1.0;}
-.go-down {position: fixed;top: 1em;right: 1em;width: 55px;height: 55px;background: url('../images/sprite.png') no-repeat;background-position: -561px 0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.4);-moz-opacity: 0.4;-khtml-opacity: 0.4;opacity: 0.4;padding: 1em;display: none;}
+.go-down {position: fixed;top: 1em;right: 1em;width: 55px;height: 55px;background: url('../images/sprite.png') no-repeat;background-position: -561px 0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.4);-moz-opacity: 0.4;-khtml-opacity: 0.4;opacity: 0.4;padding: 1em;display: block;}
 .go-down:hover { background-position: -537px -55px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);-moz-opacity: 1.0;-khtml-opacity: 1.0;opacity: 1.0;}
+
+@media (max-width: 1020px) {
+.navbar-header .navbar-brand {margin-top: 0;padding: 0 15px;}
+.navbar-header {float: none;}
+.navbar-toggle {display: block;}
+.navbar-collapse {border-top: 1px solid transparent;box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
+.navbar-collapse.collapse {display: none!important;}
+.navbar-nav {float: none;margin: 7.5px -15px;}
+.navbar-nav>li {float: none;}
+.navbar-nav>li>a {padding-top: 10px;padding-bottom: 10px;}
+.top-menu .event-calendar,.top-menu ul.language-chooser{line-height: 45px;}
+.navbar-collapse.collapse.in { display: block!important;}
+.collapsing {overflow: hidden!important;}
+.main-menu--list .nav>li {position: relative;display: block;width: 100%;}
+.main-menu .navbar-nav > li{padding: 0 15px;}
+.pull-right{float: right!important;}
+}
 
 @media (min-width:768px) and (max-width: 992px) { 
 .top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
-.top-menu .event-calendar,.top-menu ul.language-chooser{line-height: 33px;}
 }
 
 @media (max-width: 768px) {
 .top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
-.top-menu .event-calendar,.top-menu ul.language-chooser{line-height: 48px;}
 }
