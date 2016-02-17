@@ -4,8 +4,9 @@
 	<h1 class="page-title"><?php single_cat_title( ); ?></h1>
 	<?php $category = get_category(get_query_var('cat'),false);
 	$cat_list = $category->cat_ID;
+	$cat_name = $category->slug;
 
-	if ($cat_list == 16) {
+	if (($cat_list == 16) | ($cat_name == 'vacancies')) {
 		get_template_part( 'content', 'blog' );
 	}
 	elseif (($cat_list == 1) | ($cat_list == 17) | ($cat_list == 18)){

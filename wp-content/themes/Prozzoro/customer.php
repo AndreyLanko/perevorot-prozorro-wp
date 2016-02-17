@@ -63,7 +63,7 @@ Template Name: Замовнику
 
 	<div class="system-advantages--buttons">
 		<a class="green-btn" href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a>
-		<a href="http://help.vdz.ua" target="_blank" class="blue-btn">Перейти на Базу знань</a>
+		<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><?php echo _e('[:ua]Перейти на Базу знань[:en]Go to Database'); ?></a>
 	</div>
 			
 

@@ -42,7 +42,6 @@
 				<?php the_content(); ?>
 				<div class="clearfix"></div>
 				<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('share-sidebar'); ?>	
-				<div  class="up" id="scrollup"><i class="sprite sprite-arrow-up"></i></div>
 				<div class="clearfix"></div>
 				<?php if ($category[0]->cat_ID=='16') {?>
 				 <div class="blog--fio">
