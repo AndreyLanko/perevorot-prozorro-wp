@@ -16,9 +16,8 @@ Template Name: Постачальнику
 		?>							
 		</ul>
 	</div>
-		<?php $field = get_field_object('first-green', $post->ID);
-		echo('<h1><a id="perevagy"></a>'. $field['label'] . '</h1>' );
-		?>
+		<?php $field = get_field_object('first-green', $post->ID);?>
+		<h1><a id="perevagy"></a><?php echo _e($field['label']); ?></h1>
 		<div class="system-advantages--steps green-list">
 			<div class="row">				
 				<div class="col-sm-4 margin-bottom ">
