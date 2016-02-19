@@ -273,10 +273,6 @@ ul.white-checkboxes{
 	max-width: 100%;
 	height: auto;
 }
-.page-content iframe{
-	max-width: 100%;
-	height: auto;
-}
 
 .dogovory .item-wrapper{
 	display: inline-block;
@@ -917,6 +913,10 @@ h3.title{
 }
 
 @media (max-width: 768px) {
+	.page-content iframe{
+		max-width: 100%;
+		height: auto;
+	}
 	.navbar-header .navbar-brand {
 		margin-top: 0;
 		padding: 0 15px;
