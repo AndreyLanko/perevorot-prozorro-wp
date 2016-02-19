@@ -591,18 +591,20 @@ function platforms_to_screen(){
   //$api = file_get_contents('http://dev.prozorro.org/json/platforms/all/' );
   $api = file_get_contents('http://dev.prozorro.org/json/platforms/contractors/' );
   $platform = json_decode($api);
-  shuffle($platform);
+  if (is_array($platform)){
+    shuffle($platform);
 
-  $content ='';
-  $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
-  foreach ($platform as $key => $value) {
-    $size = getimagesize($value->logo);
-        if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
-        else {$nw=$size[0]; $nh=$size[1];}        
-    $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+    $content ='';
+    $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
+    foreach ($platform as $key => $value) {
+      $size = getimagesize($value->logo);
+          if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
+          else {$nw=$size[0]; $nh=$size[1];}        
+      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+    }
+    $content .=  '</div></div>';
+    return $content;
   }
-  $content .=  '</div></div>';
-  return $content;
 }
 
 add_shortcode('dogovory-to-screen', 'dogovory_to_screen');
