@@ -24,8 +24,8 @@
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/owl.carousel.js"></script>    
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/script.js"></script>
 	<?php wp_head(); ?>
-    <meta property="og:image" content="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro.png"/>
-    <link rel="image_src" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro.png" />
+    <meta property="og:image" content="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png"/>
+    <link rel="image_src" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png" />
 </head>
 
 <body <?php body_class(); ?>>
