@@ -589,7 +589,11 @@ function comments($my_post_id){
 add_shortcode('platforms-to-screen', 'platforms_to_screen');
 function platforms_to_screen(){
   //$api = file_get_contents('http://dev.prozorro.org/json/platforms/all/' );
-  $api = file_get_contents('http://dev.prozorro.org/json/platforms/contractors/' );
+    if($_SERVER['HTTP_HOST']!='prozorro.lemon.ua'){
+        $api=file_get_contents('http://dev.prozorro.org/json/platforms/contractors/');
+    }else{
+        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].'/json/platforms/contractors/');
+    }
   $platform = json_decode($api);
   if (is_array($platform)){
     shuffle($platform);
