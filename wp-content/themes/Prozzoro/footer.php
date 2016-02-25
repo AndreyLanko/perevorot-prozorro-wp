@@ -56,8 +56,9 @@
             </div>
 			<div class="footer--copyright">
 			<div class="container">
-				© 2015 Prozorro. Всі права захищено.
-				<div class="pull-right">Служба підтримки: (044) 537-85-96</div>
+				<div class="col-md-4 col-xs-12">© 2015 Prozorro. <?php echo _e('[:ua]Всі права захищено. [:en]All rights reserved.');?></div>
+				<div class="col-md-4 col-xs-12 text-center"><?php echo _e('[:ua]Створення сайта:  [:en]Created by:');?>&nbsp;<a href="http://lemon.ua">Lemon.ua</a> </div>
+				<div class="col-md-4 col-xs-12 text-right"><?php echo _e('[:ua]Служба підтримки: [:en]Support:');?> (044) 537-85-96</div>
 				</div>
 			</div>
         </nav>
