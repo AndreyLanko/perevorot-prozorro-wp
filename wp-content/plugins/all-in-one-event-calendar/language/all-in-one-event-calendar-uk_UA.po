@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 2.3 package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-02-11 16:03+0200\n"
+"PO-Revision-Date: 2016-02-25 16:02+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +32,7 @@ msgstr "Текст події"
 #: public/themes-ai1ec/umbra/less/user_variables.php:227
 #: public/themes-ai1ec/vortex/less/user_variables.php:227
 msgid "Month view date background"
-msgstr ""
+msgstr "Фон дати в вигляді \"Місяць\""
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:233
 #: public/themes-ai1ec/vortex/less/user_variables.php:233
@@ -42,26 +42,26 @@ msgstr ""
 #: public/themes-ai1ec/umbra/less/user_variables.php:239
 #: public/themes-ai1ec/vortex/less/user_variables.php:239
 msgid "Date label accent color"
-msgstr ""
+msgstr "Колір напису Дата"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:245
 #: public/themes-ai1ec/vortex/less/user_variables.php:245
 msgid "Date label background"
-msgstr ""
+msgstr "Фон напису Дата"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:251
 #: public/themes-ai1ec/vortex/less/user_variables.php:251
 msgid "Date background"
-msgstr ""
+msgstr "Фон Дати"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:257
 #: public/themes-ai1ec/vortex/less/user_variables.php:257
 msgid "Today background"
-msgstr ""
+msgstr "Фон \"Сьогодні\""
 
 #. Plugin Name of the plugin/theme
 msgid "All-in-One Event Calendar by Time.ly"
-msgstr ""
+msgstr "All-in-One Event Calendar від Time.ly"
 
 #. Description of the plugin/theme
 msgid ""
@@ -86,219 +86,219 @@ msgstr ""
 #: public/themes-ai1ec/umbra/less/user_variables.php:161
 #: public/themes-ai1ec/vortex/less/user_variables.php:161
 msgid "Today color"
-msgstr ""
+msgstr "Колір \"Сьогодні\""
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:167
 #: public/themes-ai1ec/vortex/less/user_variables.php:167
 msgid "All-day badge color"
-msgstr ""
+msgstr "Колір позначки \"Цілий день\""
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:173
 #: public/themes-ai1ec/vortex/less/user_variables.php:173
 msgid "Event image shadow"
-msgstr ""
+msgstr "Тінь зображення події"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:179
 #: public/themes-ai1ec/vortex/less/user_variables.php:179
 msgid "Event default color"
-msgstr ""
+msgstr "Колір за замовчуванням для події"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:185
 #: public/themes-ai1ec/vortex/less/user_variables.php:185
 msgid "Event default color (hover)"
-msgstr ""
+msgstr "Колір за замовчуванням для події  (при наведенні)"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:191
 #: public/themes-ai1ec/vortex/less/user_variables.php:191
 msgid "All-day/multi-day event stub text"
-msgstr ""
+msgstr "Текст заглушки для \"Цілий день/Багатоденних\" подій"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:197
 #: public/themes-ai1ec/vortex/less/user_variables.php:197
 msgid "All-day/multi-day event stub text shadow"
-msgstr ""
+msgstr "Тінь заглушки для \"Цілий день/Багатоденних\" подій"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:203
 #: public/themes-ai1ec/vortex/less/user_variables.php:203
 msgid "Event border"
-msgstr ""
+msgstr "Рамка події"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:83
 #: public/themes-ai1ec/vortex/less/user_variables.php:83
 msgid "Button text"
-msgstr ""
+msgstr "Текст кнопки"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:89
 #: public/themes-ai1ec/vortex/less/user_variables.php:89
 msgid "Input field text"
-msgstr ""
+msgstr "Текст поля для вводу"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:95
 #: public/themes-ai1ec/vortex/less/user_variables.php:95
 msgid "Input field background"
-msgstr ""
+msgstr "Фон  поля для вводу"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:101
 #: public/themes-ai1ec/vortex/less/user_variables.php:101
 msgid "Input field border"
-msgstr ""
+msgstr "Рамка  поля для вводу"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:107
 #: public/themes-ai1ec/vortex/less/user_variables.php:107
 msgid "Input field border (focus)"
-msgstr ""
+msgstr "Фон поля для вводу (на фокусі)"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:113
 #: public/themes-ai1ec/vortex/less/user_variables.php:113
 msgid "Input field background (disabled)"
-msgstr ""
+msgstr "Фон поля для вводу (відключене)"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:119
 #: public/themes-ai1ec/vortex/less/user_variables.php:119
 msgid "Field label"
-msgstr ""
+msgstr "Підпис поля"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:125
 #: public/themes-ai1ec/vortex/less/user_variables.php:125
 msgid "Dropdown list background"
-msgstr ""
+msgstr "Фон списку"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:131
 #: public/themes-ai1ec/vortex/less/user_variables.php:131
 msgid "Dropdown list border"
-msgstr ""
+msgstr "Рамка списку"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:137
 #: public/themes-ai1ec/vortex/less/user_variables.php:137
 msgid "List item text"
-msgstr ""
+msgstr "Текст списка елементів"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:143
 #: public/themes-ai1ec/vortex/less/user_variables.php:143
 msgid "List item text (active/hover)"
-msgstr ""
+msgstr "Текст списка елементів (активний/при наведенні)"
 
 #: public/admin/themes-install.php:20 public/admin/themes.php:4
 msgid "New theme activated. <a href=\"%s\">Visit site</a>"
-msgstr ""
+msgstr "Нову тему активовано. <a href=\"%s\">Відвідати сайт</a>"
 
 #: public/admin/themes-install.php:26 public/admin/themes.php:10
 msgid "Theme deleted."
-msgstr ""
+msgstr "Тему відалено."
 
 #: public/admin/themes-install.php:37 public/admin/themes-install.php:44
 msgid "Manage Themes"
-msgstr ""
+msgstr "Управління темами"
 
 #: public/admin/themes-install.php:40
 msgctxt "theme"
 msgid "Install Themes"
-msgstr ""
+msgstr "Встановити тему"
 
 #: public/admin/themes-updated.php:5
 msgid "Update Calendar Themes"
-msgstr ""
+msgstr "Оновити тему"
 
 #: public/admin/themes-updated.php:15
 msgid "All-in-One Event Calendar Settings »"
-msgstr ""
+msgstr "Налаштування All-in-One Event Calendar »"
 
 #: public/admin/themes.php:18
 msgid "Current Calendar Theme"
-msgstr ""
+msgstr "Поточна тема"
 
 #: public/admin/themes.php:21
 msgid "Current theme preview"
-msgstr ""
+msgstr "Перегляд поточної теми"
 
 #: public/admin/themes.php:47
 msgid "Available Calendar Themes"
-msgstr ""
+msgstr "Доступні теми"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:5
 #: public/themes-ai1ec/vortex/less/user_variables.php:5
 msgid "Body background"
-msgstr ""
+msgstr "Фон"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:11
 #: public/themes-ai1ec/vortex/less/user_variables.php:11
 msgid "Text color"
-msgstr ""
+msgstr "Колір текста"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:17
 #: public/themes-ai1ec/vortex/less/user_variables.php:17
 msgid "Text emboss"
-msgstr ""
+msgstr "Тиснення текста"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:23
 #: public/themes-ai1ec/vortex/less/user_variables.php:23
 msgid "Link"
-msgstr ""
+msgstr "Посилання"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:29
 #: public/themes-ai1ec/vortex/less/user_variables.php:29
 msgid "Link (hover)"
-msgstr ""
+msgstr "Посилання (при наведенні)"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:35
 #: public/themes-ai1ec/vortex/less/user_variables.php:35
 msgid "Base font"
-msgstr ""
+msgstr "Основний шрифт"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:41
 #: public/themes-ai1ec/vortex/less/user_variables.php:41
 msgid "Base font size"
-msgstr ""
+msgstr "Основний розмір шрифту"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:47
 #: public/themes-ai1ec/vortex/less/user_variables.php:47
 msgid "Table background"
-msgstr ""
+msgstr "Фон таблиці"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:53
 #: public/themes-ai1ec/vortex/less/user_variables.php:53
 msgid "Table header background"
-msgstr ""
+msgstr "Фон зоголовка таблиці"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:59
 #: public/themes-ai1ec/vortex/less/user_variables.php:59
 msgid "Table header text"
-msgstr ""
+msgstr "Текст  зоголовка таблиці"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:65
 #: public/themes-ai1ec/vortex/less/user_variables.php:65
 msgid "Primary brand color"
-msgstr ""
+msgstr "Основний колір"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:71
 #: public/themes-ai1ec/vortex/less/user_variables.php:71
 msgid "Button background"
-msgstr ""
+msgstr "Фон кнопок"
 
 #: public/themes-ai1ec/umbra/less/user_variables.php:77
 #: public/themes-ai1ec/vortex/less/user_variables.php:77
 msgid "Button border"
-msgstr ""
+msgstr "Рамка кнопки"
 
 #: public/admin/feed_row.php:104
 msgid "Refreshing&#8230;"
-msgstr ""
+msgstr "Оновлення&#8230;"
 
 #: public/admin/feed_row.php:106
 msgid "Refresh"
-msgstr ""
+msgstr "Оновити"
 
 #: public/admin/feed_row.php:119
 msgid "Removing&#8230;"
-msgstr ""
+msgstr "Видалення&#8230;"
 
 #: public/admin/feed_row.php:121
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: public/admin/import.php:6
 msgid "Successfully imported events:"
-msgstr ""
+msgstr "Успішно імпортовані події:"
 
 #: public/admin/plugins/ics/display_feeds.php:2
 msgid ""
@@ -310,15 +310,15 @@ msgstr ""
 
 #: public/admin/plugins/ics/display_feeds.php:14
 msgid "Check for new events"
-msgstr ""
+msgstr "Перевірити наявність нових подій"
 
 #: public/admin/plugins/ics/display_feeds.php:45
 msgid "Allow comments on imported events"
-msgstr ""
+msgstr "Дозволити коментарі імпортованих подій"
 
 #: public/admin/plugins/ics/display_feeds.php:52
 msgid "Show map on imported events"
-msgstr ""
+msgstr "Показати карту в імпортованих подіях"
 
 #: public/admin/plugins/ics/display_feeds.php:59
 msgid ""
@@ -327,21 +327,21 @@ msgstr ""
 
 #: public/admin/plugins/ics/display_feeds.php:93
 msgid "Add new subscription"
-msgstr ""
+msgstr "Додати нову підписку"
 
 #: public/admin/plugins/ics/display_feeds.php:96
 msgid "Update subscription"
-msgstr ""
+msgstr "Оновити  нову підписку"
 
 #: public/admin/row_custom.php:3
 msgid "Custom dates:"
-msgstr ""
+msgstr "Особливий графік:"
 
 #: public/admin/row_daily.php:3 public/admin/row_monthly.php:3
 #: public/admin/row_monthly.php:39 public/admin/row_weekly.php:3
 #: public/admin/row_yearly.php:3
 msgid "Every"
-msgstr ""
+msgstr "Кожен"
 
 #: public/admin/row_monthly.php:16
 msgid "On day of the month"
@@ -363,11 +363,11 @@ msgstr ""
 
 #: public/admin/settings.php:19
 msgid "Update Settings"
-msgstr ""
+msgstr "Оновити налаштування"
 
 #: public/admin/themes-install.php:4
 msgid "The active theme is broken.  Reverting to the default theme."
-msgstr ""
+msgstr "Активна тема зламана. Повертаємось до теми за замовчуванням."
 
 #: public/admin/themes-install.php:13
 msgid ""
@@ -377,27 +377,27 @@ msgstr ""
 
 #: public/admin/calendar_tasks.php:24
 msgid "Manage Events"
-msgstr ""
+msgstr "Управління подіями"
 
 #: public/admin/calendar_tasks.php:27
 msgid "View and edit all your events."
-msgstr ""
+msgstr "Показати та редагувати всі ваші події."
 
 #: public/admin/calendar_tasks.php:39
 msgid "Manage Event Categories"
-msgstr ""
+msgstr "Управління Категоріями подій"
 
 #: public/admin/calendar_tasks.php:42
 msgid "Organize and color-code your events."
-msgstr ""
+msgstr "Організація і колір-код ваших  подій."
 
 #: public/admin/calendar_tasks.php:50
 msgid "Choose Your Theme"
-msgstr ""
+msgstr "Виберіть тему"
 
 #: public/admin/calendar_tasks.php:53
 msgid "Change the look and feel."
-msgstr ""
+msgstr "Зміна зовнішнього вигляду і поведінки."
 
 #: public/admin/calendar_tasks.php:63
 msgid "Manage Calendar Feeds"
@@ -405,23 +405,23 @@ msgstr ""
 
 #: public/admin/calendar_tasks.php:66
 msgid "Subscribe to other calendars."
-msgstr ""
+msgstr "Підписатися на іншиі календарі."
 
 #: public/admin/calendar_tasks.php:74
 msgid "Edit Calendar Settings"
-msgstr ""
+msgstr "Редагувати налаштування календаря"
 
 #: public/admin/calendar_tasks.php:77
 msgid "Make this calendar your own."
-msgstr ""
+msgstr "Зробити цей календар власним."
 
 #: public/admin/cron_freq.php:3
 msgid "Hourly"
-msgstr ""
+msgstr "Погодинно"
 
 #: public/admin/cron_freq.php:6
 msgid "Twice Daily"
-msgstr ""
+msgstr "Двічі на день"
 
 #: public/admin/feed_row.php:14 public/admin/plugins/ics/display_feeds.php:27
 msgid "iCalendar/.ics Feed URL:"
@@ -429,19 +429,19 @@ msgstr ""
 
 #: public/admin/feed_row.php:24
 msgid "Event categories:"
-msgstr ""
+msgstr "Категорії подій:"
 
 #: public/admin/feed_row.php:31
 msgid "Tag with"
-msgstr ""
+msgstr "Мітка: "
 
 #: public/admin/feed_row.php:40
 msgid "Allow comments"
-msgstr ""
+msgstr "Дозволити коментувати"
 
 #: public/admin/feed_row.php:51
 msgid "Show map"
-msgstr ""
+msgstr "Показати карту"
 
 #: public/admin/feed_row.php:63
 msgid "Keep original events categories and tags"
@@ -461,75 +461,75 @@ msgstr ""
 
 #: public/admin/feed_row.php:87 public/admin/plugins/ics/display_feeds.php:75
 msgid "Assign default time zone to events in UTC"
-msgstr ""
+msgstr "Призначати часовий пояс за замовчуванням подіям в UTC"
 
 #: public/admin/box_support.php:19
 msgid "Get Add-ons"
-msgstr ""
+msgstr "Отримати додатки"
 
 #: public/admin/box_support.php:27
 msgid "Support"
-msgstr ""
+msgstr "Підтримка"
 
 #: public/admin/box_support.php:35
 msgid "Timely Events"
-msgstr ""
+msgstr "Timely події"
 
 #: public/admin/box_support.php:43
 msgid "Timely News"
-msgstr ""
+msgstr "Timely новини"
 
 #: public/admin/box_support.php:47
 msgid "view all news"
-msgstr ""
+msgstr "Показати всі новини"
 
 #: public/admin/box_support.php:95
 msgid "Follow @_Timely"
-msgstr ""
+msgstr "Follow @_Timely"
 
 #: public/admin/box_time_and_date.php:6
 msgid "Event date and time"
-msgstr ""
+msgstr "Дата та час події"
 
 #: public/admin/box_time_and_date.php:26
 msgid "All-day event"
-msgstr ""
+msgstr "Весь день"
 
 #: public/admin/box_time_and_date.php:35
 msgid "No end time"
-msgstr ""
+msgstr "Без часу закінчення"
 
 #: public/admin/box_time_and_date.php:42
 msgid "Start date / time"
-msgstr ""
+msgstr "Початок"
 
 #: public/admin/box_time_and_date.php:59
 msgid "End date / time"
-msgstr ""
+msgstr "Закінчення"
 
 #: public/admin/box_time_and_date.php:76
 msgid "Time zone"
-msgstr ""
+msgstr "Часова зона"
 
 #: public/admin/box_time_and_date.php:81
 msgid "Choose your time zone"
-msgstr ""
+msgstr "Виберіть свою часову зону"
 
 #: public/admin/box_time_and_date.php:108
 msgid "Repeat"
-msgstr ""
+msgstr "Повторити"
 
 #: public/admin/box_time_and_date.php:127
 msgid "Exclude"
-msgstr ""
+msgstr "Виключити"
 
 #: public/admin/box_time_and_date.php:136
 msgid "Choose a rule for exclusion"
-msgstr ""
+msgstr "Виберіть правила виключення"
 
 #: public/admin/calendar_tasks.php:3
 msgid "Welcome"
-msgstr ""
+msgstr "Ласкаво просимо!"
 
 #: public/admin/calendar_tasks.php:4
 msgid ""
@@ -539,11 +539,11 @@ msgstr ""
 
 #: public/admin/calendar_tasks.php:13
 msgid "Post Your Event"
-msgstr ""
+msgstr "Подати вашу подію"
 
 #: public/admin/calendar_tasks.php:16
 msgid "Add a new event to the calendar."
-msgstr ""
+msgstr "Додати нову подію до календаря"
 
 #: public/admin/box_eventbrite.php:60
 msgid "Donation Based"
@@ -553,11 +553,11 @@ msgstr ""
 msgid ""
 "The price for this event's first ticket will be taken from the Cost field "
 "above."
-msgstr ""
+msgstr "Ціна за перший квиток цього заходу будуть взяті з поля Вартість вище."
 
 #: public/admin/box_eventbrite.php:75
 msgid "Quantity"
-msgstr ""
+msgstr "Кількість"
 
 #: public/admin/box_eventbrite.php:85
 msgid "Include Fee in Price"
@@ -573,7 +573,7 @@ msgstr ""
 
 #: public/admin/box_eventbrite.php:98
 msgid "Payment Options"
-msgstr ""
+msgstr "Варіанти оплати"
 
 #: public/admin/box_eventbrite.php:105
 msgid "Google Checkout"
@@ -581,15 +581,15 @@ msgstr ""
 
 #: public/admin/box_eventbrite.php:107
 msgid "Check"
-msgstr ""
+msgstr "Перевірити"
 
 #: public/admin/box_eventbrite.php:109
 msgid "Cash"
-msgstr ""
+msgstr "Готівка"
 
 #: public/admin/box_eventbrite.php:111
 msgid "Send an Invoice"
-msgstr ""
+msgstr "Надіслати рахунок"
 
 #: public/admin/box_profile_timezone.php:9
 msgid "Your preferred timezone"
@@ -605,25 +605,25 @@ msgstr ""
 
 #: public/admin/box_repeat.php:72
 msgid "End"
-msgstr ""
+msgstr "Закінчення"
 
 #: public/admin/box_repeat.php:82
 msgid "Ending after"
-msgstr ""
+msgstr "Закінчення після"
 
 #: public/admin/box_repeat.php:109
 #: public/admin/plugins/ics/display_feeds.php:90
 msgid "Please wait&#8230;"
-msgstr ""
+msgstr "Зачекайте&#8230;"
 
 #: public/admin/box_repeat.php:111
 msgid "Apply"
-msgstr ""
+msgstr "Застосовувати"
 
 #: public/admin/box_repeat.php:116
 #: public/admin/plugins/ics/display_feeds.php:84
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: public/admin/box_support.php:4
 msgid "Timely"
@@ -637,51 +637,51 @@ msgstr ""
 
 #: public/admin/box_event_cost.php:228
 msgid "Status:"
-msgstr ""
+msgstr "Статус: "
 
 #: public/admin/box_event_cost.php:235
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: public/admin/box_event_cost.php:239
 msgid "Closed"
-msgstr ""
+msgstr "Закритий"
 
 #: public/admin/box_event_cost.php:254
 msgid "Add New Ticket Type"
-msgstr ""
+msgstr "Додати тип квитків"
 
 #: public/admin/box_event_cost.php:274
 msgid "Tickets URL:"
-msgstr ""
+msgstr "Посилання для квитків"
 
 #: public/admin/box_event_location.php:6
 msgid "Event location details"
-msgstr ""
+msgstr "Відомості про місце проведення події"
 
 #: public/admin/box_event_location.php:19
 msgid "Venue name:"
-msgstr ""
+msgstr "Назва:"
 
 #: public/admin/box_event_location.php:31
 msgid "Address:"
-msgstr ""
+msgstr "Адреса:"
 
 #: public/admin/box_event_location.php:45
 msgid "Input Coordinates"
-msgstr ""
+msgstr "Введіть координати"
 
 #: public/admin/box_event_location.php:57
 msgid "Latitude:"
-msgstr ""
+msgstr "широта:"
 
 #: public/admin/box_event_location.php:69
 msgid "Longitude:"
-msgstr ""
+msgstr "довгота:"
 
 #: public/admin/box_event_location.php:85
 msgid "Show Map"
-msgstr ""
+msgstr "Показати карту"
 
 #: public/admin/box_eventbrite.php:1
 msgid "Eventbrite Ticketing"
@@ -705,7 +705,7 @@ msgstr ""
 
 #: public/admin/box_eventbrite.php:22
 msgid "Set up your first ticket"
-msgstr ""
+msgstr "Налаштувати перший квиток"
 
 #: public/admin/box_eventbrite.php:24
 msgid ""
@@ -715,39 +715,40 @@ msgstr ""
 
 #: public/admin/box_eventbrite.php:42
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: public/admin/box_eventbrite.php:53
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: public/admin/box_eventbrite.php:58
 msgid "Set Price"
-msgstr ""
+msgstr "Призначити ціну"
 
 #: public/admin/box_event_contact.php:30
 msgid "Phone:"
-msgstr ""
+msgstr "Телефон"
 
 #: public/admin/box_event_contact.php:56
 msgid "Website URL:"
-msgstr ""
+msgstr "Адреса вебсайту:"
 
 #: public/admin/box_event_cost.php:6
 msgid "Event cost and Tickets"
-msgstr ""
+msgstr "Вартість заходу та квитки"
 
 #: public/admin/box_event_cost.php:20
 msgid "Ticket options not available - event imported from external calendar."
 msgstr ""
+"Налаштування квитків на задані - події імпортовані з зовнішнього календаря."
 
 #: public/admin/box_event_cost.php:28
 msgid "Free event"
-msgstr ""
+msgstr "Безкоштовний захід"
 
 #: public/admin/box_event_cost.php:41
 msgid "External Tickets URL"
-msgstr ""
+msgstr "Зовнішнє посилання для квитків:"
 
 #: public/admin/box_event_cost.php:52
 msgid "Ticketing allows you to sell tickets directly to the users."
@@ -759,98 +760,98 @@ msgstr ""
 
 #: public/admin/box_event_cost.php:80
 msgid "Remove Ticket Type"
-msgstr ""
+msgstr "Видалити тип квитка"
 
 #: public/admin/box_event_cost.php:101
 msgid "Ex.: Regular Ticket"
-msgstr ""
+msgstr "Напр.: Регулярні квитки"
 
 #: public/admin/box_event_cost.php:105
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 #: public/admin/box_event_cost.php:111
 msgid "(Optional)"
-msgstr ""
+msgstr "(Необов'язково)"
 
 #: public/admin/box_event_cost.php:115
 msgid "Price:"
-msgstr ""
+msgstr "Ціна:"
 
 #: public/admin/box_event_cost.php:124
 msgid "USD"
-msgstr ""
+msgstr "USD"
 
 #: public/admin/box_event_cost.php:128
 msgid "Limits:"
-msgstr ""
+msgstr "Обмеження:"
 
 #: public/admin/box_event_cost.php:131
 msgid "This fields are required."
-msgstr ""
+msgstr "Ці поля обов'язкові для заповнення."
 
 #: public/admin/box_event_cost.php:156
 msgid "Quantity:"
-msgstr ""
+msgstr "Кількість:"
 
 #: public/admin/box_event_cost.php:180
 msgid "Available:"
-msgstr ""
+msgstr "Доступно:"
 
 #: public/admin/box_event_cost.php:185
 msgid "Immediately"
-msgstr ""
+msgstr "Негайно"
 
 #: public/admin/box_event_cost.php:190
 msgid "From:"
-msgstr ""
+msgstr "Від:"
 
 #: public/admin/box_event_cost.php:207
 msgid "Till:"
-msgstr ""
+msgstr "До:"
 
 #: public/admin/box_ask_customer_review.php:42
 #: public/admin/box_ask_customer_review.php:75
 msgid "No, thanks"
-msgstr ""
+msgstr "Ні, дякую"
 
 #: public/admin/box_ask_customer_review.php:50
 #: public/admin/box_ask_customer_review.php:84
 msgid "Ok, sure!"
-msgstr ""
+msgstr "Так, звісно!"
 
 #: public/admin/box_ask_customer_review.php:66
 msgid "Would you mind giving us some feedback?"
-msgstr ""
+msgstr "Чи не могли б ви залишити відгук?"
 
 #: public/admin/box_ask_customer_review.php:101
 msgid "Please provide some feedback"
-msgstr ""
+msgstr "Будь ласка залиште відгук"
 
 #: public/admin/box_ask_customer_review.php:108
 msgid "Message:"
-msgstr ""
+msgstr "Повідомлення:"
 
 #: public/admin/box_ask_customer_review.php:121
 msgid "Name:"
-msgstr ""
+msgstr "Ім'я:"
 
 #: public/admin/box_ask_customer_review.php:136
 #: public/admin/box_event_contact.php:43
 msgid "E-mail:"
-msgstr ""
+msgstr "E-mail:"
 
 #: public/admin/box_ask_customer_review.php:143
 msgid "E-mail is invalid."
-msgstr ""
+msgstr "Електронна пошта є недійсною."
 
 #: public/admin/box_ask_customer_review.php:154
 msgid "Site URL:"
-msgstr ""
+msgstr "Посилання на сайт"
 
 #: public/admin/box_ask_customer_review.php:161
 msgid "Site URL is invalid."
-msgstr ""
+msgstr "Посилання на сайт є недійсним."
 
 #: public/admin/box_ask_customer_review.php:173
 msgid "Thank you for being our customer,"
@@ -862,39 +863,39 @@ msgstr ""
 
 #: public/admin/box_ask_customer_review.php:180
 msgid "Sending..."
-msgstr ""
+msgstr "Відправка..."
 
 #: public/admin/box_ask_customer_review.php:181
 msgid "Send Message"
-msgstr ""
+msgstr "Відправити повідомлення"
 
 #: public/admin/box_event_children.php:12
 msgid "Base recurrence event"
-msgstr ""
+msgstr "Основна повторювана подія"
 
 #: public/admin/box_event_children.php:14
 msgid "Modified recurrence events"
-msgstr ""
+msgstr "Змінена  повторювана подія"
 
 #: public/admin/box_event_children.php:22
 msgid "Edit parent:"
-msgstr ""
+msgstr "Редагувати батьківський елемент:"
 
 #: public/admin/box_event_children.php:27
 msgid "Modified Events"
-msgstr ""
+msgstr "Змінені події"
 
 #: public/admin/box_event_children.php:31
 msgid "Edit:"
-msgstr ""
+msgstr "Редагувати:"
 
 #: public/admin/box_event_contact.php:6
 msgid "Organizer contact info"
-msgstr ""
+msgstr "Контактні дані організатора"
 
 #: public/admin/box_event_contact.php:17
 msgid "Contact name:"
-msgstr ""
+msgstr "Контактна особа:"
 
 #: lib/theme/loader.php:325
 msgid "We couldn't find a suitable loader for filename with extension '%s'"
@@ -931,19 +932,19 @@ msgstr ""
 
 #: public/admin/agenda-widget-form.php:2 public/admin/box_event_cost.php:92
 msgid "Title:"
-msgstr ""
+msgstr "Назва:"
 
 #: public/admin/agenda-widget-form.php:12
 msgid "Number of events to show:"
-msgstr ""
+msgstr "Кількість подій, для показу:"
 
 #: public/admin/agenda-widget-form.php:21
 msgid "Number of days to show:"
-msgstr ""
+msgstr "Кількість днів, для показу:"
 
 #: public/admin/agenda-widget-form.php:26
 msgid "Limit to:"
-msgstr ""
+msgstr "Обмежити до:"
 
 #: public/admin/agenda-widget-form.php:30
 msgid "Events with these <strong>Categories</strong>"
@@ -951,7 +952,7 @@ msgstr ""
 
 #: public/admin/agenda-widget-form.php:39
 msgid "No categories found."
-msgstr ""
+msgstr "Категорії не знайдені."
 
 #: public/admin/agenda-widget-form.php:46
 msgid "<strong>Or</strong> events with these <strong>Tags</strong>"
@@ -959,19 +960,19 @@ msgstr ""
 
 #: public/admin/agenda-widget-form.php:55
 msgid "No tags found."
-msgstr ""
+msgstr "Теги не знайдено."
 
 #: public/admin/agenda-widget-form.php:62
 msgid "Show <strong>View Calendar</strong> button"
-msgstr ""
+msgstr "Показати <strong>Календар</strong> кнопку"
 
 #: public/admin/agenda-widget-form.php:65
 msgid "Show <strong>Subscribe</strong> buttons"
-msgstr ""
+msgstr "Показати <strong>Підписка</strong> кнопку"
 
 #: public/admin/agenda-widget-form.php:68
 msgid "Hide this widget on calendar page"
-msgstr ""
+msgstr "Приховати цей віджет на сторінці календаря"
 
 #: public/admin/box_ask_customer_review.php:5
 msgid "Enjoying All-in-One Event Calendar?"
@@ -1019,15 +1020,15 @@ msgstr "Кожні %d років"
 
 #: lib/recurrence/rule.php:465
 msgid "until %s"
-msgstr ""
+msgstr "до %s"
 
 #: lib/recurrence/rule.php:475
 msgid "for %d occurrences"
-msgstr ""
+msgstr "для %d входжень"
 
 #: lib/recurrence/rule.php:479
 msgid "forever"
-msgstr ""
+msgstr "назавжди"
 
 #: lib/robots/helper.php:71
 msgid ""
@@ -1099,17 +1100,17 @@ msgstr ""
 
 #: lib/post/custom-type.php:55
 msgid "event"
-msgstr ""
+msgstr "подія"
 
 #: lib/post/custom-type.php:85
 msgctxt "Event categories taxonomy"
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
 #: lib/post/custom-type.php:86
 msgctxt "Event categories taxonomy (singular)"
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
 #: lib/post/custom-type.php:87
 msgctxt "Event categories menu item"
@@ -1119,12 +1120,12 @@ msgstr ""
 #: lib/post/custom-type.php:94
 msgctxt "Event tags taxonomy"
 msgid "Tags"
-msgstr ""
+msgstr "Мітки"
 
 #: lib/post/custom-type.php:95
 msgctxt "Event tags taxonomy (singular)"
 msgid "Tag"
-msgstr ""
+msgstr "Мітка"
 
 #: lib/post/custom-type.php:102
 msgctxt "Event feeds taxonomy"
@@ -1144,56 +1145,56 @@ msgstr ""
 
 #: lib/post/custom-type.php:296
 msgid "All Events"
-msgstr ""
+msgstr "Всі події"
 
 #: lib/recurrence/rule.php:243 lib/recurrence/rule.php:252
 #: lib/recurrence/rule.php:260
 msgctxt "Recurrence editor - weekly tab"
 msgid "on"
-msgstr ""
+msgstr "на"
 
 #: lib/recurrence/rule.php:248 lib/recurrence/rule.php:277
 #: lib/recurrence/rule.php:326
 msgid "and"
-msgstr ""
+msgstr "та"
 
 #: lib/recurrence/rule.php:273 lib/recurrence/rule.php:280
 #: lib/recurrence/rule.php:286 lib/recurrence/rule.php:308
 msgctxt "Recurrence editor - monthly tab"
 msgid "on"
-msgstr ""
+msgstr "на"
 
 #: lib/recurrence/rule.php:273 lib/recurrence/rule.php:280
 #: lib/recurrence/rule.php:286
 msgid "of the month"
-msgstr ""
+msgstr "місяця"
 
 #: lib/recurrence/rule.php:321 lib/recurrence/rule.php:329
 #: lib/recurrence/rule.php:336
 msgctxt "Recurrence editor - yearly tab"
 msgid "on"
-msgstr ""
+msgstr "на"
 
 #: lib/recurrence/rule.php:376 public/admin/box_repeat.php:16
 #: public/admin/cron_freq.php:9
 msgid "Daily"
-msgstr ""
+msgstr "Щодня"
 
 #: lib/recurrence/rule.php:379
 msgid "Every other day"
-msgstr ""
+msgstr "Кожний наступний день"
 
 #: lib/recurrence/rule.php:382
 msgid "Every %d days"
-msgstr ""
+msgstr "Кожні %d днів"
 
 #: lib/recurrence/rule.php:391 public/admin/box_repeat.php:21
 msgid "Weekly"
-msgstr ""
+msgstr "Щотижня"
 
 #: lib/recurrence/rule.php:394
 msgid "Every other week"
-msgstr ""
+msgstr "Через тиждень"
 
 #: lib/less/variable/font.php:64
 msgid "Custom..."
@@ -1201,11 +1202,11 @@ msgstr ""
 
 #: lib/less/variable/font.php:112
 msgid "Enter custom font(s)"
-msgstr ""
+msgstr "Введіть користувальницький шрифт(и)"
 
 #: lib/less/variable/size.php:26
 msgid "Length"
-msgstr ""
+msgstr "Довжина"
 
 #: lib/notification/admin.php:180 public/admin/box_profile_timezone.php:2
 msgid "All-in-One Event Calendar"
@@ -1218,52 +1219,52 @@ msgstr ""
 #: lib/post/custom-type.php:26
 msgctxt "Custom post type name"
 msgid "Events"
-msgstr ""
+msgstr "Події"
 
 #: lib/post/custom-type.php:27
 msgctxt "Custom post type name (singular)"
 msgid "Event"
-msgstr ""
+msgstr "Подія"
 
 #: lib/post/custom-type.php:28
 msgid "Add New"
-msgstr ""
+msgstr "Додати нову"
 
 #: lib/post/custom-type.php:29
 msgid "Add New Event"
-msgstr ""
+msgstr "Додати нову подію"
 
 #: lib/post/custom-type.php:30
 msgid "Edit Event"
-msgstr ""
+msgstr "Редагувати подію"
 
 #: lib/post/custom-type.php:31
 msgid "New Event"
-msgstr ""
+msgstr "Нова подія"
 
 #: lib/post/custom-type.php:32
 msgid "View Event"
-msgstr ""
+msgstr "Переглянути подію"
 
 #: lib/post/custom-type.php:33
 msgid "Search Events"
-msgstr ""
+msgstr "Шукати подію"
 
 #: lib/post/custom-type.php:34
 msgid "No Events found"
-msgstr ""
+msgstr "Події не знайдено"
 
 #: lib/post/custom-type.php:35
 msgid "No Events found in Trash"
-msgstr ""
+msgstr "В кошику Подій не знайдено"
 
 #: lib/html/element/setting/html.php:62
 msgid "Filter by post ID:"
-msgstr ""
+msgstr "Фільтрувати за ID:"
 
 #: lib/html/element/setting/html.php:63
 msgid "Filter by post IDs (separate IDs by comma):"
-msgstr ""
+msgstr "Фільтрувати за ID:"
 
 #: lib/html/element/setting/html.php:64
 msgid "Limit number of events per page:"
@@ -1282,31 +1283,31 @@ msgstr ""
 
 #: lib/import-export/ics.php:831
 msgid "Tickets: "
-msgstr ""
+msgstr "Квитки:"
 
 #: lib/html/element/setting/html.php:41
 msgid "Day view:"
-msgstr ""
+msgstr "Денний:"
 
 #: lib/html/element/setting/html.php:42
 msgid "Agenda view:"
-msgstr ""
+msgstr "Порядок:"
 
 #: lib/html/element/setting/html.php:43
 msgid "Some Other view:"
-msgstr ""
+msgstr "Інший вид:"
 
 #: lib/html/element/setting/html.php:44
 msgid "Default view as per settings:"
-msgstr ""
+msgstr "За замовчуванням вигляд відповідно до налаштувань:"
 
 #: lib/html/element/setting/html.php:45
 msgid "General form:"
-msgstr ""
+msgstr "Загальний вигляд:"
 
 #: lib/html/element/setting/html.php:46
 msgid "Optional."
-msgstr ""
+msgstr "Необов'язковий."
 
 #: lib/html/element/setting/html.php:47
 msgid ""
@@ -1320,15 +1321,15 @@ msgstr ""
 
 #: lib/html/element/setting/html.php:49
 msgid "Holidays"
-msgstr ""
+msgstr "Канікули"
 
 #: lib/html/element/setting/html.php:50
 msgid "Lunar Cycles"
-msgstr ""
+msgstr "Місячний цикл"
 
 #: lib/html/element/setting/html.php:51
 msgid "zodiac-date-ranges"
-msgstr ""
+msgstr "знаки-дата-діапазони"
 
 #: lib/html/element/setting/html.php:52
 msgid "Filter by event category names/slugs (separate names by comma):"
@@ -1450,11 +1451,11 @@ msgstr ""
 
 #: lib/html/element/setting/html.php:39
 msgid "Month view:"
-msgstr ""
+msgstr "Місяць:"
 
 #: lib/html/element/setting/html.php:40
 msgid "Week view:"
-msgstr ""
+msgstr "Тиждень:"
 
 #: lib/css/frontend.php:239
 msgid ""
@@ -1532,7 +1533,7 @@ msgstr ""
 
 #: lib/date/timezone.php:493
 msgid "Choose your timezone"
-msgstr ""
+msgstr "Виберіть свій часовий пояс"
 
 #: lib/environment/check.php:55
 msgid "Select an option in the <strong>Calendar page</strong> dropdown list."
@@ -1583,11 +1584,11 @@ msgstr ""
 
 #: lib/calendar-feed/ics.php:376
 msgid "Keep Events"
-msgstr ""
+msgstr "Зберігати події"
 
 #: lib/calendar-feed/ics.php:379
 msgid "Remove Events"
-msgstr ""
+msgstr "Видалити події"
 
 #: lib/calendar-feed/ics.php:519
 msgid "Oh, submission was not accepted."
@@ -1595,7 +1596,7 @@ msgstr ""
 
 #: lib/calendar-feed/ics.php:699
 msgid "Deleted %d events"
-msgstr ""
+msgstr "Видалено  %d подій"
 
 #: lib/calendar-feed/ics.php:735
 msgid "Feed deleted"
@@ -1667,15 +1668,15 @@ msgstr ""
 
 #: app/view/event/single.php:123
 msgid "Tickets:"
-msgstr ""
+msgstr "Квитки:"
 
 #: app/view/event/single.php:124
 msgid "Free"
-msgstr ""
+msgstr "Безкоштовно"
 
 #: app/view/event/single.php:127 app/view/event/ticket.php:38
 msgid "Buy Tickets"
-msgstr ""
+msgstr "Придбати квитки"
 
 #: app/view/event/single.php:150
 msgid "Edit this occurrence (%s)"
@@ -1690,19 +1691,19 @@ msgstr ""
 
 #: app/view/event/single.php:206
 msgid "View original"
-msgstr ""
+msgstr "Переглянути оригінал"
 
 #: app/view/event/taxonomy.php:113
 msgid "Category image"
-msgstr ""
+msgstr "Зображення категорії "
 
 #: app/view/event/ticket.php:24
 msgid "Register Now"
-msgstr ""
+msgstr "Зареєструватися зараз"
 
 #: app/view/event/ticket.php:82
 msgid "Event website"
-msgstr ""
+msgstr "Сайт заходу"
 
 #: app/view/event/time.php:84 app/view/event/time.php:118
 msgctxt "Event time separator"
@@ -1724,7 +1725,7 @@ msgstr ""
 
 #: cache/twig/dc/78/b950182efb8f436b144938fb0dc48cf395d7daabe20293234dbcf2b26545.php:48
 msgid "Repeats"
-msgstr ""
+msgstr "Повторюється"
 
 #: lib/calendar-feed/ics.php:38
 msgid "ICS"
@@ -1994,41 +1995,41 @@ msgstr ""
 
 #: app/view/calendar/taxonomy.php:97
 msgid "Clear category filter"
-msgstr ""
+msgstr "Очистити фільтр категорій"
 
 #: app/view/calendar/taxonomy.php:98 app/view/event/single.php:125
 #: lib/html/element/setting/tags-categories.php:47
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
 #: app/view/calendar/taxonomy.php:99
 msgid "Clear tag filter"
-msgstr ""
+msgstr "Очистити фільтр міткок"
 
 #: app/view/calendar/taxonomy.php:100 app/view/event/single.php:126
 #: lib/html/element/setting/tags-categories.php:39
 msgid "Tags"
-msgstr ""
+msgstr "Мітки"
 
 #: app/view/calendar/view/agenda.php:142
 msgid "Collapse All"
-msgstr ""
+msgstr "Згорнути все"
 
 #: app/view/calendar/view/agenda.php:143
 msgid "Expand All"
-msgstr ""
+msgstr "Розгорнути все"
 
 #: app/view/calendar/view/agenda.php:166
 msgid "There are no upcoming events to display at this time."
-msgstr ""
+msgstr "Немає майбутніх подій для показу в цей час."
 
 #: app/view/calendar/view/agenda.php:168
 msgid "Read more"
-msgstr ""
+msgstr "Детальніше..."
 
 #: app/view/admin/tickets.php:86
 msgid "Sales"
-msgstr ""
+msgstr "Продажі"
 
 #: app/view/admin/tickets.php:87
 msgid "How do you want the tickets revenue to be sent to you?"
@@ -2042,15 +2043,15 @@ msgstr ""
 
 #: app/view/admin/tickets.php:91
 msgid "Cheque"
-msgstr ""
+msgstr "Перевірити"
 
 #: app/view/admin/tickets.php:92 public/admin/box_eventbrite.php:103
 msgid "Paypal"
-msgstr ""
+msgstr "Paypal"
 
 #: app/view/admin/tickets.php:94
 msgid "Save Changes"
-msgstr ""
+msgstr "Зберегти зміни"
 
 #: app/view/admin/tickets.php:95
 msgid "Date"
@@ -2062,12 +2063,12 @@ msgstr "Подія"
 
 #: app/view/admin/tickets.php:97
 msgid "Purchaser"
-msgstr ""
+msgstr "Покупець"
 
 #: app/view/admin/tickets.php:98 app/view/event/ticket.php:39
 #: public/admin/box_event_cost.php:35
 msgid "Tickets"
-msgstr ""
+msgstr "Квитки"
 
 #: app/view/admin/tickets.php:101
 msgid "Total"
@@ -2075,7 +2076,7 @@ msgstr "Всього"
 
 #: app/view/admin/tickets.php:102
 msgid "Sign Out"
-msgstr ""
+msgstr "Вийти з аккаунта"
 
 #: app/view/admin/widget-creator.php:24 app/view/admin/widget-creator.php:25
 #: app/view/admin/widget-creator.php:47
@@ -3153,38 +3154,40 @@ msgstr ""
 
 #: app/controller/javascript.php:473 app/view/admin/widget-creator.php:139
 msgid "Preview:"
-msgstr ""
+msgstr "Перегляд:"
 
 #: app/controller/javascript.php:474
 msgid ""
 "Loading preview&nbsp;<i class=\"ai1ec-fa ai1ec-fa-spin ai1ec-fa-spinner\"></"
 "i>"
 msgstr ""
+"Завантаження попереднього перегляду&nbsp;<i class=\"ai1ec-fa ai1ec-fa-spin "
+"ai1ec-fa-spinner\"></i>"
 
 #: app/controller/javascript.php:479 app/view/admin/all-events.php:89
 msgid "Ticketing Details"
-msgstr ""
+msgstr "Подробиці квитка"
 
 #: app/controller/javascript.php:480
 msgid "Hide Ticketing Details"
-msgstr ""
+msgstr "Сховати подробиці квитка"
 
 #: app/controller/javascript.php:481
 msgid "Loading tickets details..."
-msgstr ""
+msgstr "Завантаження подробиць квитка"
 
 #: app/controller/javascript.php:482
 msgid "Type and price"
-msgstr ""
+msgstr "Тип та ціна"
 
 #: app/controller/javascript.php:483
 msgid "Info"
-msgstr ""
+msgstr "Інформація"
 
 #: app/controller/extension-license.php:53 app/view/admin/add-ons.php:26
 #: app/view/admin/add-ons.php:27
 msgid "Add-ons"
-msgstr ""
+msgstr "Додатки"
 
 #: app/controller/front.php:343
 msgid ""
@@ -3196,7 +3199,7 @@ msgstr ""
 #: app/controller/front.php:347 app/view/admin/theme-switching.php:54
 #: app/view/admin/theme-switching.php:55
 msgid "Calendar Themes"
-msgstr ""
+msgstr "Теми"
 
 #: app/controller/front.php:990
 msgid ""
