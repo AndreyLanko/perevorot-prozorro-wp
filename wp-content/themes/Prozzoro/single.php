@@ -22,7 +22,7 @@
 				<div class="blog news col-md-8 col-lg-8 col-sm-8 col-xs-12 ">			
 
 				<div class="back"><a href="<?php echo get_category_link($category[0]->cat_ID); ?>"><i class="sprite sprite-arrow-left"></i> <?php  echo get_the_category_by_ID($category[0]->cat_ID); ?></a></div>
-				<div class="day"><?php the_time('d.m.y') ?></div>
+				<div class="day"><?php if ($category[0]->cat_ID!='16') {?><?php the_time('d.m.y') ?><?php } ?>&nbsp;</div>
 				
 				<?php if ($category[0]->cat_ID=='16') {
 					 $avtor = get_the_author_meta('ID',$post->post_author);

@@ -795,7 +795,7 @@ h3.title{
 	-khtml-opacity: 0.4;
 	opacity: 0.4;
     padding: 1em;
-    display: block;
+    display: none;
 }
 	.go-down:hover {    
 	    background-position: -537px -55px;
