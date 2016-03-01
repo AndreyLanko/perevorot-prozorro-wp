@@ -254,6 +254,12 @@ function content($limit) {
   return $content;
 }
 
+function trim_event_text($text, $count, $after) {
+  if (mb_strlen($text) > $count) $text = mb_substr($text,0,$count);
+  else $after = '';
+  return $text . $after;
+}
+
 function trim_title_chars($count, $after) {
   $title = get_the_title();
   if (mb_strlen($title) > $count) $title = mb_substr($title,0,$count);

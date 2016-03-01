@@ -6,7 +6,7 @@
 	$cat_list = $category->cat_ID;
 	$cat_name = $category->slug;
 
-	if (($cat_list == 16) | ($cat_name == 'vacancies')) {
+	if (($cat_list == 16) | ($cat_name == 'vacancies') |  ($cat_name == 'event-archive') ) {
 		get_template_part( 'content', 'blog' );
 	}
 	elseif (($cat_list == 1) | ($cat_list == 17) | ($cat_list == 18)){

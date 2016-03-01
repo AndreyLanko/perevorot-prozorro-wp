@@ -2,7 +2,18 @@
 $(document).ready( function(){
     
     function init_event_calendar() {
-         $('.ai1ec-month-view td').has('div.ai1ec-event').attr("style","background-color:#8fd785 !important");
+        $('.ai1ec-month-view td').has('div.ai1ec-event').has('div.ai1ec-date').each(function() {
+            var href = $(this).find('a').attr('href').split('~');
+            var segments = href[2].split('/');
+            var eventdate = Date.parse(segments[0]);
+            var _currentday = new Date().toString();
+            var currentday = Date.parse(_currentday);
+            if (eventdate < currentday)
+               $(this).attr('style','background-color:rgba(143, 215, 133, 0.5)  !important');   
+            else
+               $(this).attr('style','background-color:rgba(143, 215, 133, 1)  !important');        
+        });
+
         var block = $('.ai1ec-event-title');
         $(".ai1ec-event-title").each(function() {
             var after = $(this).nextAll('.ai1ec-event-time:first');
