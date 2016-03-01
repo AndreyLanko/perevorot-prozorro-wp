@@ -431,6 +431,10 @@ h1.page-title{
 	.left-menu ul li{
 		display: block;
 	}
+	.left-menu ul li.sub-cat{
+		font-size: 0.95em;
+		padding-left: 15px;
+	}
 	.left-menu a{
 		text-decoration: none;
 		color: #999999;

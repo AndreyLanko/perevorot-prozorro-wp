@@ -3,7 +3,7 @@
 		<div class="row single-content">
 		<?php
 		if( $post->post_type == 'ai1ec_event' ) :
-			get_template_part( 'single', 'event' );
+			get_template_part( 'single', 'event');
 			else :
 			
 			 while ( have_posts() ) : the_post(); ?>

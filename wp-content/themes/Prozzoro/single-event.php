@@ -1,8 +1,19 @@
 		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php 
+				 global $ai1ec_registry;
+				 $currentPostId = get_the_ID();
+				 $event = $ai1ec_registry->get( 'model.event', $currentPostId );	
+				 $endTime = $event->get( 'start' )->format( 'U' );				 
+				 $currentTime = current_time('U');
+				 $pagePath = get_page_by_path('arhiv-podij', OBJECT, 'page');
+			?>
+
 			<div class="left-menu hidden-lg hidden-md hidden-sm col-xs-12 ">
 				<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 				<ul>
 					<li class="cat-item current-cat"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
+					<li class="cat-item sub-cat <?php echo (($currentTime>$endTime)?'current-cat':'');?>" ><a href="<?php echo get_the_permalink($pagePath->ID); ?>"><?php echo _e($pagePath->post_title); ?></a></li>
 					<li class="cat-item"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
 					<li class="cat-item"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
@@ -11,7 +22,7 @@
 			<div class="blog news col-md-8 col-lg-8 col-sm-8 col-xs-12 ">			
 
 			<div class="back"><a href="<?php echo get_category_link(18); ?>"><i class="sprite sprite-arrow-left"></i> <?php echo get_the_category_by_ID(18); ?></a></div>
-			<h3><?php the_title(); ?></h3>
+			<h3><?php echo _e(($currentTime>$endTime)?'[:ua]<span class="blue">Завершено</span><br /> [:en]<span class="blue">Ended</span><br />':''); ?><?php the_title(); ?></h3>
 			<?php the_content(); ?>
 			<div class="clearfix"></div>
 			<div class="clearfix"></div>
@@ -22,6 +33,7 @@
 			<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 			<ul>
 				<li class="cat-item current-cat"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
+				<li class="cat-item sub-cat <?php echo (($currentTime>$endTime)?'current-cat':'');?>" ><a href="<?php echo get_the_permalink($pagePath->ID); ?>"><?php echo _e($pagePath->post_title); ?></a></li>
 				<li class="cat-item"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 				<li class="cat-item"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
 				<li class="cat-item"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>

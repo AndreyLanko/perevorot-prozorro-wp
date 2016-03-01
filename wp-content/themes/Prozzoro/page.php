@@ -60,7 +60,7 @@
 			$wp_query->the_post();
 			$img_url = wp_get_attachment_image_src(get_post_field('partner-img', $post->ID), 'medium'); ?>
 			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 ">
-				<a href="<?php echo _e(get_post_field('partner-slug', $post->ID)); ?>" target="_blank"><img src="<?php  echo $img_url[0]; ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"></a>
+				<a href="<?php echo (get_post_field('partner-slug', $post->ID))?_e(get_post_field('partner-slug', $post->ID)):'javascript:void(0);'; ?>" target="_blank"><img src="<?php  echo $img_url[0]; ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"></a>
 			</div>
 			<?php }
 		} 
