@@ -12,6 +12,7 @@
 			$category = get_category(get_query_var('cat'),false);
 			$author = $category->cat_ID==16  ? all_experts() : '';
 			$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
 			$args = array(
 				'cat' => $category->cat_ID,
 				'post_status' => 'publish',
@@ -57,10 +58,13 @@
 				 <p>&nbsp;</p>
 				<h3><?php echo _e('[:ua]Інші новини[:en]Other news'); ?></h3>
 				<?php	
+					$archiveCatNews = get_category_by_slug('news');
+					$archiveCatStatti = get_category_by_slug('statti');
+					$archiveCatVacancies = get_category_by_slug('vacancies');
 					$args = array(
 						'showposts' => 5, 
 						'orderby' => 'date', 
-						'category' =>  array(news, statti, vacancies)
+						'category__in' =>  array($archiveCatNews->term_id, $archiveCatStatti->term_id, $archiveCatVacancies->term_id)
 					);
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();?>

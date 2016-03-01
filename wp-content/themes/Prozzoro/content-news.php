@@ -71,26 +71,16 @@
 			<hr />
 
 			<div class="other-news">
-				<?php  
-				switch ($category->cat_ID) {
-				    case "17":
-				    	$c_id[1] = '16';
-				        break;
-				    case "16":
-				    	$c_id[1] = '17';
-				        break;
-				    case "1":
-				        $c_id[1] = '17';
-				        break;
-				   }
-				 ?>
 				<h3><?php echo _e('[:ua]Інші новини[:en]Other news'); ?></h3>
 				<?php	
+					$archiveCatNews = get_category_by_slug('news');
+					$archiveCatStatti = get_category_by_slug('statti');
+					$archiveCatVacancies = get_category_by_slug('vacancies');
 					$args = array(
 						'showposts' => 5, 
 						'orderby' => 'date',
 						'order' => 'DESC', 
-						'cat' => $c_id
+						'category__in' =>  array($archiveCatNews->term_id, $archiveCatStatti->term_id, $archiveCatVacancies->term_id)
 					);
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : 
