@@ -43,7 +43,7 @@
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
                 <div class="col-lg-4 col-md-2 col-sm-3 hidden-xs no-padding">
-                 <?php // if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+                 <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-3 col-xs-5 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
