@@ -69,7 +69,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro.png" alt="Logo" /></a>
+                    <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro<?php echo ((qtrans_getLanguage()=='en')?'-en':''); ?>.png" alt="Logo" /></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
