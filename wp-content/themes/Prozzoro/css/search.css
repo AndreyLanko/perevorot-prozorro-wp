@@ -29,6 +29,9 @@ table.table-monitor td p{margin: 0 0 20px;}
 .main-menu .navbar-nav > li {float:none; padding:45px 15px;width: 1%;}
 .main-menu .navbar-nav > li > a{white-space:nowrap;color: #333;padding: 0;border-bottom: 2px solid #fff;}
 .main-menu .navbar-nav > li > a:hover,.main-menu .navbar-nav > li > a:focus, .main-menu .navbar-nav > li.current-menu-item > a{color: #666;border-bottom: 2px solid #666;}
+.main-menu .navbar-collapse::after{content: '';clear: none;}
+.main-menu .registration{text-align: center;line-height: 28px;margin: 24px 5px;position: relative;background-size: cover;background: url('./images/logo-part.png') 50% 0 no-repeat,-moz-linear-gradient(left,  rgba(143,215,133,1) 0%, rgba(109,200,235,1) 100%); /* FF3.6-15 */background: url('./images/logo-part.png') 50% 0 no-repeat,-webkit-linear-gradient(left,  rgba(143,215,133,1) 0%,rgba(109,200,235,1) 100%); /* Chrome10-25,Safari5.1-6 */background: url('./images/logo-part.png') 50% 0 no-repeat,linear-gradient(to right,  rgba(143,215,133,1) 0%,rgba(109,200,235,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */filter: url('./images/logo-part.png') 50% 0 no-repeat,progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fd785', endColorstr='#6dc8eb',GradientType=1 ); /* IE6-9 */}
+.main-menu .registration:hover,.main-menu .registration:focus{background: url('./images/logo-part.png') 50% 0 no-repeat,-moz-linear-gradient(left,  rgba(176,227,168,1) 0%, rgba(151,216,241,1) 100%); /* FF3.6-15 */background: url('./images/logo-part.png') 50% 0 no-repeat,-webkit-linear-gradient(left,  rgba(176,227,168,1) 0%,rgba(151,216,241,1) 100%); /* Chrome10-25,Safari5.1-6 */background: url('./images/logo-part.png') 50% 0 no-repeat,linear-gradient(to right,  rgba(176,227,168,1) 0%,rgba(151,216,241,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */filter: url('./images/logo-part.png') 50% 0 no-repeat,progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0e3a8', endColorstr='#97d8f1',GradientType=1 ); /* IE6-9 */}
 
 .top-menu.navbar-default ul.start-working{margin-right: 5px;}
 .top-menu.navbar-default ul.start-working>li:hover,.top-menu.navbar-default ul.start-working>li:focus,.top-menu.navbar-default ul.start-working>li.active,.top-menu.navbar-default ul.start-working>li.active:hover,.top-menu.navbar-default ul.start-working>li.active:focus{background: #97d8f1;text-decoration: none;color: #333;}
@@ -52,10 +55,23 @@ ul.language-chooser{list-style: none;padding: 0;margin: 0;display: inline-block;
 .sections.expanded > li {display:table-cell;width:100px;}
 .sections.expanded > li > a { margin-bottom:0;}
 .sections > li.active, .sections.expanded > li.active,  .sections.expanded > li.active > a {width:100%;}
+
+@media (max-width: 601px) {
+.main-menu .registration{width: 100%;margin-right: 0;margin-left: 0;}
+}
 @media (max-width: 768px) {
 .sections {font-size:1.3em;table-layout:auto;display:block;}
 .sections > li{width: 100%;height:auto;display:block;}
 .main-menu .main-menu--list .nav-justified>li {width: 1%;}
+}
+@media (min-width: 769px) and (max-width: 1120px) {
+.top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
+.main-menu .registration{margin: 35px 20px;line-height: 18px;padding: 12px 15px;}
+}
+@media (min-width: 993px) { 
+.top-menu ul.language-chooser {margin-left: 30px;}
+.event-calendar{float: right;}
+.registration{float: right;}
 }
 
 /*************************** Social Buttons *******************************************/
