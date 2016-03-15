@@ -42,19 +42,28 @@
 
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-                <div class="col-lg-4 col-md-2 col-sm-3 hidden-xs no-padding">
-                 <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
-                </div>
                 <div class="col-lg-3 col-md-4 col-sm-3 col-xs-5 no-padding">
                     <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
                 </div>
-                <div class="col-lg-3  col-md-3 col-sm-2 col-xs-2 no-padding event-calendar">
+                <div class="col-lg-3 col-md-2 col-sm-3 hidden-xs no-padding">
+                 <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
+                </div>
+                <div class="col-lg-4 col-md-2 col-sm-3 hidden-xs no-padding">
+                     <ul class="nav navbar-nav nav-justified">
+                        <?php   wp_nav_menu( array(
+                            'theme_location' => 'top_menu',
+                            'fallback_cb' => '__return_empty_string',
+                            'items_wrap' => '%3$s',
+                            'container' => ''
+                        ) );
+                        ?>                          
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-3 col-sm-2 col-xs-2 no-padding event-calendar">
                      <a href="<?php echo get_category_link(18); ?>"><span class="text"><?php echo _e('[:ua]Календар подій [:en]Event calendar'); ?></span> <i class="sprite-icon-calendar"></i></a>
                 </div>
-                <div class="col-lg-2  col-sm-4 col-xs-5 no-padding">
-                    <ul class="nav navbar-nav pull-right start-working">
-                        <li class="blue-bg <?php echo ($post->ID == 253 ? 'active':''); ?>"><a href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a></li>
-                    </ul>
+                <div class="hidden-lg  hidden-md hidden-sm col-xs-5 no-padding text-right">
+                      <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
                 </div>
             </div><!-- /.container-fluid -->
         </nav>
@@ -70,6 +79,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro<?php echo ((qtrans_getLanguage()=='en')?'-en':''); ?>.png" alt="Logo" /></a>
+                    <a class="green-btn registration visible-sm" href="<?php echo get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,8 +95,20 @@
 						) );
 						?>							
 						</ul>
+                        <ul class="nav navbar-nav nav-justified visible-xs">
+                        <?php   wp_nav_menu( array(
+                            'theme_location' => 'top_menu',
+                            'fallback_cb' => '__return_empty_string',
+                            'items_wrap' => '%3$s',
+                            'container' => ''
+                        ) );
+                        ?>                          
+                    </ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
+                <div class="navbar-header">
+                    <a class="green-btn registration hidden-sm" href="<?php echo get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                </div>
             </div><!-- /.container-fluid -->
         </nav>
         <div class="container switcher">

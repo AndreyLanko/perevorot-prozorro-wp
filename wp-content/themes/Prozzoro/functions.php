@@ -26,7 +26,8 @@ remove_action( 'load-update-core.php', 'wp_update_plugins' );
 add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
 
 register_nav_menus(array(
-  'header_menu' => 'Меню в header',  
+  'top_menu' => 'Меню в header(на голубом фоне)',  
+  'header_menu' => 'Меню в header', 
   'provider_menu' => 'Меню в "Поставщикам"',  
   'customer_menu' => 'Меню в "Заказчику"', 
   'reform_menu' => 'Меню в "Про реформу"', 
@@ -44,15 +45,15 @@ function get_dynamic_sidebar($index=1) {
 }
 
 function register_my_widgets(){
-	register_sidebar( array(
-		'name' => 'Контакты в футере',
-		'id' => 'footer-contacts-sidebar',
-		'description' => 'Выводиться в футер справа',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	));
+  register_sidebar( array(
+	'name' => 'Контакты в футере',
+	'id' => 'footer-contacts-sidebar',
+	'description' => 'Выводиться в футер справа',
+	'before_widget' => '',
+	'after_widget' => '',
+	'before_title' => '<h4>',
+	'after_title' => '</h4>',
+  ));
   register_sidebar( array(
     'name' => 'Заказчику',
     'id' => 'customer-sidebar',
@@ -298,6 +299,18 @@ function wp_corenavi() {
   if ($max > 1) echo '</div>';
 }
 
+add_shortcode('button-to-page', 'button_to_page');
+function button_to_page() {
+	$pageContent='';
+	$pageContent.='<div class="clearfix"></div><hr />';
+	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn" href="'.get_permalink( 253 ).'">'.get_the_title( 253 ).'</a>';
+	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
+	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'">'.get_the_title( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'</a>';
+	$pageContent.='</div>';
+
+	return $pageContent;
+}
+
 add_shortcode('faq-in-top', 'faq_in_top');
 function faq_in_top() {
   echo '<div class="faq"><ul class="faq--list">';
@@ -320,7 +333,7 @@ function faq_in_top() {
   echo '<div class="clearfix"></div></div></li>';
   endwhile; endif;
   wp_reset_postdata();
-  echo '</ul><div> <a href="'.get_category_link(15).'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Всі питання</span><span id="en">All FAQ</span></a></div></div>';
+  echo '</ul><div> <a href="'.get_category_link(15).'" ><i class="sprite-arrow-right"></i>&nbsp;<span id="ua">Всі питання</span><span id="en">All FAQ</span></a></div><hr /></div>';
 }
 
 function author_img($my_user_id) {

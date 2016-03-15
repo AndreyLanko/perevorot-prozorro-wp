@@ -39,8 +39,8 @@ Template Name: Замовнику
 		<?php $field = get_field_object('etapy-zakupivli', $post->ID);?>
 		<h1><a id="etapy"></a><?php echo _e($field['label']); ?></h1>
 		<div class="custom-counter"><?php echo _e(get_post_field('etapy-zakupivli', $post->ID)); ?></div>
+		<?php echo(do_shortcode('[button-to-page]')); ?>
 		<hr />
-
 		<?php $field = get_field_object('propozitsii', $post->ID);?>
 		<h1><a id="propozytsii"></a><?php echo _e($field['label']); ?></h1>
 		<div class="system-advantages--text"><?php echo (get_post_field('propozitsii', $post->ID)); ?></div>			
@@ -57,13 +57,7 @@ Template Name: Замовнику
 		<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('customer-sidebar'); ?>
 					
 		<div class="clearfix"></div>				
-	</div>
-	
-	<hr />
-
-	<div class="system-advantages--buttons">
-		<a class="green-btn" href="<?php echo get_permalink( 253 ) ?>"><?php echo get_the_title( 253 ) ?></a>
-		<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><?php echo _e('[:ua]Перейти на Базу знань[:en]Go to Database'); ?></a>
+	</div>	
 	</div>
 			
 
