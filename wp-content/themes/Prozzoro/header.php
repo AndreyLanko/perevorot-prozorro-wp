@@ -79,7 +79,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro<?php echo ((qtrans_getLanguage()=='en')?'-en':''); ?>.png" alt="Logo" /></a>
-                    <a class="green-btn registration visible-sm" href="<?php echo get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                    <a class="green-btn registration visible-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -107,7 +107,7 @@
 					</div><!-- /.navbar-collapse -->
 				</div>
                 <div class="navbar-header">
-                    <a class="green-btn registration hidden-sm" href="<?php echo get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                    <a class="green-btn registration hidden-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
             </div><!-- /.container-fluid -->
         </nav>

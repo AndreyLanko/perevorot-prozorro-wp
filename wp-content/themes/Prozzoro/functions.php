@@ -303,9 +303,9 @@ add_shortcode('button-to-page', 'button_to_page');
 function button_to_page() {
 	$pageContent='';
 	$pageContent.='<div class="clearfix"></div><hr />';
-	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn" href="'.get_permalink( 253 ).'">'.get_the_title( 253 ).'</a>';
+	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn" href="'.get_permalink( 253 ).'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
 	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
-	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'">'.get_the_title( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'</a>';
+	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'"><span id="ua">Оскаржити торги</span><span id="en">File a complaint</span></a>';
 	$pageContent.='</div>';
 
 	return $pageContent;
