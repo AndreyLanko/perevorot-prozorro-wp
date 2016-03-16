@@ -412,8 +412,9 @@ ul.language-chooser{
 
 .main-menu .registration{
 	text-align: center;
+	font-weight: bold;
 	line-height: 28px;
-	margin: 24px 5px;
+	margin: 29px 5px 24px;
 	position: relative;
 	background-size: cover;
 	background: url('images/logo-part.png') 50% 0 no-repeat,-moz-linear-gradient(left,  rgba(143,215,133,1) 0%, rgba(109,200,235,1) 100%); /* FF3.6-15 */
