@@ -31,6 +31,7 @@ register_nav_menus(array(
   'provider_menu' => 'Меню в "Поставщикам"',  
   'customer_menu' => 'Меню в "Заказчику"', 
   'reform_menu' => 'Меню в "Про реформу"', 
+  'platform_menu' => 'Меню в "Площадкам"', 
   'foot_menu_left' => 'Меню в footer слева',
   'foot_menu_center' => 'Меню в footer по центру',
   'foot_menu_right' => 'Меню в footer справа'

@@ -408,6 +408,7 @@ ul.language-chooser{
 .main-menu .navbar-collapse::after{
 	content: '';
 	clear: none;
+	display: block;
 }
 
 .main-menu .registration{
@@ -949,14 +950,21 @@ h3.title{
 	}
 }
 
+@media (max-width: 1190px) {
+	.top-menu .event-calendar span.text{
+		display: none;
+	}
+ }
 @media (min-width: 993px) { 
 	.top-menu ul.language-chooser {
-		margin-left: 30px;
+		margin-left: 0px;
 	}
-	.event-calendar{
+	.top-menu .event-calendar{
 		float: right;
+		text-align: right;
 	}
-	.registration{
+	
+	.navbar-header .registration{
 		float: right;
 	}
 }

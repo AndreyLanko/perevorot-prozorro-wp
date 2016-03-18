@@ -66,9 +66,10 @@ ul.language-chooser{list-style: none;padding: 0;margin: 0;display: inline-block;
 .main-menu .registration{margin: 35px 20px;line-height: 18px;padding: 12px 15px;}
 }
 @media (min-width: 993px) { 
-.top-menu ul.language-chooser {margin-left: 30px;}
-.event-calendar{float: right;}
-.registration{float: right;}
+.top-menu ul.language-chooser {margin-left: 0px;}
+.top-menu .event-calendar{float: right;text-align: right;}
+.top-menu .event-calendar span.text{display: none;}
+.navbar-header .registration{float: right;}
 }
 
 /*************************** Social Buttons *******************************************/

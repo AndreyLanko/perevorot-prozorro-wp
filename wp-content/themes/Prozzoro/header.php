@@ -106,7 +106,7 @@
                     </ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
-                <div class="navbar-header">
+                <div class="navbar-header pull-right">
                     <a class="green-btn registration hidden-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
             </div><!-- /.container-fluid -->
