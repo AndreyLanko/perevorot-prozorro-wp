@@ -35,23 +35,10 @@ Template Name: Замовнику
 			</div>				
 		</div>		
 		<hr />
-
-		<?php $field = get_field_object('etapy-zakupivli', $post->ID);?>
-		<h1><a id="etapy"></a><?php echo _e($field['label']); ?></h1>
-		<div class="custom-counter"><?php echo _e(get_post_field('etapy-zakupivli', $post->ID)); ?></div>
-		<?php echo(do_shortcode('[button-to-page]')); ?>
-		<hr />
-		<?php $field = get_field_object('propozitsii', $post->ID);?>
-		<h1><a id="propozytsii"></a><?php echo _e($field['label']); ?></h1>
-		<div class="system-advantages--text"><?php echo (get_post_field('propozitsii', $post->ID)); ?></div>			
-
-		<?php echo author_in_top();?>
-
-
 		<?php while ( have_posts() ) : the_post(); ?>
-		<div class="specification gray-bg padding margin-bottom "><a id="specifikatsii"></a>
-			<?php the_content(); ?>
-		</div>
+
+		<?php the_content(); ?>
+
 		<?php endwhile;?>
 		<a id="faq"></a>
 		<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('customer-sidebar'); ?>

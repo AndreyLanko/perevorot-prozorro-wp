@@ -181,7 +181,7 @@ hr {border: 1px solid #eeeeee;}
 @media (max-width: 991px) {
     .main-menu .navbar-nav > li > a{padding:15px;}
 }
-.main-menu .main-menu--list {margin-left:295px;margin-right:210px;}
+.main-menu .main-menu--list {margin-left:295px;margin-right:215px;}
 @media (max-width: 991px) {
 	.main-menu .main-menu--list {margin-left:0px;margin-right:0px;}
 }
