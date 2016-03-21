@@ -14,6 +14,8 @@
 
 .sprite-icon-calendar {width: 24px;height: 24px;background-position: -537px 0;}
 .sprite-icon-calendar-h {width: 24px;height: 24px;background-position: -537px -24px;}
+.sprite-attantion {width: 25px;height: 25px;background-position: 0 -546px;}
+.sprite-attantion-h {width: 25px;height: 25px;background-position: -25px -546px;}
 
 .sprite-arrow-up {width: 21px;height: 21px;background-position: -368px 0;}
 .sprite-social-youtube {width: 21px;height: 21px;background-position: -300px -141px;}
@@ -310,6 +312,14 @@ ul.white-checkboxes{
 }
 	.single-content .right-col{
 		margin-top: 30px;
+	}
+
+.top-menu .ofnews{
+	line-height: 30px;	
+}
+	.top-menu .ofnews a:hover i.sprite-attantion,
+	.top-menu .ofnews a:focus i.sprite-attantion{
+		background-position: -25px -546px;
 	}
 
 .top-menu .event-calendar{
@@ -898,16 +908,34 @@ h3.title{
 		padding: 12px 15px;
 	}
 }
+@media (max-width: 991px) and (min-width: 768px){
+	.visible-sm {
+	    display: inline-block!important;
+	}
+	.top-menu .social {
+	    margin-right: 20px !important;
+	}
+}
 @media (max-width: 1020px) {
 	.navbar-header .navbar-brand {
-		margin-top: 0;
+		margin: 15px 0;
 		padding: 0 15px;
 	}
     .navbar-header {
+    	margin-top: 15px;
+    	margin-bottom: 15px;
         float: none;
     }
+    .main-menu .registration {
+   		margin: 20px;
+   		display: inline-block!important;
+	}
+	.main-menu .navbar-header>.registration.hidden-md{
+		display: none!important;
+	}
     .navbar-toggle {
         display: block;
+        margin-top: 23px;
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -922,6 +950,7 @@ h3.title{
     }
     .navbar-nav>li {
         float: none;
+        font-size:14px;
     }
     .navbar-nav>li>a {
         padding-top: 10px;
@@ -930,6 +959,9 @@ h3.title{
     .top-menu .event-calendar,
 	.top-menu ul.language-chooser{
 		line-height: 45px;
+	}
+	.top-menu .ofnews{
+		line-height: 43px;
 	}
 	.navbar-collapse.collapse.in { 
         display: block!important;
@@ -954,21 +986,31 @@ h3.title{
 	.top-menu .event-calendar span.text{
 		display: none;
 	}
+	.top-menu .social{
+		margin-right: 70px;
+	}
+	.main-menu--list ul.nav li{
+		font-size:12px;
+	}
  }
-@media (min-width: 993px) { 
+@media (min-width: 992px) { 
 	.top-menu ul.language-chooser {
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	.top-menu .event-calendar{
 		float: right;
 		text-align: right;
 	}
-	
-	.navbar-header .registration{
+	.top-menu .social{
 		float: right;
+		margin-right: 40px;
+	}
+	
+	.navbar-header .registration.hidden-md{
+		float: right;
+		display: inline-block!important;
 	}
 }
-
 
 @media (min-width:768px) and (max-width: 992px) { 
 	.specification p{
@@ -985,11 +1027,6 @@ h3.title{
 	.event-calendar{
 		float: right;
 	}
-	.main-menu .registration{
-		float: left;
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
 }
 
 @media (max-width: 768px) {
@@ -998,8 +1035,22 @@ h3.title{
 		height: auto;
 	}
 	.navbar-header .navbar-brand {
-		margin-top: 0;
+		margin: 15px 0;
 		padding: 0 15px;
+	}
+	.main-menu .registration{
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.navbar-header.pull-right{
+		width: 100%;
+	}
+	.main-menu--list ul.nav li{
+		font-size: 14px;
+	}
+	.top-menu .social {
+	    margin-right: 10px !important;
 	}
 	.specification p{
 		display: inline-block;
@@ -1058,14 +1109,18 @@ h3.title{
 	}
 
 }
-@media (max-width: 601px) {
-	.main-menu .registration{
-		width: 100%;
-		margin-right: 0;
-		margin-left: 0;
-	}
-}
 
+/*********************************************** Accordion **********************************************************************************/
+h3.accordion-title{
+	font-size: 16px;
+	text-transform: none;
+	color: #0099cc;
+}
+h3.accordion-title:hover,
+h3.accordion-title:focus{
+	text-transform: none;
+	text-decoration: underline;
+}
 /*********************************************** CALENDAR **********************************************************************************/
 
 .page-content div[class*="-calendar-toolbar"]{

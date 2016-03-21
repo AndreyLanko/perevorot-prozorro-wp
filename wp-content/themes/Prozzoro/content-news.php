@@ -1,6 +1,7 @@
 		<div class="row">
 		<?php 
 			$category = get_category(get_query_var('cat'),false);
+			$_newsID = get_category_by_slug('ofitsijni-novyny')->term_id;
 			$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		?>
 			<div class="left-menu hidden-lg hidden-md hidden-sm col-xs-12 ">
@@ -9,6 +10,7 @@
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
+					<li class="cat-item <?php echo ($category->cat_ID==$_newsID ?'current-cat':'' );?>"><a href="<?php echo get_category_link($_newsID); ?>"><?php echo get_the_category_by_ID($_newsID); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
 				</ul>
 			</div>
@@ -60,6 +62,7 @@
 					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
+					<li class="cat-item <?php echo ($category->cat_ID==$_newsID ?'current-cat':'' );?>"><a href="<?php echo get_category_link($_newsID); ?>"><?php echo get_the_category_by_ID($_newsID); ?></a></li>
 					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
 				</ul>
 			<hr />
@@ -80,7 +83,10 @@
 						'showposts' => 5, 
 						'orderby' => 'date',
 						'order' => 'DESC', 
-						'category__in' =>  array($archiveCatNews->term_id, $archiveCatStatti->term_id, $archiveCatVacancies->term_id)
+						'category__in' =>  array($archiveCatNews->term_id,
+												 $archiveCatStatti->term_id,
+												 $archiveCatVacancies->term_id,
+												 $_newsID)
 					);
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : 

@@ -42,8 +42,14 @@
 
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
-                <div class="col-lg-3 col-md-4 col-sm-3 col-xs-5 no-padding">
-                    <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
+                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding ofnews">
+                    <?php $_newsID = get_category_by_slug('ofitsijni-novyny')->term_id;?>
+                   <a href="<?php echo get_category_link($_newsID); ?>"><i class="sprite-attantion"></i></a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-2 col-xs-4 no-padding">
+                    <div class="social">
+                        <?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('social-sidebar'); ?>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-2 col-sm-3 hidden-xs no-padding">
                  <?php if ( function_exists('qtrans_generateLanguageSelectCode') ){ echo qtrans_generateLanguageSelectCode('text'); }?>
@@ -107,7 +113,7 @@
 					</div><!-- /.navbar-collapse -->
 				</div>
                 <div class="navbar-header pull-right">
-                    <a class="green-btn registration hidden-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                    <a class="green-btn registration hidden-md hidden-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
             </div><!-- /.container-fluid -->
         </nav>

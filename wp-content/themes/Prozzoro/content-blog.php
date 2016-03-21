@@ -10,6 +10,7 @@
 			<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
 			<?php 
 			$category = get_category(get_query_var('cat'),false);
+			$_newsID = get_category_by_slug('ofitsijni-novyny')->term_id;
 			$author = $category->cat_ID==16  ? all_experts() : '';
 			$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
@@ -64,7 +65,10 @@
 					$args = array(
 						'showposts' => 5, 
 						'orderby' => 'date', 
-						'category__in' =>  array($archiveCatNews->term_id, $archiveCatStatti->term_id, $archiveCatVacancies->term_id)
+						'category__in' =>  array($archiveCatNews->term_id,
+												 $archiveCatStatti->term_id,
+												 $archiveCatVacancies->term_id,
+												 $_newsID)
 					);
 				    $query = new WP_Query($args); 
 				    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();?>
