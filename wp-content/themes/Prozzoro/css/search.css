@@ -11,6 +11,7 @@ table.table-monitor td p{margin: 0 0 20px;}
 /*************************** Header *******************************************/
 .no-padding{padding-right: 0;padding-left: 0;}
 .sprite-icon-calendar {width: 24px;height: 24px;background: url('../images/sprite.png') no-repeat;background-position: -537px 0;}
+.sprite-attantion {width: 25px;height: 25px;background: url('../images/sprite.png') no-repeat;background-position: 0 -546px;}
 
 .top-menu {min-height: 30px; border: none; background: #f0f5f2; text-transform: uppercase; margin-bottom: 0;}
 .top-menu .navbar-nav > li > a{padding-top: 5px; padding-bottom: 5px;}
@@ -23,6 +24,8 @@ table.table-monitor td p{margin: 0 0 20px;}
 .top-menu .event-calendar a{color: #6dc8eb;}
 .top-menu .event-calendar a:hover,.top-menu .event-calendar a:focus{text-decoration: underline;}
 .top-menu .event-calendar a:hover i.sprite-icon-calendar,.top-menu .event-calendar a:focus i.sprite-icon-calendar{background-position: -537px -24px;}
+.top-menu .ofnews{line-height: 30px;}
+.top-menu .event-calendar a:hover i.sprite-attantion,.top-menu .event-calendar a:focus i.sprite-attantion{background-position: -25px -546px;}
 
 .main-menu {border: none; margin-bottom:0;}
 .main-menu.navbar-default {background: none;}
@@ -53,23 +56,59 @@ ul.language-chooser{list-style: none;padding: 0;margin: 0;display: inline-block;
 .sections.expanded > li > a { margin-bottom:0;}
 .sections > li.active, .sections.expanded > li.active,  .sections.expanded > li.active > a {width:100%;}
 
-@media (max-width: 601px) {
-.main-menu .registration{width: 100%;margin-right: 0;margin-left: 0;}
-}
 @media (max-width: 768px) {
 .sections {font-size:1.3em;table-layout:auto;display:block;}
 .sections > li{width: 100%;height:auto;display:block;}
-.main-menu .main-menu--list .nav-justified>li {width: 1%;}
+.main-menu .main-menu--list .nav-justified>li {width: 1%;}	
+.navbar-header .navbar-brand {margin: 15px 0;padding: 0 15px;}
+.main-menu .registration{width: 100%;margin-right: 0;margin-left: 0;}
+.navbar-header.pull-right{width: 100%;}
+.main-menu--list ul.nav li{font-size: 14px;}
+.top-menu .social {margin-right: 10px !important;}
+.top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
+.top-menu .event-calendar,.top-menu ul.language-chooser,.top-menu ul.social-top{line-height: 45px;}
+.container>.navbar-header{margin-left: 0px;margin-right: 0px;}
+}
+@media (max-width: 1190px) {
+.top-menu .event-calendar span.text{display: none;}
+.top-menu .social{margin-right: 70px;}
+.main-menu--list ul.nav li{font-size:12px;}
 }
 @media (min-width: 769px) and (max-width: 1120px) {
 .top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
 .main-menu .registration{margin: 35px 20px;line-height: 18px;padding: 12px 15px;}
+.event-calendar{float: right;}
 }
-@media (min-width: 993px) { 
-.top-menu ul.language-chooser {margin-left: 0px;}
+@media (min-width: 992px) { 
+.top-menu ul.language-chooser {margin-left: 30px;}
 .top-menu .event-calendar{float: right;text-align: right;}
-.top-menu .event-calendar span.text{display: none;}
-.navbar-header .registration{float: right;}
+.top-menu .social{float: right;margin-right: 40px;}
+.navbar-header .registration{float: right;display: inline-block!important;}
+}
+
+}
+@media (max-width: 991px) and (min-width: 768px){
+.visible-sm {display: inline-block!important;}
+.top-menu .social {margin-right: 20px !important;}
+}
+@media (max-width: 1020px) {
+.navbar-header .navbar-brand {margin: 15px 0;padding: 0 15px;}
+.navbar-header {margin-top: 15px;margin-bottom: 15px;float: none;}
+.main-menu .registration {margin: 20px;display: inline-block!important;}
+.main-menu .navbar-header>.registration.hidden-md{display: none!important;}
+.navbar-toggle {display: block;margin-top: 23px;}
+.navbar-collapse {border-top: 1px solid transparent;box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
+.navbar-collapse.collapse {display: none!important;}
+.navbar-nav {float: none;margin: 7.5px -15px;}
+.navbar-nav>li {float: none;font-size:14px;}
+.navbar-nav>li>a {padding-top: 10px;padding-bottom: 10px;}
+.top-menu .event-calendar,.top-menu ul.language-chooser{line-height: 45px;}
+.top-menu .ofnews{line-height: 43px;}
+.navbar-collapse.collapse.in { display: block!important;}
+.collapsing {overflow: hidden!important;}
+.main-menu--list .nav>li {position: relative;display: block;width: 100%;}
+.main-menu .navbar-nav > li{padding: 0 15px;}
+.pull-right{float: right!important;}
 }
 
 /*************************** Social Buttons *******************************************/
