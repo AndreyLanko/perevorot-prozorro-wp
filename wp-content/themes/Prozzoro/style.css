@@ -424,6 +424,7 @@ ul.language-chooser{
 .main-menu .registration{
 	text-align: center;
 	font-weight: bold;
+	max-width: 185px;
 	line-height: 28px;
 	margin: 29px 5px 24px;
 	position: relative;
