@@ -175,13 +175,31 @@ function create_post_type() {
    'supports' => array( 'title' ),
    'show_in_menu'=>true,
    'menu_position'=>5,
-   'menu_icon'=>'dashicons-id-alt',
+   'menu_icon'=>'dashicons-smiley',
    'rewrite' => array('slug' => '/faces'),
    'query_var' => true,
    'has_archive' => true,
    'hierarchical' => false
    ));
+
+   register_post_type( 'dogovory',
+    array(
+    'labels' => array(
+              'name' => 'Укладені договори',
+              'has_archive' => true
+              ),
+   'public' => true,
+   'supports' => array( 'title','editor' ),
+   'show_in_menu'=>true,
+   'menu_position'=>4,
+   'menu_icon'=>'dashicons-id-alt',
+   'rewrite' => array('slug' => '/dogovory'),
+   'query_var' => true,
+   'has_archive' => true,
+   'hierarchical' => false
+   ));
 }
+
 
 function add_faqcategory_automatically($post_ID) {
   global $wpdb;
@@ -639,17 +657,26 @@ function platforms_to_screen(){
 
 add_shortcode('dogovory-to-screen', 'dogovory_to_screen');
 function dogovory_to_screen(){
-  $dogovor[1] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
-  $dogovor[2] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
-  $dogovor[3] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
-  $dogovor[4] = array('sum' => '115', 'val' => 'млн.грн', 'name' => '"Енергоатом"', 'type' => 'Закупівля вати та чогось там щеЗакупівля вати та чогось там ще', 'closed' => '22.07.2015' );
-  $content ='';
-  $content .= '<div class="dogovory margin-bottom clearfix">';
-  foreach ($dogovor as $key => $value) {
-        $content .=  '<div class="col-sm-3"><div class="item-wrapper"><div class="item"><span class="size65 green">'.$value['sum'].'</span><span class="size24 green">'.$value['val'].'</span><span class="size24">'.$value['name'].'</span><span class="size14">'.$value['type'].'</span><span class="size14">Завершено: '.$value['closed'].'</span></div></div></div>';
-    }
-  $content .=  '</div>';
-  return $content;
+   $content ='';
+   $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
+   $args = array(
+        'post_type' => 'dogovory',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'ASC',          
+        'posts_per_page' => -1        
+      );
+      $wp_query = new WP_Query($args);
+      if ( $wp_query->have_posts() ) {
+        while ( $wp_query->have_posts() ) {
+          $wp_query->the_post();
+          $dogovoryContent = str_replace("\r", "<br />", get_the_content(''));
+          $content .=  '<div class="item" id="dogovory_'.get_the_ID().'">'.$dogovoryContent.'</div>';
+         }
+      } 
+      wp_reset_postdata(); 
+    $content .=  '</div></div>';
+    return $content;
 }
 
 add_shortcode('reform-faces', 'reform_faces');
