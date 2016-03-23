@@ -305,17 +305,12 @@ ol > li > h3 {text-transform:uppercase;color: #3399cc;}
 .start-steps .phone {margin-top:10px;}
 
 .start-steps--platforms-list .item  img {display:inline-block; margin: 0 auto;}
-.start-steps--platforms-list .item {float:left; /*width:16.666%;*/ text-align:center; margin-top:30px; padding:0 10px;line-height: 100px;}
+.start-steps--platforms-list .item {float:left;  text-align:center; margin-top:30px; padding:0 10px;line-height: 100px;}
+.start-steps--platforms-list [id^="dogovory_"]{line-height: 1.4em; float:none; display:block; margin: 10px auto;}
+.start-steps--platforms-list [id^="dogovory_"].item a {display:inline;}
 .start-steps--platforms-list .item a{width: 100%;display: block;}
 .start-steps--platforms-list .item a.pl-title,.start-steps--platforms-list .item .phone{line-height: 1.2em;}
-/*@media (max-width: 991px) {
-.start-steps--platforms-list .item  img {width:80%;}
-.start-steps--platforms-list .item {width:33.333%;}
-}
-@media (max-width: 450px) {
-.start-steps--platforms-list .item  img {width:100%;}
-.start-steps--platforms-list .item{width:50%;}
-}*/
+
 .start-steps .remember {font-size:1.142857em;text-align:center;}
 .start-steps .remember h2 {font-size:1.31em;color:#16a2d2;font-family: 'Open Sans', sans-serif;}
 
