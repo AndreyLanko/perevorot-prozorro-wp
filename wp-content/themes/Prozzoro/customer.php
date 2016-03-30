@@ -16,6 +16,9 @@ Template Name: Замовнику
 			?>							
 			</ul>
 		</div>
+
+		<?php echo do_shortcode('[official-news-in-top]'); ?>
+
 		<?php $field = get_field_object('no-money-blue', $post->ID);?>
 		<h1><a id="perevagy"></a><?php echo _e($field['label']); ?></h1>
 		<div class="system-advantages--steps">

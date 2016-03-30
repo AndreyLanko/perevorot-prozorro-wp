@@ -392,7 +392,7 @@ function vacancies_in_top(){
     'order' => 'DESC'
   );
   $wp_query = new WP_Query( $args );
-  $cat = get_category_by_slug(vacancies);
+  $cat = get_category_by_slug('vacancies');
   $text_to_site.='<h1 align="center">'.$cat->cat_name.'</h1>';
   if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
       $text_to_site.= '<div class="row">
@@ -417,6 +417,36 @@ function vacancies_in_top(){
                       </div>';
       endwhile; endif;
       wp_reset_postdata(); 
+      return $text_to_site;
+  }
+
+add_shortcode('official-news-in-top', 'official_news_in_top');
+function official_news_in_top(){
+  $text_to_site = '';
+  $args = array(
+    'showposts' => 4, 
+    'category_name' =>  'ofitsijni-novyny',
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC'
+  );
+  $wp_query = new WP_Query( $args );
+  $cat = get_category_by_slug('ofitsijni-novyny');
+  $text_to_site.='<h1 align="center"><span id="ua">Останні зміни до законодавства</span><span id="en">Last law revisions</span></h1>';
+  $text_to_site.= '<div class="row">
+                         <div class="gray-bg padding margin-bottom">';
+  if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+      $text_to_site.= '<div class="col-md-3 col-sm-6 col-xs-12"><span class="day">';
+      $text_to_site.= get_the_time('d.m.y');
+      $text_to_site.='</span><p><a href="';
+      $text_to_site.= get_the_permalink(); 
+      $text_to_site.='">';
+      $text_to_site.= get_the_title();
+      $text_to_site.= '</a></p><div class="clearfix"></div>';
+      $text_to_site.= '</div>';
+      endwhile; endif;
+      wp_reset_postdata(); 
+       $text_to_site.='<div class="clearfix"></div></div><div class="blog-all"> <a href="'.get_category_link($cat->term_id).'" ><i class="sprite-arrow-right"></i>  <span id="ua">Перейти до останніх змін до законодавства</span><span id="en">Go to last law revisions</span></a><div class="clearfix"></div></div><hr />';
       return $text_to_site;
   }
 
@@ -644,6 +674,31 @@ function platforms_to_screen(){
 
     $content ='';
     $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
+    foreach ($platform as $key => $value) {
+      $size = getimagesize($value->logo);
+          if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
+          else {$nw=$size[0]; $nh=$size[1];}        
+      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+    }
+    $content .=  '</div></div>';
+    return $content;
+  }
+}
+add_shortcode('doporodovi-platforms-to-screen', 'doporodovi_platforms_to_screen');
+function doporodovi_platforms_to_screen(){
+    $path='/json/platforms/contractors/';
+
+    if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
+        $api=file_get_contents('http://prozorro.org'.$path);
+    }else{
+        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
+    }
+  $platform = json_decode($api);
+  if (is_array($platform)){
+    shuffle($platform);
+
+    $content ='';
+    $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel doporodovi">';
     foreach ($platform as $key => $value) {
       $size = getimagesize($value->logo);
           if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
