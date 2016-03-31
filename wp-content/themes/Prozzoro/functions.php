@@ -660,8 +660,9 @@ function comments($my_post_id){
 }
 
 add_shortcode('platforms-to-screen', 'platforms_to_screen');
+
 function platforms_to_screen(){
-    $path='/json/platforms/contractors/';
+    $path='/json/platforms/type2/';
 
     if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
         $api=file_get_contents('http://prozorro.org'.$path);
@@ -669,7 +670,7 @@ function platforms_to_screen(){
         $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
     }
   $platform = json_decode($api);
-  if (is_array($platform)){
+  if (!empty($platform)){
     shuffle($platform);
 
     $content ='';
@@ -686,7 +687,7 @@ function platforms_to_screen(){
 }
 add_shortcode('doporodovi-platforms-to-screen', 'doporodovi_platforms_to_screen');
 function doporodovi_platforms_to_screen(){
-    $path='/json/platforms/contractors/';
+    $path='/json/platforms/type1/';
 
     if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
         $api=file_get_contents('http://prozorro.org'.$path);
@@ -694,7 +695,8 @@ function doporodovi_platforms_to_screen(){
         $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
     }
   $platform = json_decode($api);
-  if (is_array($platform)){
+
+  if (!empty($platform)){
     shuffle($platform);
 
     $content ='';
@@ -706,6 +708,7 @@ function doporodovi_platforms_to_screen(){
       $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
     }
     $content .=  '</div></div>';
+
     return $content;
   }
 }
