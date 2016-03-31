@@ -18,8 +18,8 @@
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.carousel.css" rel="stylesheet">
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.theme.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/style.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/attrchange.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/owl.carousel.js"></script>    
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/script.js"></script>
@@ -85,7 +85,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="<?php  echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro<?php echo ((qtrans_getLanguage()=='en')?'-en':''); ?>.png" alt="Logo" /></a>
-                    <a class="green-btn registration visible-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                    <a class="green-btn registration visible-sm" href="#"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,7 +113,7 @@
 					</div><!-- /.navbar-collapse -->
 				</div>
                 <div class="navbar-header pull-right">
-                    <a class="green-btn registration hidden-md hidden-sm" href="<?php echo get_permalink(253); ?>"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
+                    <a class="green-btn registration hidden-md hidden-sm" href="#"><?php _e('[:ua]Зареєструватись[:en]Register'); ?></a>
                 </div>
             </div><!-- /.container-fluid -->
         </nav>
@@ -125,6 +125,14 @@
 				<li class="blue-bg <?php echo ($cur_post==150 ? 'active':'notitle'); ?>"><a href="<?php echo get_permalink( 150 ) ?>"><i class="sprite-customer"></i> <span><?php echo get_the_title( 150 ) ?></span></a></li>
 			</ul>
 		</div>
+        <section class="startpopup">
+            <div class="startpopup-wrapper">
+                <a href="#" class="close-startpopup">&#215;</a>
+                <h1 id="title" align="center"><?php echo _e('[:ua]Почати роботу[:en]Start working'); ?></h1>
+                <h1 id="btn" align="center"><a class="blue-btn" href="<?php echo get_permalink( get_page_by_path( 'pochaty-robotu-zamovnyku' ) ); ?>"><?php echo _e('[:ua]Як Замовник[:en]I am procurer'); ?></a></h1>
+                <h1 id="btn" align="center"><a class="green-btn" href="<?php echo get_permalink( get_page_by_path( 'pochaty-robotu-postachalnyku' ) ); ?>"><?php echo _e('[:ua]Як Постачальник[:en]I am supplier');?></a></h1>
+            </div>
+        </section>
 
 <div class="site">
 	<div id="content" class="site-content">
