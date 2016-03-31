@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-
     <!-- Bootstrap -->
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>

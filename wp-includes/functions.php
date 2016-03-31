@@ -58,6 +58,7 @@ function mysql2date( $format, $date, $translate = true ) {
  * @param int|bool $gmt  Optional. Whether to use GMT timezone. Default false.
  * @return int|string Integer if $type is 'timestamp', string otherwise.
  */
+ 
 function current_time( $type, $gmt = 0 ) {
 	switch ( $type ) {
 		case 'mysql':

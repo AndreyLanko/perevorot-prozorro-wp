@@ -20,6 +20,7 @@
  remove_action( 'rest_api_init', 'wp_oembed_register_route' ); 
  remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
 
+ 
 add_filter('pre_site_transient_update_core',create_function('$a', "return null;"));
 wp_clear_scheduled_hook('wp_version_check');
 remove_action( 'load-update-core.php', 'wp_update_plugins' );
