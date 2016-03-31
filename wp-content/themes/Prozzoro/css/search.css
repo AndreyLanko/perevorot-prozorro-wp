@@ -222,3 +222,8 @@ nav.footer .current-menu-item a{text-decoration: none;color: #0099cc;}
 .top-menu .event-calendar span.text,.top-menu .social-top li.title{display: none;}
 .footer .footer--copyright div{text-align: center !important;}
 }
+
+.startpopup-wrapper .blue-btn {padding:12px 28px; margin: 0 5px; background: #6dc8eb; color:#333; display:inline-block;text-transform: uppercase;}
+.startpopup-wrapper .blue-btn:hover,.blue-btn:focus {color:#333;text-decoration: none;background: #97d8f1;}
+.startpopup-wrapper .green-btn {padding:12px 28px; margin: 0 5px; background: #8fd785; color:#333; display:inline-block;text-transform: uppercase;}
+.startpopup-wrapper .green-btn:hover,.green-btn:focus {color:#333;text-decoration: none;background: #b0e3a8;}
