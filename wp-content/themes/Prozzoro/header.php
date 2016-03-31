@@ -26,7 +26,6 @@
     <meta property="og:image" content="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png"/>
     <link rel="image_src" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png" />
 </head>
-
 <body <?php body_class(); ?>>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
