@@ -3918,12 +3918,12 @@ function validate_file( $file, $allowed_files = '' ) {
  * @return bool True if SSL, false if not used.
  */
 function is_ssl() {
-	if ( isset($_SERVER['HTTP_X_HTTPS']) ) {
-	if ( 'on' == strtolower($_SERVER['HTTP_X_HTTPS']) )
+	if (isset($_SERVER['HTTP_X_HTTPS'])) {
+	if ('on' == strtolower($_SERVER['HTTP_X_HTTPS']) )
 	return true;
-	if ( '1' == $_SERVER['HTTP_X_HTTPS'] )
+	if ('1' == $_SERVER['HTTP_X_HTTPS'])
 	return true;
-	} elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
+	} elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'])) {
 	return true;
 	}
 	return false;

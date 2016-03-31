@@ -39,9 +39,7 @@ Template Name: Замовнику
 		</div>		
 		<hr />
 		<?php while ( have_posts() ) : the_post(); ?>
-
 		<?php the_content(); ?>
-
 		<?php endwhile;?>
 		<a id="faq"></a>
 		<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('customer-sidebar'); ?>

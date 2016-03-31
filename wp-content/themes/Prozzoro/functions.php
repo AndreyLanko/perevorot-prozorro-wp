@@ -127,7 +127,6 @@ class FAQ_Widget extends WP_Widget {
   }
 }
 add_action( 'widgets_init', 'register_faq_widget' );
-
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
   register_post_type( 'faq',
