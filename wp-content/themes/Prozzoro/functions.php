@@ -1,5 +1,4 @@
 <?php
-
 // Отключаем сам REST API
  add_filter('rest_enabled', '__return_false');
  // Отключаем фильтры REST API 

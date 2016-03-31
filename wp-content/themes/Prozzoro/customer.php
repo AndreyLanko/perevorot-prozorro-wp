@@ -3,6 +3,7 @@
 Template Name: Замовнику
 */
  get_header(); ?>
+ 
 <div class="container system-advantages">
 		<div class="customer-menu">
 			<ul class="nav">
