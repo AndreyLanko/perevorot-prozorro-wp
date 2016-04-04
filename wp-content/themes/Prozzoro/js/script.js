@@ -9,6 +9,11 @@ $(document).ready( function(){
         event.preventDefault();
         $('.startpopup').css('display', 'none');
     });
+
+     $('a.reg-in-body').bind('click', function(event){
+        event.preventDefault();
+        $('.startpopup').css('display', 'block');
+    });
 	
 	    
     function init_event_calendar() {

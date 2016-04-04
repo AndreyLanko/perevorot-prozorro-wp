@@ -318,9 +318,21 @@ function wp_corenavi() {
 
 add_shortcode('button-to-page', 'button_to_page');
 function button_to_page() {
+	global $post;
+	$pageLink = $post->post_name;
+	$addClass = 'reg-in-body';
+	$registerLink = '#';
+	if ($pageLink=='zamovniku') {
+		$registerLink = get_permalink( get_page_by_path( 'pochaty-robotu-zamovnyku' ) );
+		$addClass = '';
+	}
+		elseif ($pageLink=='postachalniku') {
+			$registerLink = get_permalink( get_page_by_path( 'pochaty-robotu-postachalnyku' ) );
+			$addClass = '';
+		}
 	$pageContent='';
 	$pageContent.='<div class="clearfix"></div><hr />';
-	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn" href="'.get_permalink( 253 ).'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
+	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn '.$addClass.'" href="'.$registerLink.'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
 	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
 	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'"><span id="ua">Оскаржити торги</span><span id="en">File a complaint</span></a>';
 	$pageContent.='</div>';
