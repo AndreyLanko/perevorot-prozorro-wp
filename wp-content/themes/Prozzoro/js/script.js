@@ -10,7 +10,12 @@ $(document).ready( function(){
         $('.startpopup').css('display', 'none');
     });
 
-    
+     $('a.reg-in-body').bind('click', function(event){
+        event.preventDefault();
+        $('.startpopup').css('display', 'block');
+    });
+	
+	    
     function init_event_calendar() {
         $('.ai1ec-month-view td').has('div.ai1ec-event').has('div.ai1ec-date').each(function() {
             var href = $(this).find('a').attr('href').split('~');
