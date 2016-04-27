@@ -49,15 +49,15 @@
 					$_endTime = $eventInfo->get( 'end' )->format( 'H:i' );		 ?>
 						 <div class="row">
 							<div class="blog">
-							<span class="day">
-							<?php  if (strtotime($startTime)==strtotime($endTime)) {
-									echo ($startTime.' @ '.$_startTime.' - '.$_endTime);
-									 } else { 
-									 echo ($startTime.' '.$_startTime.' - '.$endTime.' '.$_endTime);
-								 }; ?>
-							</span>
+								<span class="day">
+								<?php  if (strtotime($startTime)==strtotime($endTime)) {
+										echo ($startTime.' @ '.$_startTime.' - '.$_endTime);
+										 } else { 
+										 echo ($startTime.' '.$_startTime.' - '.$endTime.' '.$_endTime);
+									 }; ?>
+								</span>
 							<h3 class="title"><a href="<?php echo get_the_permalink();?>"><?php echo get_the_title();?></a></h3>
-							<?php echo _e(trim_event_text(get_the_content(), 250, '...'));?>
+							<?php echo _e(trim_event_text(strip_tags(get_the_content()), 250, '...'));?>
 							<div class="clearfix"></div>
 							<div class="more"><a href="<?php echo get_the_permalink();?>"><i class="sprite-arrow-right"></i><?php echo ' ';?><?php echo _e('[:ua] Детальніше [:en] More'); ?></a></div>
 							<div class="clearfix"></div>

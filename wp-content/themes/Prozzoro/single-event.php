@@ -4,7 +4,8 @@
 				 global $ai1ec_registry;
 				 $currentPostId = get_the_ID();
 				 $event = $ai1ec_registry->get( 'model.event', $currentPostId );	
-				 $endTime = $event->get( 'start' )->format( 'U' );				 
+				 $endTime = $event->get( 'end' )->format( 'U' );	
+				// echo($event->get( 'end' )->format( 'U' ));
 				 $currentTime = current_time('U');
 				 $pagePath = get_page_by_path('arhiv-podij', OBJECT, 'page');
 			?>
