@@ -143,7 +143,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/category/faq/'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+   'publicly_queryable' => false
    ));
 
    register_post_type( 'partners',
@@ -160,7 +161,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/partner'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+   'publicly_queryable' => false
    ));
 
    register_post_type( 'faces',
@@ -177,7 +179,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/faces'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+    'publicly_queryable' => false
    ));
 
    register_post_type( 'dogovory',
@@ -194,7 +197,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/dogovory'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+    'publicly_queryable' => false
    ));
 }
 
