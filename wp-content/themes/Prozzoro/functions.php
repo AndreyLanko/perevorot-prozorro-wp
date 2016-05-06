@@ -659,7 +659,6 @@ function news_date($id){
         $monthnum = '<!--:ru-->декабря<!--:--><!--:ua-->грудня<!--:--><!--:en-->Desember<!--:-->';
         break;
   }
-
   echo _e(' '. $day .' '. $monthnum .' '. $year );
 }
 
