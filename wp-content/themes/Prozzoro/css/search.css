@@ -1,7 +1,6 @@
 h1 {text-transform: uppercase; text-align: center; font-family: 'Open Sans', sans-serif;font-weight:300; font-size: 2.57em;color: #666;cursor: default;}
 h1.size48 {font-size: 2.57em;}
 h1.margin-top-x {margin: 30px 0 20px 0;}
-
 table.table-monitor td{vertical-align: top;}
 table.table-monitor td p{margin: 0 0 20px;}
 .last{padding-bottom: 15px;}
@@ -12,7 +11,6 @@ table.table-monitor td p{margin: 0 0 20px;}
 .no-padding{padding-right: 0;padding-left: 0;}
 .sprite-icon-calendar {width: 24px;height: 24px;background: url('../images/sprite.png') no-repeat;background-position: -537px 0;}
 .sprite-attantion {width: 25px;height: 25px;background: url('../images/sprite.png') no-repeat;background-position: 0 -546px;}
-
 .top-menu {min-height: 30px; border: none; background: #f0f5f2; text-transform: uppercase; margin-bottom: 0;}
 .top-menu .navbar-nav > li > a{padding-top: 5px; padding-bottom: 5px;}
 .top-menu.navbar-default .navbar-nav > li{float: none;}
@@ -60,6 +58,10 @@ ul.language-chooser{list-style: none;padding: 0;margin: 0;display: inline-block;
 .startpopup-wrapper {position: absolute;z-index: 25;width: 40.25%;min-width: 300px;height: auto;min-height: 350px;top: 50%;left: 50%;-webkit-transform: translateY(-50%) translateX(-50%);-moz-transform: translateY(-50%) translateX(-50%);-o-transform: translateY(-50%) translateX(-50%);-ms-transform: translateY(-50%) translateX(-50%);transform: translateY(-50%) translateX(-50%);background-color: #fff;border:2px solid #2ab2ea;padding: 50px;text-align: center;-webkit-box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.11);-moz-box-shadow:    7px 7px 0px 0px rgba(0, 0, 0, 0.11);box-shadow:         7px 7px 0px 0px rgba(0, 0, 0, 0.11);}
 .startpopup-wrapper h1{text-align: center;}
 .startpopup-wrapper h1#title{margin:0 0 50px;}
+.startpopup-wrapper .blue-btn {padding:12px 28px; margin: 0 5px; background: #6dc8eb; color:#333; display:inline-block;text-transform: uppercase;}
+.startpopup-wrapper .blue-btn:hover,.blue-btn:focus {color:#333;text-decoration: none;background: #97d8f1;}
+.startpopup-wrapper .green-btn {padding:12px 28px; margin: 0 5px; background: #8fd785; color:#333; display:inline-block;text-transform: uppercase;}
+.startpopup-wrapper .green-btn:hover,.green-btn:focus {color:#333;text-decoration: none;background: #b0e3a8;}
 .startpopup-wrapper #btn a{padding: 25px;-webkit-box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.11);-moz-box-shadow:    7px 7px 0px 0px rgba(0, 0, 0, 0.11);box-shadow:         7px 7px 0px 0px rgba(0, 0, 0, 0.11);}
 .startpopup-wrapper a{width: 90%;display: block;margin: 25px auto;}
 .startpopup-wrapper .close-startpopup {display: block;position: absolute;top:-33px;right: 0;float: right;width: 25px;height: 25px;background-color: #fff;border: 2px solid #2ab2ea;border-radius: 50%;margin: 0;font-size: 20px;line-height: 20px;}

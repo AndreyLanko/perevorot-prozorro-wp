@@ -1,5 +1,4 @@
 <?php
-
 // Отключаем сам REST API
  add_filter('rest_enabled', '__return_false');
  // Отключаем фильтры REST API 
@@ -127,7 +126,6 @@ class FAQ_Widget extends WP_Widget {
   }
 }
 add_action( 'widgets_init', 'register_faq_widget' );
-
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
   register_post_type( 'faq',
@@ -145,7 +143,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/category/faq/'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+   'publicly_queryable' => false
    ));
 
    register_post_type( 'partners',
@@ -162,7 +161,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/partner'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+   'publicly_queryable' => false
    ));
 
    register_post_type( 'faces',
@@ -179,7 +179,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/faces'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+    'publicly_queryable' => false
    ));
 
    register_post_type( 'dogovory',
@@ -196,7 +197,8 @@ function create_post_type() {
    'rewrite' => array('slug' => '/dogovory'),
    'query_var' => true,
    'has_archive' => true,
-   'hierarchical' => false
+   'hierarchical' => false,
+    'publicly_queryable' => false
    ));
 }
 
@@ -320,9 +322,21 @@ function wp_corenavi() {
 
 add_shortcode('button-to-page', 'button_to_page');
 function button_to_page() {
+	global $post;
+	$pageLink = $post->post_name;
+	$addClass = 'reg-in-body';
+	$registerLink = '#';
+	if ($pageLink=='zamovniku') {
+		$registerLink = get_permalink( get_page_by_path( 'pochaty-robotu-zamovnyku' ) );
+		$addClass = '';
+	}
+		elseif ($pageLink=='postachalniku') {
+			$registerLink = get_permalink( get_page_by_path( 'pochaty-robotu-postachalnyku' ) );
+			$addClass = '';
+		}
 	$pageContent='';
 	$pageContent.='<div class="clearfix"></div><hr />';
-	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn" href="'.get_permalink( 253 ).'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
+	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn '.$addClass.'" href="'.$registerLink.'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
 	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
 	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'"><span id="ua">Оскаржити торги</span><span id="en">File a complaint</span></a>';
 	$pageContent.='</div>';
@@ -645,7 +659,6 @@ function news_date($id){
         $monthnum = '<!--:ru-->декабря<!--:--><!--:ua-->грудня<!--:--><!--:en-->Desember<!--:-->';
         break;
   }
-
   echo _e(' '. $day .' '. $monthnum .' '. $year );
 }
 
@@ -659,55 +672,33 @@ function comments($my_post_id){
   return $com_content;
 }
 
-add_shortcode('platforms-to-screen', 'platforms_to_screen');
-function platforms_to_screen(){
-    $path='/json/platforms/contractors/';
+add_shortcode('carousel-platforms', 'carousel_platforms');
+function carousel_platforms( $atts ){
+    $atts = shortcode_atts( array(
+      'url' => '',
+      'title' => '',
+    ), $atts, 'carousel-platforms' );
+    extract( $atts );
 
-    if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
-        $api=file_get_contents('http://prozorro.org'.$path);
-    }else{
-        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
-    }
-  $platform = json_decode($api);
+  $api = file_get_contents($url);
+  $platform = json_decode($api, true);
+
   if (is_array($platform)){
     shuffle($platform);
-
     $content ='';
+    if ($title) { $content .= '<h1 align="center">'.$title.'</h1>'; }
     $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
     foreach ($platform as $key => $value) {
-      $size = getimagesize($value->logo);
+      $size = getimagesize($value['logo']);
           if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
           else {$nw=$size[0]; $nh=$size[1];}        
-      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+      $content .=  '<div class="item" id="'.$value['slug'].'"><a href="'.$value['href'].'"><img src="'.$value['logo'].'" width="'.$nw.'" height="'.$nh.'"  alt="'.$valu['name'].'" title="'.$value['name'].'" /></a><a class="pl-title" href="'.$value['href'].'">'.$value['name'].'</a><div class="phone"></div></div>';
     }
-    $content .=  '</div></div>';
-    return $content;
+    $content .=  '</div></div>';    
+  } else {
+    $content .= '<div class="blue" align="center">Oops!! Path (url) is incorrect!! Try another!</div>';
   }
-}
-add_shortcode('doporodovi-platforms-to-screen', 'doporodovi_platforms_to_screen');
-function doporodovi_platforms_to_screen(){
-    $path='/json/platforms/contractors/';
-
-    if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
-        $api=file_get_contents('http://prozorro.org'.$path);
-    }else{
-        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
-    }
-  $platform = json_decode($api);
-  if (is_array($platform)){
-    shuffle($platform);
-
-    $content ='';
-    $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel doporodovi">';
-    foreach ($platform as $key => $value) {
-      $size = getimagesize($value->logo);
-          if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
-          else {$nw=$size[0]; $nh=$size[1];}        
-      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
-    }
-    $content .=  '</div></div>';
-    return $content;
-  }
+  return $content;
 }
 
 add_shortcode('dogovory-to-screen', 'dogovory_to_screen');

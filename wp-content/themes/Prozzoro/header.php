@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-
     <!-- Bootstrap -->
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -18,7 +17,7 @@
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.carousel.css" rel="stylesheet">
     <link href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/css/owl.theme.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/attrchange.js"></script>
     <script src="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/js/owl.carousel.js"></script>    
@@ -27,7 +26,6 @@
     <meta property="og:image" content="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png"/>
     <link rel="image_src" href="<?php bloginfo('wpurl'); ?>/wp-content/themes/Prozzoro/images/logo-prozorro-big.png" />
 </head>
-
 <body <?php body_class(); ?>>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,7 +37,6 @@
       ga('send', 'pageview');
 
     </script>
-
 	<nav class="navbar navbar-default top-menu">
             <div class="container">
                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 no-padding ofnews">

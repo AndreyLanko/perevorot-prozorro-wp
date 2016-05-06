@@ -2,8 +2,7 @@
 /*
 Template Name: Замовнику
 */
- get_header(); ?>
-
+ get_header(); ?> 
 <div class="container system-advantages">
 		<div class="customer-menu">
 			<ul class="nav">
@@ -39,9 +38,7 @@ Template Name: Замовнику
 		</div>		
 		<hr />
 		<?php while ( have_posts() ) : the_post(); ?>
-
 		<?php the_content(); ?>
-
 		<?php endwhile;?>
 		<a id="faq"></a>
 		<?php if ( function_exists('dynamic_sidebar') ) dynamic_sidebar('customer-sidebar'); ?>
