@@ -9,11 +9,8 @@
 	if (($cat_list == 16) | ($cat_name == 'vacancies') |  ($cat_name == 'event-archive') ) {
 		get_template_part( 'content', 'blog' );
 	}
-	elseif (($cat_list == 1) | ($cat_list == 17) | ($cat_list == 18) |  ($cat_name == 'ofitsijni-novyny') ){
-		get_template_part( 'content', 'news' );
-	}
 	else {
-		get_template_part( 'content');
+		get_template_part( 'content', 'news' );
 	}
 
 	// If comments are open or we have at least one comment, load up the comment template.

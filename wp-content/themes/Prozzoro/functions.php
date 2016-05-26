@@ -33,7 +33,8 @@ register_nav_menus(array(
   'platform_menu' => 'Меню в "Площадкам"', 
   'foot_menu_left' => 'Меню в footer слева',
   'foot_menu_center' => 'Меню в footer по центру',
-  'foot_menu_right' => 'Меню в footer справа'
+  'foot_menu_right' => 'Меню в footer справа',
+  'news_menu' => 'Меню в "Новости"'
 ));
 
 function get_dynamic_sidebar($index=1) {
@@ -659,7 +660,6 @@ function news_date($id){
         $monthnum = '<!--:ru-->декабря<!--:--><!--:ua-->грудня<!--:--><!--:en-->Desember<!--:-->';
         break;
   }
-
   echo _e(' '. $day .' '. $monthnum .' '. $year );
 }
 
@@ -673,58 +673,33 @@ function comments($my_post_id){
   return $com_content;
 }
 
-add_shortcode('platforms-to-screen', 'platforms_to_screen');
+add_shortcode('carousel-platforms', 'carousel_platforms');
+function carousel_platforms( $atts ){
+    $atts = shortcode_atts( array(
+      'url' => '',
+      'title' => '',
+    ), $atts, 'carousel-platforms' );
+    extract( $atts );
 
-function platforms_to_screen(){
-    $path='/json/platforms/type2/';
+  $api = file_get_contents($url);
+  $platform = json_decode($api, true);
 
-    if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
-        $api=file_get_contents('http://prozorro.org'.$path);
-    }else{
-        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
-    }
-  $platform = json_decode($api);
-  if (!empty($platform)){
+  if (is_array($platform)){
     shuffle($platform);
-
     $content ='';
+    if ($title) { $content .= '<h1 align="center">'.$title.'</h1>'; }
     $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel">';
     foreach ($platform as $key => $value) {
-      $size = getimagesize($value->logo);
+      $size = getimagesize($value['logo']);
           if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
           else {$nw=$size[0]; $nh=$size[1];}        
-      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
+      $content .=  '<div class="item" id="'.$value['slug'].'"><a href="'.$value['href'].'"><img src="'.$value['logo'].'" width="'.$nw.'" height="'.$nh.'"  alt="'.$valu['name'].'" title="'.$value['name'].'" /></a><a class="pl-title" href="'.$value['href'].'">'.$value['name'].'</a><div class="phone"></div></div>';
     }
-    $content .=  '</div></div>';
-    return $content;
+    $content .=  '</div></div>';    
+  } else {
+    $content .= '<div class="blue" align="center">Oops!! Path (url) is incorrect!! Try another!</div>';
   }
-}
-add_shortcode('doporodovi-platforms-to-screen', 'doporodovi_platforms_to_screen');
-function doporodovi_platforms_to_screen(){
-    $path='/json/platforms/type1/';
-
-    if($_SERVER['HTTP_HOST']=='prozorro.lemon.ua'){
-        $api=file_get_contents('http://prozorro.org'.$path);
-    }else{
-        $api=file_get_contents('http://'.$_SERVER['HTTP_HOST'].$path);
-    }
-  $platform = json_decode($api);
-
-  if (!empty($platform)){
-    shuffle($platform);
-
-    $content ='';
-    $content .= '<div class="start-steps--platforms-list margin-bottom clearfix"><div class="owl-carousel doporodovi">';
-    foreach ($platform as $key => $value) {
-      $size = getimagesize($value->logo);
-          if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
-          else {$nw=$size[0]; $nh=$size[1];}        
-      $content .=  '<div class="item" id="'.$value->slug.'"><a href="'.$value->href.'"><img src="'.$value->logo.'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value->name.'" title="'.$value->name.'" /></a><a class="pl-title" href="'.$value->href.'">'.$value->name.'</a><div class="phone"></div></div>';
-    }
-    $content .=  '</div></div>';
-
-    return $content;
-  }
+  return $content;
 }
 
 add_shortcode('dogovory-to-screen', 'dogovory_to_screen');
