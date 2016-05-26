@@ -7,11 +7,14 @@
 			<div class="left-menu hidden-lg hidden-md hidden-sm col-xs-12 ">
 				<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 				<ul>
-					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID==$_newsID ?'current-cat':'' );?>"><a href="<?php echo get_category_link($_newsID); ?>"><?php echo get_the_category_by_ID($_newsID); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
+					<li class="cat-item"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
+				<?php	wp_nav_menu( array(
+						'theme_location' => 'news_menu',
+						'fallback_cb' => '__return_empty_string',
+						'items_wrap' => '%3$s',
+						'container' => ''
+					) );
+					?>		
 				</ul>
 			</div>
 			<div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 ">
@@ -59,13 +62,16 @@
 		<div class="right-col left-menu col-md-4 col-lg-4 col-sm-4 hidden-xs ">
 			<h3><?php echo _e('[:ua]Рубрики [:en]Categories'); ?></h3>
 			<ul>
-					<li class="cat-item <?php echo ($category->cat_ID=='18' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='17' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(17); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='16' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID==$_newsID ?'current-cat':'' );?>"><a href="<?php echo get_category_link($_newsID); ?>"><?php echo get_the_category_by_ID($_newsID); ?></a></li>
-					<li class="cat-item <?php echo ($category->cat_ID=='1' ?'current-cat':'' );?>"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
-				</ul>
-			<hr />
+				<li class="cat-item"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
+				<?php	wp_nav_menu( array(
+						'theme_location' => 'news_menu',
+						'fallback_cb' => '__return_empty_string',
+						'items_wrap' => '%3$s',
+						'container' => ''
+					) );
+					?>		
+			</ul>
+		<hr />
 
 			<div class="top-blog">
 				<h3><a href="<?php echo get_category_link(16) ?>"><?php echo get_the_category_by_ID(16); ?></a></h3>

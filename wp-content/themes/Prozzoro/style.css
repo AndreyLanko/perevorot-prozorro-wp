@@ -498,7 +498,10 @@ h1.page-title{
 	.left-menu a:focus,
 	.left-menu .current-cat a,
 	.left-menu .current-cat a:hover,
-	.left-menu .current-cat a:focus{
+	.left-menu .current-cat a:focus,
+	.left-menu .current-menu-item a,
+	.left-menu .current-menu-item a:hover,
+	.left-menu .current-menu-item a:focus{
 		text-decoration: none;
 		color: #0099cc;
 	}

@@ -33,7 +33,8 @@ register_nav_menus(array(
   'platform_menu' => 'Меню в "Площадкам"', 
   'foot_menu_left' => 'Меню в footer слева',
   'foot_menu_center' => 'Меню в footer по центру',
-  'foot_menu_right' => 'Меню в footer справа'
+  'foot_menu_right' => 'Меню в footer справа',
+  'news_menu' => 'Меню в "Новости"'
 ));
 
 function get_dynamic_sidebar($index=1) {
