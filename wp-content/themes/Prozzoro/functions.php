@@ -338,7 +338,7 @@ function button_to_page() {
 	$pageContent='';
 	$pageContent.='<div class="clearfix"></div><hr />';
 	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn '.$addClass.'" href="'.$registerLink.'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
-	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
+	$pageContent.='<a href="http://infobox.prozorro.org/knowledge-base?page=1&count=10&type=all" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
 	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'"><span id="ua">Оскаржити торги</span><span id="en">File a complaint</span></a>';
 	$pageContent.='</div>';
 
