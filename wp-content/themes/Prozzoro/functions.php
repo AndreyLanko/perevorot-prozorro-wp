@@ -400,7 +400,7 @@ add_shortcode('vacancies-in-top', 'vacancies_in_top');
 function vacancies_in_top(){
   $text_to_site = '';
   $args = array(
-    'showposts' => 3, 
+    'showposts' => -1, 
     'category_name' =>  'vacancies',
     'post_status' => 'publish',
     'orderby' => 'date',
