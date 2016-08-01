@@ -11,6 +11,11 @@ table.table-monitor td p{margin: 0 0 20px;}
 .no-padding{padding-right: 0;padding-left: 0;}
 .sprite-icon-calendar {width: 24px;height: 24px;background: url('../images/sprite.png') no-repeat;background-position: -537px 0;}
 .sprite-attantion {width: 25px;height: 25px;background: url('../images/sprite.png') no-repeat;background-position: 0 -546px;}
+
+.sprite-customer {width: 46px;height: 46px;background-position: -616px -92px;}
+.sprite-provider {width: 46px;height: 46px;background-position: -616px -46px;}
+.sprite-tender-search {width: 46px;height: 46px;background-position: -616px 0;}
+
 .top-menu {min-height: 30px; border: none; background: #f0f5f2; text-transform: uppercase; margin-bottom: 0;}
 .top-menu .navbar-nav > li > a{padding-top: 5px; padding-bottom: 5px;}
 .top-menu.navbar-default .navbar-nav > li{float: none;}
