@@ -65,9 +65,9 @@ a:hover .sprite-pen-icon, .active .sprite-pen-icon, .sprite-pen-icon-a { backgro
 .sprite-cursor-green {width: 54px;height: 54px;background-position: -100px -108px;}
 .sprite-list-green {width: 54px;height: 54px;background-position: -46px -162px;}
 
-.sprite-customer {width: 50px;height: 46px;background-position: -154px -108px;}
-.sprite-provider {width: 46px;height: 46px;background-position: -208px -162px;}
-.sprite-tender-search {width: 34px;height: 46px;background-position: -90px -230px;}
+.sprite-customer {width: 46px;height: 46px;background-position: -616px -92px;}
+.sprite-provider {width: 46px;height: 46px;background-position: -616px -46px;}
+.sprite-tender-search {width: 46px;height: 46px;background-position: -616px 0;}
 
 
 /*
