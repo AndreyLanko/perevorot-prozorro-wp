@@ -33,6 +33,179 @@
 .sprite-todown {width: 55px;height: 55px;background-position: -561px 0;}
 .sprite-todown-h {width: 55px;height: 55px;background-position: -537px -55px;}
 
+.sprite-active-add-gray {width: 415px;height: 100px;background-position: 0 -571px;}
+.sprite-active-add-tur {width: 394px;height: 100px;background-position: -662px 0;}
+.sprite-active-gray {width: 251px;height: 100px;background-position: -662px -100px;}
+.sprite-active-oko {width: 142px;height: 100px;background-position: -913px -100px;}
+.sprite-active-tur {width: 285px;height: 100px;background-position: -662px -200px;}
+.sprite-logo-gray {width: 100px;height: 100px;background-position: -947px -200px;}
+.sprite-logo-oko {width: 100px;height: 100px;background-position: -662px -300px;}
+.sprite-logo-tur {width: 100px;height: 100px;background-position: -762px -300px;}
+li.gray-bg span,
+li.green-bg span,
+li.blue-bg span{
+	display: block;
+}
+li.green-bg span,
+li.blue-bg span{
+	margin-top: 16px;
+}
+li.green-bg.active span,
+li.blue-bg.active span{
+	margin-top: 23px;
+}
+.green-bg .sprite-provider{
+	width: 100px;
+	height: 100px;
+	background-position: -762px -300px;
+    margin: -12px 0 0 -16px;
+    float: left;
+}
+.green-bg.active .sprite-provider{
+	width: 285px;
+	height: 100px;
+	background-position: -662px -200px;
+	margin:-12px -40px 0 0;  
+}
+.green-bg.active:before{
+	content: '';
+	display: block;
+	float: right;
+	background: url('./images/sprite.png') no-repeat;
+	width: 394px;
+    height: 100px;
+    background-position: -662px 0;
+    margin: 0 15px;
+}
+.gray-bg .sprite-tender-search{
+	width: 142px;
+	height: 100px;
+	background-position: -913px -100px;
+	margin-left: 5px;
+    margin-bottom: 0;
+    margin-top: -12px;
+    float: left;
+}
+.expanded .gray-bg .sprite-tender-search{
+	width: 100px;
+	height: 100px;
+	background-position: -662px -300px;
+	margin-left: -13px;
+    margin-bottom: 0;
+    margin-top: -12px;
+}
+.blue-bg .sprite-customer{
+	width: 100px;
+	height: 100px;
+	background-position: -947px -200px;
+	margin: -12px -2px -3px 0;
+    float: right;
+}
+.blue-bg.active .sprite-customer{
+	width: 251px;
+	height: 100px;
+	background-position: -662px -100px;
+	margin: -12px 0 -3px -16px;
+}
+.blue-bg.active:before{
+	content: '';
+	display: block;
+	float: left;
+	background: url('./images/sprite.png') no-repeat;
+	width: 415px;
+    height: 100px;
+    background-position: 0 -571px;
+    margin: 0 15px;
+}
+@media only screen and (max-width : 1200px){
+	.blue-bg.active:before,
+	.green-bg.active:before{
+		content: '';
+		display: none;
+	}
+ }
+@media only screen and (max-width : 768px){
+	li.gray-bg span,
+	li.green-bg span,
+	li.blue-bg span{
+		display: inline-block;
+	}
+	li.green-bg.active span, 
+	li.blue-bg.active span {
+	    margin-top: 0;
+	}
+	.gray-bg .sprite-tender-search,
+	.expanded .gray-bg .sprite-tender-search{
+		width: 100px;
+		height: 100px;
+		background-position: -662px -300px;
+		margin-left: 5px;
+	    margin-bottom: 0;
+	    margin-top: -12px;
+	    float: none;
+	}
+	.blue-bg.active .sprite-customer{
+		width: 100px;
+		height: 100px;
+		background-position: -947px -200px;
+		margin: -12px -2px -3px 0;
+		float: none;
+	} 
+	.green-bg.active .sprite-provider{
+		width: 100px;
+		height: 100px;
+		background-position: -762px -300px;
+	    margin: -12px 0 0 -16px;
+	    float: none;
+	}
+}
+@media only screen and (max-width : 480px){
+	.sections > li,
+	.sections.expanded > li {
+	    width: 100%;
+	    height: 100px;
+	    display: block;
+	}
+ 	.sections > li.active > a {
+	    text-align: center;
+	}
+	li.blue-bg .sprite-customer,
+	li.green-bg .sprite-provider,
+	li.gray-bg .sprite-tender-search,
+	.expanded li.blue-bg .sprite-customer,
+	.expanded li.green-bg .sprite-provider,
+	.expanded li.gray-bg .sprite-tender-search{
+		float: left;
+		margin-left: 1px;
+	}
+	li.green-bg.active span, 
+	li.blue-bg.active span,
+	li.green-bg span, 
+	li.blue-bg span,
+	li.gray-bg span {
+	    margin-top: 28px;
+	    white-space: nowrap;
+	    display: inline-block !important;
+	}
+}
+@media only screen and (max-width : 320px){
+ 	li.green-bg.active span, 
+	li.blue-bg.active span,
+	li.green-bg span, 
+	li.blue-bg span,
+	li.gray-bg span{
+		font-size: 0.9em;
+	}
+	nav.top-menu .social {
+	    margin-right: -30px !important;
+	}
+	nav.top-menu .event-calendar{
+		margin-left: 22px;
+    	margin-right: -25px;
+	}
+}
+
+
 .en_content #ua{
 	display: none;
 }
