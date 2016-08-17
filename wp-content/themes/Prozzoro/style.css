@@ -39,6 +39,9 @@
 .ua_content #en{
 	display: none;
 }
+.normalcase{
+	text-transform: none !important;
+}
 
 .no-padding{
 	padding-right: 0;
