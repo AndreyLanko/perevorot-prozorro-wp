@@ -1365,3 +1365,24 @@ table.ai1ec-month-view td.ai1ec-today{
   
 
 /******************************************** END CALENDAR ********************************************************************************/
+#content .five-in-row{
+    -webkit-padding-start: 0px;
+}
+#content .five-in-row>li{
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 15px;
+}
+/* Small Devices, Tablets */
+	@media only screen and (max-width : 768px){
+ 		#content .five-in-row>li{
+			width: 33.33%;
+		}
+	}
+/* Extra Small Devices, Phones */
+	@media only screen and (max-width : 480px){
+		#content .five-in-row>li{
+			width: 100%;
+		} 
+	}

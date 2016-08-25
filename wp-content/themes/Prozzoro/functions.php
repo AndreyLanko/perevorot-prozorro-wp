@@ -826,7 +826,7 @@ function dogovory_to_screen(){
 add_shortcode('reform-faces', 'reform_faces');
 function reform_faces(){
  $content ='';
- $content.='<div class="row faces"><ul class="nav-justified">'; 
+ $content.='<div class="row faces"><ul class="nav-justified five-in-row">'; 
  $args = array(
       'post_type' => 'faces',
       'post_status' => 'publish',
