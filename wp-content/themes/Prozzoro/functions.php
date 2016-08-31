@@ -33,7 +33,8 @@ register_nav_menus(array(
   'platform_menu' => 'Меню в "Площадкам"', 
   'foot_menu_left' => 'Меню в footer слева',
   'foot_menu_center' => 'Меню в footer по центру',
-  'foot_menu_right' => 'Меню в footer справа'
+  'foot_menu_right' => 'Меню в footer справа',
+  'news_menu' => 'Меню в "Новости"'
 ));
 
 function get_dynamic_sidebar($index=1) {
@@ -337,7 +338,7 @@ function button_to_page() {
 	$pageContent='';
 	$pageContent.='<div class="clearfix"></div><hr />';
 	$pageContent.='<div class="system-advantages--buttons"><a class="green-btn '.$addClass.'" href="'.$registerLink.'"><span id="ua">Зареєструватись</span><span id="en">Register</span></a>';
-	$pageContent.='<a href="http://help.vdz.ua" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
+	$pageContent.='<a href="http://infobox.prozorro.org/knowledge-base?page=1&count=10&type=all" target="_blank" class="blue-btn"><span id="ua">Перейти на Базу знань</span><span id="en">Go to Database</span></a>';
 	$pageContent.='<a class="red-btn" href="'.get_permalink( get_page_by_path( 'yak-oskarzhyty-torgy' ) ).'"><span id="ua">Оскаржити торги</span><span id="en">File a complaint</span></a>';
 	$pageContent.='</div>';
 
@@ -399,7 +400,7 @@ add_shortcode('vacancies-in-top', 'vacancies_in_top');
 function vacancies_in_top(){
   $text_to_site = '';
   $args = array(
-    'showposts' => 3, 
+    'showposts' => -1, 
     'category_name' =>  'vacancies',
     'post_status' => 'publish',
     'orderby' => 'date',
@@ -680,7 +681,16 @@ function carousel_platforms( $atts ){
     ), $atts, 'carousel-platforms' );
     extract( $atts );
 
-  $api = file_get_contents($url);
+  if(strpos(trim($url),"/") == '0') {
+    if (!empty($_SERVER['HTTPS'])){
+        $type = 'https://';
+      } else {
+        $type = 'http://';
+      }
+      $api=file_get_contents($type.$_SERVER['HTTP_HOST'].$url);
+    }  else {
+      $api = file_get_contents($url);
+    }
   $platform = json_decode($api, true);
 
   if (is_array($platform)){
@@ -692,9 +702,97 @@ function carousel_platforms( $atts ){
       $size = getimagesize($value['logo']);
           if($size[0]>150 || $size[1]>100) { $nw=150; $nh=floor(150/($size[0]/$size[1]));}
           else {$nw=$size[0]; $nh=$size[1];}        
-      $content .=  '<div class="item" id="'.$value['slug'].'"><a href="'.$value['href'].'"><img src="'.$value['logo'].'" width="'.$nw.'" height="'.$nh.'"  alt="'.$valu['name'].'" title="'.$value['name'].'" /></a><a class="pl-title" href="'.$value['href'].'">'.$value['name'].'</a><div class="phone"></div></div>';
+      $content .=  '<div class="item" id="'.$value['slug'].'"><a href="'.$value['href'].'"><img src="'.$value['logo'].'" width="'.$nw.'" height="'.$nh.'"  alt="'.$value['name'].'" title="'.$value['name'].'" /></a><a class="pl-title" href="'.$value['href'].'">'.$value['name'].'</a><div class="phone"></div></div>';
     }
     $content .=  '</div></div>';    
+  } else {
+    $content .= '<div class="blue" align="center">Oops!! Path (url) is incorrect!! Try another!</div>';
+  }
+  return $content;
+}
+
+add_shortcode('announced-to-page', 'announced_to_page');
+function announced_to_page( $atts ){
+    $atts = shortcode_atts( array(
+      'url' => '',
+      'title' => '',
+    ), $atts, 'announced-to-page' );
+    extract( $atts );
+
+    if(strpos(trim($url),"/") == '0') {
+      if (!empty($_SERVER['HTTPS'])){
+        $type = 'https://';
+      } else {
+        $type = 'http://';
+      }
+      $api=file_get_contents($type.$_SERVER['HTTP_HOST'].$url);
+    }  else {
+      $api = file_get_contents($url);
+    }
+  $announced = json_decode($api, true);  
+
+  if (is_array($announced)){
+    $content ='';
+    $count = 2; 
+    $content .='  <div class="clearfix"></div>';
+    if ($title) { $content .= '<h1 align="center">'.$title.'</h1>'; } 
+    $content .='<div class="tender--simmilar tender-type2">
+        <div class="row">';
+        foreach ($announced as $key => $value) {
+          if ($value['currency'] == 'UAH'){
+            if ( function_exists('qtrans_getLanguage') ){
+              if ( qtrans_getLanguage()=='ua')
+                $currency = 'грн';
+              if ( qtrans_getLanguage()=='en')
+                $currency = 'UAH';
+            }
+          } else {
+            $currency = $value['currency'];
+          }
+
+          if ( function_exists('qtrans_getLanguage') ){
+              if ( qtrans_getLanguage()=='ua'){
+                $moreinfo = 'Детальніше';
+                $company = 'Компанія';
+                $alllink = '/tender/search/?status=active.enquiries&status=active.tendering';
+              } else                
+              if ( qtrans_getLanguage()=='en'){
+                $moreinfo = 'Details';
+                $company = 'Company';
+                $alllink = '/en/tender/search/?status=active.enquiries&status=active.tendering';
+              }                
+            }
+          
+          $content .='<div class="col-md-4 col-sm-6">
+            <div class="tender--simmilar--item gray-bg padding margin-bottom">
+              <div class="green tender--simmilar--item--cost">'.number_format($value['amount'], 0, '', ' ').' <span class="small">'.$currency.'</span></div>
+              <a href="/tender/'.$value['tenderID'].'/" target="_blank" class="title normalcase">'.mb_substr(trim($value['title']),0,75) .'</a>             
+              
+              <div class="tender--legend">';
+              if(!empty($value['locality'])){
+                $content .= $value['locality']; 
+              }
+              $content .='</div>';
+              if(!empty($value['name'])){      
+                $content .='<div class="tender--simmilar--text margin-bottom">
+                  <strong>'.$company.':</strong> '.mb_substr(trim($value['name']),0,70).'
+                </div>';
+              }
+              $content .='<a href="/tender/'.$value['tenderID'].'/" target="_blank"><i class="sprite-arrow-right"></i> '.$moreinfo.'</a>
+            </div>
+          </div>';
+           if($count <=0)
+           break; //will break if statement and foreach
+           $count--; // reduce it by one
+        }         
+          
+          $content .='</div>        
+        <div class="col-sm-12">
+        <a href="'.$alllink.'" target="_blank"><i class="sprite-arrow-right"></i> Перейти до всіх свіжих заявок</a>
+        </div>
+      </div>
+      
+      <div class="clearfix"></div> ';
   } else {
     $content .= '<div class="blue" align="center">Oops!! Path (url) is incorrect!! Try another!</div>';
   }
@@ -728,7 +826,7 @@ function dogovory_to_screen(){
 add_shortcode('reform-faces', 'reform_faces');
 function reform_faces(){
  $content ='';
- $content.='<div class="row faces"><ul class="nav-justified">'; 
+ $content.='<div class="row faces"><ul class="nav-justified five-in-row">'; 
  $args = array(
       'post_type' => 'faces',
       'post_status' => 'publish',

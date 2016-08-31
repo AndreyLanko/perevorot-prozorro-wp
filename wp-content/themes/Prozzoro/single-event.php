@@ -5,7 +5,6 @@
 				 $currentPostId = get_the_ID();
 				 $event = $ai1ec_registry->get( 'model.event', $currentPostId );	
 				 $endTime = $event->get( 'end' )->format( 'U' );	
-				// echo($event->get( 'end' )->format( 'U' ));
 				 $currentTime = current_time('U');
 				 $pagePath = get_page_by_path('arhiv-podij', OBJECT, 'page');
 			?>
@@ -15,9 +14,13 @@
 				<ul>
 					<li class="cat-item current-cat"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 					<li class="cat-item sub-cat <?php echo (($currentTime>$endTime)?'current-cat':'');?>" ><a href="<?php echo get_the_permalink($pagePath->ID); ?>"><?php echo _e($pagePath->post_title); ?></a></li>
-					<li class="cat-item"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
-					<li class="cat-item"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-					<li class="cat-item"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
+					<?php	wp_nav_menu( array(
+						'theme_location' => 'news_menu',
+						'fallback_cb' => '__return_empty_string',
+						'items_wrap' => '%3$s',
+						'container' => ''
+					) );
+					?>
 				</ul>
 			</div>
 			<div class="blog news col-md-8 col-lg-8 col-sm-8 col-xs-12 ">			
@@ -35,9 +38,13 @@
 			<ul>
 				<li class="cat-item current-cat"><a href="<?php echo get_category_link(18); ?>"><?php echo get_the_category_by_ID(18); ?></a></li>
 				<li class="cat-item sub-cat <?php echo (($currentTime>$endTime)?'current-cat':'');?>" ><a href="<?php echo get_the_permalink($pagePath->ID); ?>"><?php echo _e($pagePath->post_title); ?></a></li>
-				<li class="cat-item"><a href="<?php echo get_category_link(19); ?>"><?php echo get_the_category_by_ID(17); ?></a></li>
-				<li class="cat-item"><a href="<?php echo get_category_link(16); ?>"><?php echo get_the_category_by_ID(16); ?></a></li>
-				<li class="cat-item"><a href="<?php echo get_category_link(1); ?>"><?php echo _e('[:ua]Всі новини [:en]All news');?></a></li>
+				<?php	wp_nav_menu( array(
+						'theme_location' => 'news_menu',
+						'fallback_cb' => '__return_empty_string',
+						'items_wrap' => '%3$s',
+						'container' => ''
+					) );
+					?>
 			</ul>
 			<hr />
 
