@@ -151,7 +151,7 @@ hr {border: 1px solid #eeeeee;}
 .sections > li.active, .sections.expanded > li.active,  .sections.expanded > li.active > a {width:100%;}
 @media (max-width: 769px) {
 .sections {font-size:1.3em;table-layout:auto;display:block;}
-.sections > li{width: 100%;height:auto;display:block;}
+.sections > li{width: 100%;/*height:auto;*/display:block;}
 }
 
 .nav-justified.inline-navbar.nav > li{float:none; display:table-cell;}

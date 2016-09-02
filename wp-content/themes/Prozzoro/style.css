@@ -46,9 +46,12 @@ li.green-bg span,
 li.blue-bg span{
 	display: block;
 }
+li.green-bg span{
+	margin-top:5px;
+}
 li.green-bg span,
 li.blue-bg span{
-	margin-top: 16px;
+	margin-top: 21px;
 }
 li.green-bg.active span,
 li.blue-bg.active span{
@@ -98,7 +101,7 @@ li.blue-bg.active span{
 	width: 100px;
 	height: 100px;
 	background-position: -947px -200px;
-	margin: -12px -2px -3px 0;
+	margin: -12px -11px -3px 0;
     float: right;
 }
 .blue-bg.active .sprite-customer{
@@ -132,7 +135,7 @@ li.blue-bg.active span{
 	}
 	li.green-bg.active span, 
 	li.blue-bg.active span {
-	    margin-top: 0;
+	    /*margin-top: 0;*/
 	}
 	.gray-bg .sprite-tender-search,
 	.expanded .gray-bg .sprite-tender-search{
@@ -142,21 +145,26 @@ li.blue-bg.active span{
 		margin-left: 5px;
 	    margin-bottom: 0;
 	    margin-top: -12px;
-	    float: none;
+	    float: left;
 	}
-	.blue-bg.active .sprite-customer{
+	.blue-bg.active .sprite-customer,
+	.blue-bg .sprite-customer{
 		width: 100px;
 		height: 100px;
 		background-position: -947px -200px;
 		margin: -12px -2px -3px 0;
-		float: none;
+		float: left;
 	} 
-	.green-bg.active .sprite-provider{
+	.green-bg.active .sprite-provider,
+	.green-bg .sprite-provider{
 		width: 100px;
 		height: 100px;
 		background-position: -762px -300px;
-	    margin: -12px 0 0 -16px;
-	    float: none;
+	    margin: -12px 0 0 2px;
+	    float: left;
+	}
+	li.gray-bg span {
+	    margin-top: 21px;
 	}
 }
 @media only screen and (max-width : 480px){
